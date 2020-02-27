@@ -1,7 +1,72 @@
-*{
-    background-color: #000000;
+/* whole document css settings */
+* {
+  background-color: #000000;
 }
 
-h1{
-    color: #ffffff;
+/* CSS Variables */
+:root {
+  --game-circle-width: 200px;
+  --game-circle-height: 200px;
+}
+/* buttons setup */
+
+.button-green {
+  position: absolute;
+  background-color: #00ff00;
+  bottom: 50%;
+  right: 50%;
+  height: 400px;
+  width: 400px;
+  border: 10px solid black;
+  border-radius: 10%;
+  box-shadow:inset 0 0 50px #aeffae;
+}
+
+.button-red {
+  position: absolute;
+  background-color: #ff0000;
+  bottom: 50%;
+  left: 50%;
+  height: 400px;
+  width: 400px;
+  border: 10px solid black;
+  border-radius: 10%;
+  box-shadow:inset 0 0 50px #ffaeae;
+}
+
+.button-yellow {
+  position: absolute;
+  background-color: #ffff00;
+  top: 50%;
+  right: 50%;
+  height: 400px;
+  width: 400px;
+  border: 10px solid black;
+  border-radius: 10%;
+  box-shadow:inset 0 0 50px #ffffae;
+}
+
+.button-blue {
+  position: absolute;
+  background-color: #0000ff;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 400px;
+  border: 10px solid black;
+  border-radius: 10%;
+  box-shadow:inset 0 0 50px #aeaeff;
+  
+}
+
+.center-circle {
+  position: absolute;
+  background-color: #252323;
+  height: var(--game-circle-height);
+  width: var(--game-circle-width);
+  left: calc(50% - (var(--game-circle-width) / 2));
+  top: calc(50% - (var(--game-circle-height) / 2));
+  border: 10px solid black;
+  border-radius: 50%;
+  box-shadow:inset 0 0 30px #5e5e5e;
 }

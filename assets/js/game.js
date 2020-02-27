@@ -1,3 +1,2 @@
-console.log('My JS is linked');
+console.log('My JS is linked now');
 
-$("#Name").html("<h1>This is jQuery</h1>");
