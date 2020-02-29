@@ -20,8 +20,6 @@
 
 ## Overview
 
-# Simon Says Game
-
 One or two paragraphs providing an overview of your project.
 
 Essentially, this part is your sales pitch.
@@ -38,15 +36,19 @@ Essentially, this part is your sales pitch.
 
 ## UX
 
-``` 
+```
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
 - As a user type, I want to perform an action, so that I can achieve a goal.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+This section is also where you would share links to any wireframes, mockups, diagrams etc. 
+That you created as part of the design process. 
+These files should themselves either be included as a pdf file in the project itself.
+(in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
 ```
+
 <!-- Top -->
 <!-- wireframes -->
 
@@ -56,7 +58,9 @@ These are my wireframes I created during the design process, they were great as 
 
 <div align="center">
 
-**PC Mockups**
+#### PC Mockups
+
+<br>
 
 <!-- Main Screen PC -->
 <img src="/Wireframes/Images/Main Screen - WEB.png" alt="Main Screen screen for pc" width="600" height="350">
@@ -71,14 +75,13 @@ These are my wireframes I created during the design process, they were great as 
 <img src="/Wireframes/Images/Game Over - WEB.png" alt="Game Over screen for pc" width="600" height="350">
 
 <!-- Top -->
-
-<div align="center">
+<br>
 
 [Top](#Contents)
 
-</div>
+---
 
-**Tablet Mockups**
+#### Tablet Mockups
 
 <!-- Main Screen iPad -->
 <img src="/Wireframes/Images/Main Screen - iPad.png" alt="Main Screen screen for iPad" width="600" height="350">
@@ -94,11 +97,11 @@ These are my wireframes I created during the design process, they were great as 
 
 <!-- Top -->
 
-<div align="center">
-
 [Top](#Contents)
 
-</div>
+---
+
+#### Smartphone Mockups
 
 <!-- Main Screen iPhone -->
 <img src="/Wireframes/Images/Main Screen - iPhone.png" alt="Main Screen screen for iPhone" width="600" height="350">
@@ -111,7 +114,15 @@ These are my wireframes I created during the design process, they were great as 
 
 <!-- Game Over Screen iPhone -->
 <img src="/Wireframes/Images/Game Over - iPhone.png" alt="Game Over screen for iPhone" width="600" height="350">
+
+<!-- Top -->
+
+[Top](#Contents)
+
 </div>
+
+---
+
 <!-- features -->
 
 ## Features
@@ -130,6 +141,7 @@ In addition, you may also use this section to discuss plans for additional featu
 ### Features Left to Implement
 - Another feature idea
 ```
+
 <!-- Top -->
 
 <div align="center">
@@ -147,7 +159,7 @@ I used the following technologies to create this website:
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to *construct this project. For each, provide its name, a link to its *official site and a short sentence of why it was used.
 
- [JQuery](https://jquery.com) 
+ [JQuery](https://jquery.com)
    - The project uses **JQuery** to simplify DOM manipulation.
 
 
@@ -207,6 +219,7 @@ You should also mention in this section any interesting bugs or problems you dis
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ```
+
  <!-- Top -->
 
 <div align="center">
@@ -218,6 +231,7 @@ If this section grows too long, you may want to split it off into a separate fil
 <!-- Deployment -->
 
 ## Deployment
+
 ```
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
@@ -242,21 +256,24 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ## Credits
 
-
 ### Content
+
 ```
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 ```
 
 ### Media
+
 ```
 - The photos used in this site were obtained from ...
 ```
-    
+
 ### Acknowledgements
+
 ```
 - I received inspiration for this project from X
- ```
+```
+
  <!-- Top -->
 
 <div align="center">
