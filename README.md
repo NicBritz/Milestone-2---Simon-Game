@@ -59,16 +59,16 @@ These are my wireframes I created during the design process, they were great as 
 **PC Mockups**
 
 <!-- Main Screen PC -->
-<img src="/Wireframes/Images/Main Screen - WEB.png" alt="Main Screen screen for pc" width="512" height="357">
+<img src="/Wireframes/Images/Main Screen - WEB.png" alt="Main Screen screen for pc" width="600" height="350">
 
 <!-- Game Screen PC -->
-<img src="/Wireframes/Images/Game Screen - WEB.png" alt="Game screen for pc" width="512" height="357">
+<img src="/Wireframes/Images/Game Screen - WEB.png" alt="Game screen for pc" width="600" height="350">
 
 <!-- Settings Screen PC -->
-<img src="/Wireframes/Images/Settings - WEB.png" alt="Game settings screen for pc" width="512" height="357">
+<img src="/Wireframes/Images/Settings - WEB.png" alt="Game settings screen for pc" width="600" height="350">
 
 <!-- Game Over Screen PC -->
-<img src="/Wireframes/Images/Game Over - WEB.png" alt="Game Over screen for pc" width="512" height="357">
+<img src="/Wireframes/Images/Game Over - WEB.png" alt="Game Over screen for pc" width="600" height="350">
 
 <!-- Top -->
 
@@ -81,16 +81,16 @@ These are my wireframes I created during the design process, they were great as 
 **Tablet Mockups**
 
 <!-- Main Screen iPad -->
-<img src="/Wireframes/Images/Main Screen - iPad.png" alt="Main Screen screen for iPad" width="512" height="357">
+<img src="/Wireframes/Images/Main Screen - iPad.png" alt="Main Screen screen for iPad" width="600" height="350">
 
 <!-- Game Screen iPad -->
-<img src="/Wireframes/Images/Game Screen - iPad.png" alt="Game screen for iPad" width="512" height="357">
+<img src="/Wireframes/Images/Game Screen - iPad.png" alt="Game screen for iPad" width="600" height="350">
 
 <!-- Settings Screen iPad -->
-<img src="/Wireframes/Images/Settings - iPad.png" alt="Game settings screen for iPad" width="512" height="357">
+<img src="/Wireframes/Images/Settings - iPad.png" alt="Game settings screen for iPad" width="600" height="350">
 
 <!-- Game Over Screen iPad -->
-<img src="/Wireframes/Images/Game Over - iPad.png" alt="Game Over screen for iPad" width="512" height="357">
+<img src="/Wireframes/Images/Game Over - iPad.png" alt="Game Over screen for iPad" width="600" height="350">
 
 <!-- Top -->
 
@@ -101,16 +101,16 @@ These are my wireframes I created during the design process, they were great as 
 </div>
 
 <!-- Main Screen iPhone -->
-<img src="/Wireframes/Images/Main Screen - iPhone.png" alt="Main Screen screen for iPhone" width="512" height="357">
+<img src="/Wireframes/Images/Main Screen - iPhone.png" alt="Main Screen screen for iPhone" width="600" height="350">
 
 <!-- Game Screen iPhone -->
-<img src="/Wireframes/Images/Game Screen - iPhone.png" alt="Game screen for iPhone" width="512" height="357">
+<img src="/Wireframes/Images/Game Screen - iPhone.png" alt="Game screen for iPhone" width="600" height="350">
 
 <!-- Settings Screen iPhone -->
-<img src="/Wireframes/Images/Settings - iPhone.png" alt="Game settings screen for iPhone" width="512" height="357">
+<img src="/Wireframes/Images/Settings - iPhone.png" alt="Game settings screen for iPhone" width="600" height="350">
 
 <!-- Game Over Screen iPhone -->
-<img src="/Wireframes/Images/Game Over - iPhone.png" alt="Game Over screen for iPhone" width="512" height="357">
+<img src="/Wireframes/Images/Game Over - iPhone.png" alt="Game Over screen for iPhone" width="600" height="350">
 </div>
 <!-- features -->
 
