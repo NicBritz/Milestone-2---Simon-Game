@@ -19,11 +19,6 @@ $(document).ready(function() {
     });
 });
 
-function playButtonAudio(button) {
-  $(`#${button}-classic-audio`)
-    .get(0)
-    .play();
-}
 
 // game play Button Pressed
 function buttonPressed(button) {
@@ -39,7 +34,7 @@ function buttonPressed(button) {
   }, 100);
 
   // Plays appropriate sound restarting it if its already playing
-  $(`#${btnData}-classic-audio`)
+  $(`audio`)
     .get(0)
     .currentTime=0;
 
