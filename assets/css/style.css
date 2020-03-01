@@ -3,7 +3,6 @@
   background-color: #000000;
 }
 
-
 /* ---------- Game Play Buttons setup ---------- */
 .button-green,
 .button-red,
@@ -44,7 +43,11 @@
   left: 50%;
   top: 50%;
   box-shadow: inset 0 0 50px #aeaeff;
-  
+}
+
+/* hover over game buttons */
+.game-button-hovered {
+  box-shadow: inset 0 0 20px #000000;
 }
 
 /* ----- The Center Game Circle ----- */
@@ -67,7 +70,6 @@
 /* ----- Laptops and Tablets under 1440px ------ */
 
 @media (max-width: 1440px) {
-
   /* resizing the play buttons */
   .button-green,
   .button-red,
@@ -86,11 +88,9 @@
   }
 }
 
-
 /* ---------- Mobile S-M-L => Portrait ---------- */
 
 @media (max-width: 425px) {
-
   /* resizing the play buttons */
   .button-green,
   .button-red,
@@ -114,7 +114,6 @@
 /* ---------- Mobile S-M-L => Landscape ---------- */
 
 @media (max-height: 425px) {
-
   /* resizing the play buttons */
   .button-green,
   .button-red,
