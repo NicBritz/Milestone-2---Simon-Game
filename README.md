@@ -58,6 +58,8 @@ These are my wireframes I created during the design process, they were great as 
 
 <div align="center">
 
+---
+
 #### PC Mockups
 
 <br>
@@ -75,13 +77,15 @@ These are my wireframes I created during the design process, they were great as 
 <img src="/Wireframes/Images/Game Over - WEB.png" alt="Game Over screen for pc" width="600" height="350">
 
 <!-- Top -->
-<br>
+---
 
 [Top](#Contents)
 
 ---
 
 #### Tablet Mockups
+
+<br>
 
 <!-- Main Screen iPad -->
 <img src="/Wireframes/Images/Main Screen - iPad.png" alt="Main Screen screen for iPad" width="600" height="350">
@@ -102,6 +106,8 @@ These are my wireframes I created during the design process, they were great as 
 ---
 
 #### Smartphone Mockups
+
+<br>
 
 <!-- Main Screen iPhone -->
 <img src="/Wireframes/Images/Main Screen - iPhone.png" alt="Main Screen screen for iPhone" width="600" height="350">
