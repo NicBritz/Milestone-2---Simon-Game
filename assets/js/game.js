@@ -15,9 +15,35 @@ $(document).ready(function() {
       }
     )
     .click(function() {
-      
-      $(`#${this.dataset.button}-classic-audio`)
-        .get(0)
-        .play();
+      buttonPressed(this);
     });
 });
+
+function playButtonAudio(button) {
+  $(`#${button}-classic-audio`)
+    .get(0)
+    .play();
+}
+
+// game play Button Pressed
+function buttonPressed(button) {
+  // variables
+  let btn = $(`#${button.id}`);
+  let btnData = button.dataset.button;
+
+  // adds pressed class and removers shortly after
+  btn.addClass("game-button-pressed");
+
+  setTimeout(function() {
+    btn.removeClass("game-button-pressed");
+  }, 100);
+
+  // Plays appropriate sound restarting it if its already playing
+  $(`#${btnData}-classic-audio`)
+    .get(0)
+    .currentTime=0;
+
+  $(`#${btnData}-classic-audio`)
+    .get(0)
+    .play();
+}
