@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- link to my StyleSheet -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- link to jQuery -->
     <script
@@ -19,16 +19,30 @@
   <body>
     <!-- Main game buttons -->
     <div id="game-buttons">
-      <div id="game-button-1" class="button-green"></div>
-      <div id="game-button-2" class="button-red"></div>
-      <div id="game-button-3" class="button-yellow"></div>
-      <div id="game-button-4" class="button-blue"></div>
+      <div id="game-button-green" class="button-green" data-button="green"></div>
+      <div id="game-button-red" class="button-red" data-button="red"></div>
+      <div id="game-button-yellow" class="button-yellow" data-button="yellow"></div>
+      <div id="game-button-blue" class="button-blue" data-button="blue"></div>
 
       <!-- Main game center circle -->
     </div>
     <div id="game-center-circle" class="center-circle"></div>
 
+    <!-- Imports audio files -->
+    <audio id="green-classic-audio">
+      <source src="assets/sounds/green-classic-audio.wav" type="audio/wav" />
+    </audio>
+    <audio id="red-classic-audio">
+      <source src="assets/sounds/red-classic-audio.wav" type="audio/wav" />
+    </audio>
+    <audio id="yellow-classic-audio">
+      <source src="assets/sounds/yellow-classic-audio.wav" type="audio/wav" />
+    </audio>
+    <audio id="blue-classic-audio">
+      <source src="assets/sounds/blue-classic-audio.wav" type="audio/wav" />
+    </audio>
+
     <!-- links to my main JavaScript file -->
-    <script type="text/javascript" src="/assets/js/game.js"></script>
+    <script type="text/javascript" src="assets/js/game.js"></script>
   </body>
 </html>
