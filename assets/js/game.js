@@ -3,22 +3,28 @@ function helloJasmine() {
   return "Hello Jasmine Testing";
 }
 
+//checks if it is a touch screen device
+let isTouch =
+  !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
 $(document).ready(function() {
-  //-------- hover and click on game buttons ------>
-  $("#game-buttons > div")
-    .hover(
+  // hover effect if its not a touch device
+  if (!isTouch) {
+    $("#game-buttons > div").hover(
       function() {
         $(this).addClass("game-button-hovered");
       },
       function() {
         $(this).removeClass("game-button-hovered");
       }
-    )
-    .click(function() {
-      buttonPressed(this);
-    });
-});
+    );
+  }
 
+  // Game button clicked
+  $("#game-buttons > div").click(function() {
+    buttonPressed(this);
+  });
+});
 
 // game play Button Pressed
 function buttonPressed(button) {
@@ -34,9 +40,7 @@ function buttonPressed(button) {
   }, 100);
 
   // Plays appropriate sound restarting it if its already playing
-  $(`audio`)
-    .get(0)
-    .currentTime=0;
+  $(`audio`).get(0).currentTime = 0;
 
   $(`#${btnData}-classic-audio`)
     .get(0)
