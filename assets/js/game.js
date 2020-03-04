@@ -3,24 +3,18 @@
 //   return "Hello Jasmine Testing";
 // }
 
-let gameSpeed = 500;
-let roundArray = [
-  "blue",
-  "green",
-  "red",
-  "yellow",
-  "blue",
-  "green",
-  "red",
-  "yellow"
-];
+let gameSpeed = 1000;
+let roundArray = [];
+let playerTurn = 0;
+let roundLen = 1;
 
 $(document).ready(function() {
   //--------------------------------------------------------------- temp play button -----//
-  $("#game-center-circle").click(function() {
-    gameOn = true;
-    computerRound(gameSpeed, roundArray);
-  });
+  $("#game-center-circle")
+    .unbind()
+    .click(function() {
+      computerRound(gameSpeed, roundArray);
+    });
 
   //--------------------------------------------------------------- Play Sound -------------//
   function playSound(sound) {
@@ -46,6 +40,7 @@ $(document).ready(function() {
 
   //-------------------------------------------------------------------------- computer Round
   function computerRound(speed, roundList) {
+    randomizeRound();
     setTimeout(function() {
       let count = 0;
       // delays between each iteration
@@ -56,7 +51,6 @@ $(document).ready(function() {
           count++;
           if (count == roundList.length) {
             playerRound(roundArray);
-            
           }
         }, ind * speed);
       });
@@ -74,37 +68,29 @@ $(document).ready(function() {
 
       // hover effect if its not a touch device
       if (!isTouch) {
-        $("#game-buttons > div").hover(
-          function() {
-            $(this).addClass("game-button-hovered");
-          },
-          function() {
-            $(this).removeClass("game-button-hovered");
-          }
-        );
+        // $("#game-buttons > div").hover(
+        //   function() {
+        //     $(this).addClass("game-button-hovered");
+        //   },
+        //   function() {
+        //     $(this).removeClass("game-button-hovered");
+        //   }
+        // );
       }
       console.log("Done and Dusted!");
 
-      // Game button clicked
-      $("#game-buttons > div").click(function() {
-        playSound(this.dataset.button);
-        buttonPressed(this.dataset.button);
+      // Game button clicked https://stackoverflow.com/questions/14969960/jquery-click-events-firing-multiple-times
+      $("#game-buttons > div")
+        .unbind()
+        .click(function() {
+          let pressed = this.dataset.button;
 
-        //compare player and computer
-        if (roundArray[playerTurn] == this.dataset.button) {
-          console.log(
-            `computer: ${roundArray[playerTurn]} <=> Player: ${this.dataset.button}`
-          );
-          console.log("pass");
-        } else {
-          console.log(
-            `computer: ${roundArray[playerTurn]} <=> Player: ${this.dataset.button}`
-          );
-          console.log("fail");    
-           gameOver();
-        }
-        playerTurn++;
-      });
+          playSound(pressed);
+          buttonPressed(pressed);
+          checkResult(pressed, playerTurn);
+          playerTurn += 1;
+          console.log("player turn " + playerTurn);
+        });
     }, 2000);
   }
 
@@ -118,5 +104,35 @@ $(document).ready(function() {
     alert("Game Over");
     //refresh the page
     location.reload();
+  }
+
+  // randomize next turn
+  function randomizeRound() {
+    playerTurn = 0;
+    choices = ["red", "green", "blue", "yellow"];
+
+    roundArray.push(choices[Math.floor(Math.random() * choices.length)]);
+    console.log(roundArray);
+  }
+
+  // check result
+  function checkResult(buttonPressed, turn) {
+
+    if (roundLen < roundArray.length) {
+      if (buttonPressed === roundArray[turn]) {
+        console.log("pass");
+        roundLen++
+      } else {
+        gameOver();
+        return;
+      }
+      return console.log(
+        `Pressed: ${buttonPressed}  ==== compared ${roundArray[turn]}`
+      );
+    }else{
+      setTimeout(function() {
+        computerRound(gameSpeed, roundArray);
+      }, 2000);
+    }
   }
 });
