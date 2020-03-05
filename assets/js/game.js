@@ -26,6 +26,7 @@ let playerTurn = 0;
 let roundLen = 1;
 let playerActive = false;
 let playerTurnArray = [];
+let playerChoice = 0;//players current place in round
 
 /* check if touch screen -
  * https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices/28058919
@@ -34,14 +35,13 @@ let isTouch =
   !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
 
 $(document).ready(function() {
-  buttonPressed(blueGameButton);
 
   //--------------------------------------------------------------- temp play button -----//
   gameCenterCircle.addEventListener("click", function() {
     computerPlayRound(gameSpeed);
   });
 
-  //--------------------------------------------------------------- Play Sound -------------//
+  //---------- Play Sound ----------//
   function playSound(sound) {
     // restart any audio already playing
     for (var i = 0; i < allAudio.length; i++) {
@@ -64,7 +64,7 @@ $(document).ready(function() {
     }
   }
 
-  //--------------------------------------------------------------- Game colour buttons pressed
+  //---------- Game colour buttons pressed ----------//
 
   function buttonPressed(button) {
     switch (button) {
@@ -95,77 +95,7 @@ $(document).ready(function() {
     }
   }
 
-  //-------------------------------------------------------------------------- computer Round
-  // function computerRound(speed, roundList) {
-  //   // randomizeRound();
-  //   setTimeout(function() {
-  //     let count = 0;
-  //     // delays between each iteration
-  //     roundList.forEach(function(value, ind) {
-  //       setTimeout(function() {
-  //         autoPlay(value);
-  //         count++;
-  //         if (count == roundList.length) {
-  //           playerRound();
-  //         }
-  //       }, ind * speed);
-  //     });
-  //   }, speed);
-  // }
-
-  // ------------------------------------------------------------------------------ Player round
-  // function playerRound() {
-  //   playerTurn = 0;
-  //   setTimeout(function() {
-  //     playerActive = true;
-  //     console.log("Ready For Player");
-
-  // Game button clicked https://stackoverflow.com/questions/14969960/jquery-click-events-firing-multiple-times
-  // $("#game-buttons > div")
-  //   .unbind()
-  //   .click(function() {
-  //     let pressed = this.dataset.button;
-
-  // playSound(pressed);
-  // buttonPressed(pressed);
-  // checkResult(pressed, playerTurn);
-  //   playerTurn += 1;
-  //   console.log("player turn " + playerTurn);
-  // });
-  // }, 1500);
-  // }
-
-  function gameOver() {
-    alert("Game Over");
-    //refresh the page
-    location.reload();
-  }
-
-  // // check result
-  // function checkResult(buttonPressed, turn) {
-  //   if (roundLen < roundArray.length) {
-  //     if (buttonPressed === roundArray[turn]) {
-  //       console.log("pass");
-  //       roundLen++;
-  //     } else {
-  //       gameOver();
-  //       return;
-  //     }
-  //     return console.log(
-  //       `Pressed: ${buttonPressed}  ==== compared ${roundArray[turn]}`
-  //     );
-  //   } else {
-  //     setTimeout(function() {
-  //       roundArray.push(generateRound());
-  //       console.log(roundArray);
-  //       computerPlayRound(gameSpeed);
-  //     }, 2000);
-  //   }
-  // }
-
-  //========================================= GamePlay ===========================================>>>
-
-  // Game button hover --------->
+  //---------- Game colour buttons Hovered ----------//
   allGameButtons.hover(mouseInBtn, mouseOutBtn);
 
   //in
@@ -188,9 +118,40 @@ $(document).ready(function() {
     }
   }
 
-  //-----------------------------<
+//---------- Randomly add an element to the round array ----------//
+  function generateRound() {
+    let choices = ["red", "green", "blue", "yellow"];
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
 
-  // Game button click --------->
+//---------- Computers Turn ----------//
+function computerPlayRound(speed) {
+  //current choice
+  playerChoice = 0;
+  //generate next round element
+  roundArray.push(generateRound());
+
+  //Player is deactivated
+  playerActive = false;
+
+  //Computer play Round
+  setTimeout(function() {
+    // delays between each round iteration
+    roundArray.forEach(function(value, ind) {
+      setTimeout(function() {
+        buttonPressed(value);
+        playSound(value);
+        if (ind + 1 === roundArray.length) {
+          console.log("computer round ended");
+          playerActive = true;
+          playerRound();
+        }
+      }, ind * speed);
+    });
+  }, speed);
+}
+  
+  //---------- Players Turn ----------//
   function playerRound() {
     allGameButtons.unbind().click(function() {
       let pressed = this.dataset.button;
@@ -202,40 +163,8 @@ $(document).ready(function() {
     });
   }
 
-  ////////////////////////////////////////////////////////////////////
-//players current place in round
-let playerChoice = 0;
 
-  //computer plays
-  function computerPlayRound(speed) {
-    //current choice
-    playerChoice = 0;
-    //generate next round element
-    roundArray.push(generateRound());
-
-    //Player is deactivated
-    playerActive = false;
-
-    //Computer play Round
-    setTimeout(function() {
-      // delays between each round iteration
-      roundArray.forEach(function(value, ind) {
-        setTimeout(function() {
-          buttonPressed(value);
-          playSound(value);
-          if (ind + 1 === roundArray.length) {
-            console.log("computer round ended");
-            playerActive = true;
-            playerRound();
-          }
-        }, ind * speed);
-      });
-    }, speed);
-  }
-
-  
-
-  // check the player result
+  //---------- Check if player wins or loses ----------//
   function checkResult(button) {
     //Check if the players last last choice is correct
     if (button === roundArray[playerChoice]) {
@@ -256,10 +185,12 @@ let playerChoice = 0;
     }
   }
 
-  function generateRound() {
-    let choices = ["red", "green", "blue", "yellow"];
-    return choices[Math.floor(Math.random() * choices.length)];
-  }
+    //---------- Game Over ----------//
+    function gameOver() {
+      alert("Game Over");
+      //refresh the page
+      location.reload();
+    }
 
   
 });
