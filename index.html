@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- link to my StyleSheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+    <!--    fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
     <!-- link to jQuery -->
     <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
     ></script>
 
+
     <title>Simon Game</title>
-  </head>
-  <body>
-    <!-- Main game buttons -->
-    <div id="game-buttons">
-      <div
-        id="green-game-button"
-        class="button-green"
-        data-button="green"
-      ></div>
-      <div id="red-game-button" class="button-red" data-button="red"></div>
-      <div
-        id="yellow-game-button"
-        class="button-yellow"
-        data-button="yellow"
-      ></div>
-      <div id="blue-game-button" class="button-blue" data-button="blue"></div>
+</head>
+<body>
+<!-- Main game buttons -->
+<div id="game-buttons">
+    <div
+            id="green-game-button"
+            class="button-green"
+            data-button="green"
+    ></div>
+    <div id="red-game-button" class="button-red" data-button="red"></div>
+    <div
+            id="yellow-game-button"
+            class="button-yellow"
+            data-button="yellow"
+    ></div>
+    <div id="blue-game-button" class="button-blue" data-button="blue"></div>
 
-      <!-- Main game center circle -->
-    </div>
-    <div id="game-center-circle" class="center-circle"></div>
+    <!-- Main game center circle -->
+</div>
+<div id="game-center-circle" class="center-circle">
 
-    <!-- Imports audio files -->
-    <audio id="green-classic-audio">
-      <source src="assets/sounds/green-classic-audio.wav" type="audio/wav" />
-    </audio>
-    <audio id="red-classic-audio">
-      <source src="assets/sounds/red-classic-audio.wav" type="audio/wav" />
-    </audio>
-    <audio id="yellow-classic-audio">
-      <source src="assets/sounds/yellow-classic-audio.wav" type="audio/wav" />
-    </audio>
-    <audio id="blue-classic-audio">
-      <source src="assets/sounds/blue-classic-audio.wav" type="audio/wav" />
-    </audio>
+</div>
+<div id="game-center-circle-textbox" class="game-circle"><p id="game-circle-txt">0</p></div>
 
-    <!-- links to my main JavaScript file -->
-    <script type="text/javascript" src="assets/js/game.js"></script>
-  </body>
+
+<!-- Imports audio files -->
+<audio id="green-classic-audio">
+    <source src="assets/sounds/green-classic-audio.wav" type="audio/wav"/>
+</audio>
+<audio id="red-classic-audio">
+    <source src="assets/sounds/red-classic-audio.wav" type="audio/wav"/>
+</audio>
+<audio id="yellow-classic-audio">
+    <source src="assets/sounds/yellow-classic-audio.wav" type="audio/wav"/>
+</audio>
+<audio id="blue-classic-audio">
+    <source src="assets/sounds/blue-classic-audio.wav" type="audio/wav"/>
+</audio>
+
+<!-- links to my main JavaScript file -->
+<script type="text/javascript" src="assets/js/game.js"></script>
+</body>
 </html>
