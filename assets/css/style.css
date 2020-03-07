@@ -38,6 +38,8 @@
 }
 
 /* ---------- Game Play Buttons setup ---------- */
+
+
 .button-green,
 .button-red,
 .button-yellow,
@@ -52,9 +54,15 @@
 
 .button-green {
     background-color: #00ff00;
-    background-image: url("assets/images/istockphoto-960504202-612x612.jpg");
+    /*https://css-tricks.com/tinted-images-multiple-backgrounds/*/
+    /*background:  linear-gradient(*/
+    /*  rgba(0, 255, 0, 0.6),*/
+    /*  rgba(0, 255, 0, 0.6)*/
+    /*), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583542756/Simon/test_Pat.jpg) no-repeat;*/
+    /*background-size: cover;*/
     bottom: 50%;
     right: 50%;
+    /*border: 5px solid black;*/
     box-shadow: inset 0 0 50px #aeffae;
 }
 
