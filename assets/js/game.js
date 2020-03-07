@@ -1,33 +1,27 @@
-//-------- first simple test for Jasmine ------>
-function helloJasmine() {
-    return "Hello Jasmine Testing";
-}
-
-// Button constants
+//---------- Button selectors ----------//
 const gameCenterCircle = $("#game-circle-txt");
-
-// Audio constants
-const allAudio = document.getElementsByTagName("audio");
-const greenClassicAudio = document.getElementById("green-classic-audio");
-const redClassicAudio = document.getElementById("red-classic-audio");
-const yellowClassicAudio = document.getElementById("yellow-classic-audio");
-const blueClassicAudio = document.getElementById("blue-classic-audio");
-
-// Game colour buttons
 const allGameButtons = $("#game-buttons > div");
-const greenGameButton = document.getElementById("green-game-button");
-const redGameButton = document.getElementById("red-game-button");
-const yellowGameButton = document.getElementById("yellow-game-button");
-const blueGameButton = document.getElementById("blue-game-button");
+const greenGameButton = $("#green-game-button");
+const redGameButton = $("#red-game-button");
+const yellowGameButton = $("#yellow-game-button");
+const blueGameButton = $("#blue-game-button");
+const playButton = $("#playbtn");
 
-//Game Text
-const gameCircleText = $("#game-circle-txt");
+//---------- Modals ----------//
+const mainModal = $("#main-modal");
 
-let gameSpeed = 1000;
-let roundArray = [];
-let playerActive = true;
-let playerChoice = 0;//players current place in round
-let score = 0;
+//---------- Audio selectors ----------//
+const greenClassicAudio = $("#green-classic-audio");
+const redClassicAudio = $("#red-classic-audio");
+const yellowClassicAudio = $("#yellow-classic-audio");
+const blueClassicAudio = $("#blue-classic-audio");
+
+//---------- Game Variables ----------//
+let gameSpeed = 600; // current speed the game is running
+let roundArray = []; // current array of button presses for the round
+let playerActive = true; // sets the player to an active state
+let playerChoice = 0; //players current selection in the round
+let score = 0; //players score or level
 
 /* check if touch screen -
  * https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices/28058919
@@ -37,72 +31,69 @@ let isTouch =
 
 $(document).ready(function () {
 
-    //show Main Modal https://github.com/kylefox/jquery-modal
-    $("#main-menu").modal({
-        fadeDuration: 600,
+    //---------- Show Main Modal ----------//
+    //source: https://github.com/kylefox/jquery-modal
+    mainModal.modal({
+        fadeDuration: 600, // Fade In
+        // Prevent user from closing the modal without a valid selection
         escapeClose: false,
         clickClose: false,
         showClose: false
     });
 
-    //--------------------------------------------------------------- main menu button -----//
-    $("#playbtn").unbind().click(function () {
-        $.modal.close();
+    //---------- Main Play Button ----------//
+    playButton.unbind().click(function () {
+        $.modal.close(); // close all open modals -- source: https://github.com/kylefox/jquery-modal
         computerPlayRound(gameSpeed);
         updateScore();
-        return false
-
     });
 
     //---------- Play Sound ----------//
     function playSound(sound) {
-        // restart any audio already playing
-        for (let i = 0; i < allAudio.length; i++) {
-            allAudio[i].currentTime = 0;
-        }
         // play appropriate audio file
         switch (sound) {
             case "green":
-                greenClassicAudio.play();
+                greenClassicAudio[0].play();
                 break;
             case "red":
-                redClassicAudio.play();
+                redClassicAudio[0].play();
                 break;
             case "yellow":
-                yellowClassicAudio.play();
+                yellowClassicAudio[0].play();
                 break;
             case "blue":
-                blueClassicAudio.play();
+                blueClassicAudio[0].play();
                 break;
         }
     }
 
-    //---------- Game colour buttons pressed ----------//
+    //---------- Colour buttons pressed ----------//
 
     function buttonPressed(button) {
+
         switch (button) {
             case "green":
-                greenGameButton.classList.add("game-button-pressed");
+                greenGameButton.addClass("game-button-pressed");
                 setTimeout(function () {
-                    greenGameButton.classList.remove("game-button-pressed");
+                    greenGameButton.removeClass("game-button-pressed");
                 }, 200);
                 break;
             case "red":
-                redGameButton.classList.add("game-button-pressed");
+                redGameButton.addClass("game-button-pressed");
                 setTimeout(function () {
-                    redGameButton.classList.remove("game-button-pressed");
+                    redGameButton.removeClass("game-button-pressed");
                 }, 200);
                 break;
             case "yellow":
-                yellowGameButton.classList.add("game-button-pressed");
+                yellowGameButton.addClass("game-button-pressed");
                 setTimeout(function () {
-                    yellowGameButton.classList.remove("game-button-pressed");
+                    yellowGameButton.removeClass("game-button-pressed");
                 }, 200);
                 break;
             case "blue":
-                blueGameButton.classList.add("game-button-pressed");
+                blueGameButton.addClass("game-button-pressed");
                 setTimeout(function () {
-                    blueGameButton.classList.remove("game-button-pressed");
+                    blueGameButton.removeClass("game-button-pressed");
                 }, 200);
                 break;
         }
@@ -121,10 +112,8 @@ $(document).ready(function () {
         playerChoice = 0;
         //generate next round element
         roundArray.push(generateRound());
-
         //Player is deactivated
         playerActive = false;
-
         //Computer play Round
         setTimeout(function () {
             // delays between each round iteration
@@ -166,7 +155,7 @@ $(document).ready(function () {
                 //wait a couple to give clear indication of next round
                 setTimeout(function () {
                     computerPlayRound(gameSpeed)
-                }, 2000);
+                }, gameSpeed / 2);
 
             } else {
                 playerChoice++;
@@ -184,7 +173,7 @@ $(document).ready(function () {
         score++;
         setTimeout(function () {
             gameCenterCircle.text(score);
-        }, 1000);
+        }, gameSpeed);
 
     }
 
