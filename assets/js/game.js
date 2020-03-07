@@ -1,8 +1,3 @@
-//-------- first simple test for Jasmine ------>
-function helloJasmine() {
-    return "Hello Jasmine Testing";
-}
-
 //---------- Button selectors ----------//
 const gameCenterCircle = $("#game-circle-txt");
 const allGameButtons = $("#game-buttons > div");
@@ -10,19 +5,23 @@ const greenGameButton = $("#green-game-button");
 const redGameButton = $("#red-game-button");
 const yellowGameButton = $("#yellow-game-button");
 const blueGameButton = $("#blue-game-button");
+const playButton = $("#playbtn");
 
-// Audio constants
+//---------- Modals ----------//
+const mainModal = $("#main-modal");
+
+//---------- Audio selectors ----------//
 const greenClassicAudio = $("#green-classic-audio");
 const redClassicAudio = $("#red-classic-audio");
 const yellowClassicAudio = $("#yellow-classic-audio");
 const blueClassicAudio = $("#blue-classic-audio");
 
-
-let gameSpeed = 600;
-let roundArray = [];
-let playerActive = true;
-let playerChoice = 0;//players current place in round
-let score = 0;
+//---------- Game Variables ----------//
+let gameSpeed = 600; // current speed the game is running
+let roundArray = []; // current array of button presses for the round
+let playerActive = true; // sets the player to an active state
+let playerChoice = 0; //players current selection in the round
+let score = 0; //players score or level
 
 /* check if touch screen -
  * https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices/28058919
@@ -32,21 +31,21 @@ let isTouch =
 
 $(document).ready(function () {
 
-    //show Main Modal https://github.com/kylefox/jquery-modal
-    $("#main-menu").modal({
-        fadeDuration: 600,
+    //---------- Show Main Modal ----------//
+    //source: https://github.com/kylefox/jquery-modal
+    mainModal.modal({
+        fadeDuration: 600, // Fade In
+        // Prevent user from closing the modal without a valid selection
         escapeClose: false,
         clickClose: false,
         showClose: false
     });
 
     //---------- Main Play Button ----------//
-    $("#playbtn").unbind().click(function () {
-        $.modal.close();
+    playButton.unbind().click(function () {
+        $.modal.close(); // close all open modals -- source: https://github.com/kylefox/jquery-modal
         computerPlayRound(gameSpeed);
         updateScore();
-        return false
-
     });
 
     //---------- Play Sound ----------//
@@ -156,7 +155,7 @@ $(document).ready(function () {
                 //wait a couple to give clear indication of next round
                 setTimeout(function () {
                     computerPlayRound(gameSpeed)
-                }, 2000);
+                }, gameSpeed / 2);
 
             } else {
                 playerChoice++;
