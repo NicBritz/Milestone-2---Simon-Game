@@ -37,12 +37,20 @@ let isTouch =
 
 $(document).ready(function () {
 
+    //show Main Modal https://github.com/kylefox/jquery-modal
+    $("#main-menu").modal({
+        fadeDuration: 600,
+        escapeClose: false,
+        clickClose: false,
+        showClose: false
+    });
 
-    //--------------------------------------------------------------- temp play button -----//
-
-    gameCenterCircle.click(function () {
+    //--------------------------------------------------------------- main menu button -----//
+    $("#playbtn").unbind().click(function () {
+        $.modal.close();
         computerPlayRound(gameSpeed);
         updateScore();
+        return false
 
     });
 

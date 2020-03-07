@@ -3,6 +3,40 @@
     background-color: #000000;
 }
 
+/*main menu modal*/
+#main-menu {
+    background-color: black;
+}
+
+.modal-title {
+    padding: 5%;
+    text-align: center;
+}
+
+.modal-title img {
+    padding: 10px;
+    width: 100%;
+
+
+}
+
+.main-text {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    text-align: center;
+    font-size: 2em;
+    padding: 5%;
+
+}
+
+.modal-playbtn {
+    text-align: center;
+}
+
+.modal-playbtn img:hover {
+    cursor: grab;
+}
+
 /* ---------- Game Play Buttons setup ---------- */
 .button-green,
 .button-red,
@@ -82,10 +116,10 @@
     margin-top: -80px;
     margin-left: -80px;
     color: #ffffff;
-    z-index: 10;
+    z-index: 1;
     font-family: 'Oxanium', cursive;
     font-size: 5em;
-    background-color: rgba(10, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     text-align: center;
     vertical-align: middle;
     line-height: 160px;
@@ -122,13 +156,15 @@
         margin-top: -65px;
         margin-left: -65px;
         line-height: 130px;
-      font-size: 5em;
+        font-size: 5em;
     }
 }
 
 /* ---------- Mobile S-M-L => Portrait ---------- */
 
 @media (max-width: 425px) {
+
+
     /* resizing the play buttons */
     .button-green,
     .button-red,
@@ -190,4 +226,6 @@
         line-height: 110px;
         font-size: 4em;
     }
+
+
 }
