@@ -4,8 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- link to my StyleSheet -->
-    <link rel="stylesheet" href="assets/css/style.css"/>
 
     <!--    fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
@@ -18,10 +16,25 @@
             crossorigin="anonymous"
     ></script>
 
+    <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" rel="stylesheet"/>
+    <!-- link to my StyleSheet -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+
 
     <title>Simon Game</title>
 </head>
 <body>
+
+<!-- Main menu modal  -->
+<div class="modal" id="main-menu">
+    <div class="modal-title" id="title"><img src="assets/images/Title.png"></div>
+    <div class="main-text"><p>Welcome to my game</p></div>
+
+    <div class="modal-playbtn" id="playbtn"><img src="assets/images/Play%20btn.png"></div>
+</div>
+
 <!-- Main game buttons -->
 <div id="game-buttons">
     <div
