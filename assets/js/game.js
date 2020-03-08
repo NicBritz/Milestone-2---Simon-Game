@@ -10,6 +10,10 @@ const playButton = $("#playbtn");
 //---------- Modals ----------//
 const mainModal = $("#main-modal");
 
+//---------- Quote URL ----------//
+const quoteURL = "https://type.fit/api/quotes";
+const quoteTXT = $("#quote-txt");
+
 //---------- Audio selectors ----------//
 const greenClassicAudio = $("#green-classic-audio");
 const redClassicAudio = $("#red-classic-audio");
@@ -22,6 +26,11 @@ let roundArray = []; // current array of button presses for the round
 let playerActive = true; // sets the player to an active state
 let playerChoice = 0; //players current selection in the round
 let score = 0; //players score or level
+let quotePhrase = {
+    quote: "Kind words can be short and easy to speak, but their echoes are truly endless.",
+    author: "Mother Teresa"
+};
+
 
 /* check if touch screen -
  * https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices/28058919
@@ -31,15 +40,49 @@ let isTouch =
 
 $(document).ready(function () {
 
-    //---------- Show Main Modal ----------//
-    //source: https://github.com/kylefox/jquery-modal
-    mainModal.modal({
-        fadeDuration: 600, // Fade In
-        // Prevent user from closing the modal without a valid selection
-        escapeClose: false,
-        clickClose: false,
-        showClose: false
-    });
+    /*---------- Get Quotes ----------//
+    from https://type.fit/api/quotes found
+    *via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
+    * */
+
+    $.when(
+        $.getJSON(quoteURL))
+        .then(function (response) {
+            const data = response;
+            let rnd = Math.floor(Math.random() * data.length);
+            quotePhrase.quote = data[rnd].text;
+            quotePhrase.author = data[rnd].author;
+            if (quotePhrase.author === null || quotePhrase.author === undefined) {
+                quotePhrase.author = "Unknown"
+            }
+            //---------- Game Start ----------//
+            showModal();
+
+        }, function (errorResponse) {
+            // url Not Found
+            if (errorResponse === 404) {
+                quotePhrase.quote = "404 - Not Found!";
+            }
+        });
+
+    //---------- Show Main Modal ----------/
+    function showModal() {
+
+        // Adds the quote to the main modal
+        quoteTXT.html(`<p>${quotePhrase.quote}</p><br>
+                     <p><em>"${quotePhrase.author}"</em></p>`);
+
+        // Display the modal
+        //source: https://github.com/kylefox/jquery-modal
+        mainModal.modal({
+            fadeDuration: 500, // Fade In
+            // Prevent user from closing the modal without a valid selection
+            escapeClose: false,
+            clickClose: false,
+            showClose: false
+        });
+    }//
+
 
     //---------- Main Play Button ----------//
     playButton.unbind().click(function () {

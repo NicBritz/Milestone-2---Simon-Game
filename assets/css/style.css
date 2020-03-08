@@ -7,40 +7,61 @@
 
 /* ---------- Main Modal ---------- */
 
+/* modal styling*/
 .modal {
     background-color: black;
+    padding: 0;
+    border: 3px solid #c0c0c0;
+    max-width: 600px;
 }
 
 /* Title Text */
 .modal-title {
-    padding: 5%;
+    padding: 5% 5% 0 5%;
     text-align: center;
 }
 
 /* Title Image */
 .modal-title img {
-    padding: 10px;
+
     width: 100%;
 }
 
 /* Main menu text */
-.main-text {
+.quote-txt-box {
     color: #fff;
     font-family: 'Oxanium', cursive;
     text-align: center;
-    font-size: 2em;
-    padding: 5%;
+    font-size: 1em;
+    padding: 1em;
 }
 
-/* Play Button */
-.modal-playbtn {
+/* Modal Game Buttons*/
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 1em 0;
     text-align: center;
 }
 
-/* Play Button Hover*/
-.modal-playbtn img:hover {
-    cursor: grab;
+/* Play Button properties*/
+.modal-playbtn img,
+.modal-help img,
+.modal-settings {
+    transition: all .2s;
 }
+
+/* Play Button Hover*/
+.modal-playbtn img:hover,
+.modal-help img:hover,
+.modal-settings img:hover {
+    cursor: grab;
+    transform: scale(1.1);
+}
+
+
+/* Help Button */
+
 
 /* ---------- Game Colour Buttons setup ---------- */
 
@@ -204,6 +225,19 @@
         line-height: 110px;
         font-size: 4em;
     }
+
+    /* resizing the modal */
+    .modal {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* resizing the quote text*/
+    .quote-txt-box {
+        font-size: 1em;
+        padding: 0.5em;
+    }
 }
 
 /* ---------- Mobile S-M-L => Landscape ---------- */
@@ -237,6 +271,26 @@
         margin-left: -45px;
         line-height: 110px;
         font-size: 4em;
+    }
+
+    /* resizing game title text */
+    .modal-title {
+        height: 90px;
+        padding-top: 0;
+        padding-bottom: 1em;
+    }
+
+    /* resizing the modal */
+    .modal {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* resizing the quote text*/
+    .quote-txt-box {
+        font-size: 1em;
+        padding: 0.5em;
     }
 
 
