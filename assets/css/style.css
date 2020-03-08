@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 /* ---------- Global CSS ---------- */
 * {
     background-color: #000000;
@@ -156,6 +158,8 @@
 .modal-close img,
 .modal-next img,
 .modal-prev img {
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
@@ -166,7 +170,10 @@
 .modal-close img:hover,
 .modal-next img:hover,
 .modal-prev img:hover {
+    cursor: -webkit-grab;
     cursor: grab;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -177,6 +184,16 @@
 /* Cracked */
 .cracked {
     /*https://css-tricks.com/tinted-images-multiple-backgrounds/*/
+    background: -webkit-gradient(
+            linear,
+            left top, left bottom,
+            from(rgba(79, 172, 0, 0.1)),
+            to(rgba(50, 50, 50, 0.2))
+    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+    background: -o-linear-gradient(
+            rgba(79, 172, 0, 0.1),
+            rgba(50, 50, 50, 0.2)
+    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
     background: linear-gradient(
             rgba(79, 172, 0, 0.1),
             rgba(50, 50, 50, 0.2)
@@ -198,7 +215,8 @@
     max-width: 460px;
     max-height: 460px;
     border: 5px solid #000000;
-    box-shadow: inset 0 0 50px #9b9b9b;
+    -webkit-box-shadow: inset 0 0 20px #000000;
+    box-shadow: inset 0 0 20px #000000;
 
 }
 
@@ -239,19 +257,23 @@
 .button-blue:active,
 .button-green:active,
 .button-yellow:active,
-.button-red:active{
-     transform: scale(0.95);
+.button-red:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 /* Game button pressed */
 .game-button-pressed {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
     transform: scale(0.95);
 }
 
 /* The Center Game Circle */
 .center-circle {
     position: fixed;
-    background-color: #252323;
+    background-color: #4a4646;
     width: 150px;
     height: 150px;
     top: 50%;
@@ -260,14 +282,18 @@
     margin-left: -85px;
     border: 10px solid black;
     border-radius: 50%;
-    box-shadow: inset 0 0 30px #5e5e5e;
+    -webkit-box-shadow: inset 0 0 40px #ff0000;
+    box-shadow: inset 0 0 40px #ff0000;
 }
 
-.center-circle-stop{
-    border: 10px solid #ff0000;
+.center-circle-stop {
+    -webkit-box-shadow: inset 0 0 40px #ff0000;
+    box-shadow: inset 0 0 40px #ff0000;
 }
-.center-circle-go{
-    border: 10px solid #00ff00;
+
+.center-circle-go {
+    -webkit-box-shadow: inset 0 0 40px #00ff00;
+    box-shadow: inset 0 0 40px #00ff00;
 }
 
 /*  The Center Text */
