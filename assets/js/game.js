@@ -1,5 +1,6 @@
 //---------- Button selectors ----------//
 const gameCenterCircle = $("#game-circle-txt");
+const gameCenterCircleBorder = $("#game-center-circle");
 const allGameButtons = $("#game-buttons > div");
 const greenGameButton = $("#green-game-button");
 const redGameButton = $("#red-game-button");
@@ -234,25 +235,25 @@ $(document).ready(function () {
                     greenGameButton.addClass("game-button-pressed");
                     setTimeout(function () {
                         greenGameButton.removeClass("game-button-pressed");
-                    }, 200);
+                    }, 100);
                     break;
                 case "red":
                     redGameButton.addClass("game-button-pressed");
                     setTimeout(function () {
                         redGameButton.removeClass("game-button-pressed");
-                    }, 200);
+                    }, 100);
                     break;
                 case "yellow":
                     yellowGameButton.addClass("game-button-pressed");
                     setTimeout(function () {
                         yellowGameButton.removeClass("game-button-pressed");
-                    }, 200);
+                    }, 100);
                     break;
                 case "blue":
                     blueGameButton.addClass("game-button-pressed");
                     setTimeout(function () {
                         blueGameButton.removeClass("game-button-pressed");
-                    }, 200);
+                    }, 100);
                     break;
             }
         }
@@ -276,6 +277,10 @@ $(document).ready(function () {
 
 //---------- Computers Turn ----------//
         function computerPlayRound(speed) {
+            //computer stop ring
+            gameCenterCircleBorder.addClass("center-circle-stop");
+            // player go ring
+            gameCenterCircleBorder.removeClass("center-circle-go");
             //current choice
             playerChoice = 0;
             //generate next round element
@@ -301,11 +306,16 @@ $(document).ready(function () {
 
         //---------- Players Turn ----------//
         function playerRound() {
+            //player go ring
+            gameCenterCircleBorder.addClass("center-circle-go");
+            //computer stop ring
+            gameCenterCircleBorder.removeClass("center-circle-stop");
+
             allGameButtons.unbind().click(function () {
                 let pressed = this.dataset.button;
                 if (playerActive) {
                     playSound(pressed);
-                    buttonPressed(pressed);
+                    // buttonPressed(pressed);
                     checkResult(pressed);
                 }
             });
