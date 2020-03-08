@@ -262,8 +262,25 @@ $(document).ready(function () {
 //---------- Randomly add an element to the round array ----------//
         function generateRound() {
             let choices = ["red", "green", "blue", "yellow"];
-            return choices[Math.floor(Math.random() * choices.length)];
+            roundArray.push(choices[Math.floor(Math.random() * choices.length)]);
+
         }
+
+//        randomize round
+        function randomiseRound() {
+            if (roundArray.length < 2) {
+                generateRound();
+            } else {
+                let currentLength = roundArray.length + 1;
+                roundArray = [];
+                //randomise results based on the arrays elements
+                for (let i = 0; i < currentLength; i++) {
+                    generateRound();
+                }
+            }
+
+        }
+
 
 //    level up
         function levelUP() {
@@ -277,14 +294,21 @@ $(document).ready(function () {
 
 //---------- Computers Turn ----------//
         function computerPlayRound(speed) {
-            //computer stop ring
-            gameCenterCircleBorder.addClass("center-circle-stop");
-            // player go ring
-            gameCenterCircleBorder.removeClass("center-circle-go");
+            setTimeout(function () {
+                //computer stop ring
+                gameCenterCircleBorder.addClass("center-circle-stop");
+                // player go ring
+                gameCenterCircleBorder.removeClass("center-circle-go");
+            }, gameSpeed);
             //current choice
             playerChoice = 0;
-            //generate next round element
-            roundArray.push(generateRound());
+            if (gameMode === 0) {
+                //generate next round element
+                generateRound();
+            } else if (gameMode === 1) {
+                randomiseRound();
+            }
+
             //Player is deactivated
             playerActive = false;
             //Computer play Round
@@ -295,7 +319,6 @@ $(document).ready(function () {
                         buttonPressed(value);
                         playSound(value);
                         if (ind + 1 === roundArray.length) {
-                            console.log("computer round ended");
                             playerActive = true;
                             playerRound();
                         }
@@ -304,12 +327,15 @@ $(document).ready(function () {
             }, speed);
         }
 
-        //---------- Players Turn ----------//
+//---------- Players Turn ----------//
         function playerRound() {
-            //player go ring
-            gameCenterCircleBorder.addClass("center-circle-go");
-            //computer stop ring
-            gameCenterCircleBorder.removeClass("center-circle-stop");
+            setTimeout(function () {
+                //computer stop ring
+                gameCenterCircleBorder.removeClass("center-circle-stop");
+                gameCenterCircleBorder.addClass("center-circle-go");
+                // player go ring
+
+            }, gameSpeed);
 
             allGameButtons.unbind().click(function () {
                 let pressed = this.dataset.button;
@@ -322,7 +348,7 @@ $(document).ready(function () {
         }
 
 
-        //---------- Check if player wins or loses ----------//
+//---------- Check if player wins or loses ----------//
         function checkResult(button) {
             //Check if the players last last choice is correct
             if (button === roundArray[playerChoice]) {
@@ -347,7 +373,7 @@ $(document).ready(function () {
             }
         }
 
-        //---------- Play crack sound and display crack overlay if player loses ----------//
+//---------- Play crack sound and display crack overlay if player loses ----------//
         function crackedButton(button) {
 
             switch (button) {
@@ -373,7 +399,7 @@ $(document).ready(function () {
             }
         }
 
-        //---------- Update Score----------//
+//---------- Update Score----------//
         function updateScore() {
             score++;
             setTimeout(function () {
@@ -383,7 +409,7 @@ $(document).ready(function () {
 
         }
 
-        //---------- Game Over ----------//
+//---------- Game Over ----------//
         function gameOver() {
             setTimeout(function () {
                 location.reload();
@@ -391,4 +417,5 @@ $(document).ready(function () {
             // location.reload();
         }
     }
-);
+)
+;
