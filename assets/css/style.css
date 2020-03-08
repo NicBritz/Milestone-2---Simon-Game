@@ -37,24 +37,60 @@
 }
 
 /* Modal Game Buttons*/
-.column {
+.col3 {
     float: left;
     width: 33.33%;
     padding: 1em 0;
     text-align: center;
 }
 
+.play-small {
+    width: 20px;
+}
+
+/*Modal Back button*/
+.modal-back {
+    display: flex;
+    float: left;
+    /*width: 5%;*/
+    padding: 1em;
+    text-align: left;
+    transform: scale(0.7);
+}
+
+/* help text */
+.help-txt-box {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    text-align: left;
+    font-size: 1em;
+
+    padding: 1em;
+}
+
+.help-txt-box h1 {
+    text-align: center;
+    margin: 1em;
+}
+
+.help-txt-box h2 {
+    text-align: left;
+}
+
+
 /* Play Button properties*/
 .modal-playbtn img,
 .modal-help img,
-.modal-settings {
+.modal-settings img,
+.modal-back img {
     transition: all .2s;
 }
 
 /* Play Button Hover*/
 .modal-playbtn img:hover,
 .modal-help img:hover,
-.modal-settings img:hover {
+.modal-settings img:hover,
+.modal-back img:hover {
     cursor: grab;
     transform: scale(1.1);
 }

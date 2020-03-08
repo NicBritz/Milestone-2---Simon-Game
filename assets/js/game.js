@@ -6,14 +6,19 @@ const redGameButton = $("#red-game-button");
 const yellowGameButton = $("#yellow-game-button");
 const blueGameButton = $("#blue-game-button");
 const playButton = $("#playbtn");
+const helpButton = $("#helpbtn");
+const settingsButton = $("#settingsbtn");
+const backButton = $("#backbtn");
 
 //---------- Modals ----------//
 const mainModal = $("#main-modal");
+const modalTitle = $("#title");
+
 
 //---------- Quote URL ----------//
 const quoteURL = "https://type.fit/api/quotes";
 const quoteTXT = $("#quote-txt");
-
+const helpTXT = $("#help-txt");
 //---------- Audio selectors ----------//
 const greenClassicAudio = $("#green-classic-audio");
 const redClassicAudio = $("#red-classic-audio");
@@ -56,7 +61,7 @@ $(document).ready(function () {
                 quotePhrase.author = "Unknown"
             }
             //---------- Game Start ----------//
-            showModal();
+            showMainModal();
 
         }, function (errorResponse) {
             // url Not Found
@@ -65,9 +70,16 @@ $(document).ready(function () {
             }
         });
 
-    //---------- Show Main Modal ----------/
-    function showModal() {
-
+    //---------- Show Main Modal ----------//
+    function showMainModal() {
+        //hide buttons
+        modalTitle.show();
+        quoteTXT.show();
+        settingsButton.show();
+        helpButton.show();
+        playButton.show();
+        backButton.hide();
+        helpTXT.hide();
         // Adds the quote to the main modal
         quoteTXT.html(`<p>${quotePhrase.quote}</p><br>
                      <p><em>"${quotePhrase.author}"</em></p>`);
@@ -81,14 +93,42 @@ $(document).ready(function () {
             clickClose: false,
             showClose: false
         });
-    }//
 
+    }
+
+
+    //---------- Show help Modal ----------//
+    function showHelpModal() {
+        modalTitle.hide();
+        quoteTXT.hide();
+        settingsButton.hide();
+        helpButton.hide();
+        playButton.hide();
+        backButton.show();
+        helpTXT.show();
+    }
 
     //---------- Main Play Button ----------//
     playButton.unbind().click(function () {
         $.modal.close(); // close all open modals -- source: https://github.com/kylefox/jquery-modal
         computerPlayRound(gameSpeed);
         updateScore();
+    });
+
+    //---------- help Button ----------//
+    helpButton.unbind().click(function () {
+        showHelpModal();
+    });
+
+    //---------- help Button ----------//
+    backButton.unbind().click(function () {
+        modalTitle.show();
+        quoteTXT.show();
+        settingsButton.show();
+        helpButton.show();
+        playButton.show();
+        backButton.hide();
+        helpTXT.hide();
     });
 
     //---------- Play Sound ----------//
@@ -147,6 +187,16 @@ $(document).ready(function () {
     function generateRound() {
         let choices = ["red", "green", "blue", "yellow"];
         return choices[Math.floor(Math.random() * choices.length)];
+    }
+
+//    level up
+    function levelUP() {
+        if (gameSpeed > 200) {
+            if (score % 5 === 0) {
+                console.log("level up");
+                gameSpeed -= 50;
+            }
+        }
     }
 
 //---------- Computers Turn ----------//
@@ -215,6 +265,7 @@ $(document).ready(function () {
     function updateScore() {
         score++;
         setTimeout(function () {
+            levelUP();
             gameCenterCircle.text(score);
         }, gameSpeed);
 
@@ -222,7 +273,7 @@ $(document).ready(function () {
 
     //---------- Game Over ----------//
     function gameOver() {
-        alert("Game Over");
+        //alert("Game Over");
         //refresh the page
         location.reload();
     }
