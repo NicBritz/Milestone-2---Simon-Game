@@ -2,22 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="Description" content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz ">
 
     <!--  Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-    <!-- link to jQuery -->
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"
-    ></script>
 
     <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" rel="stylesheet"/>
 
     <!-- link to my StyleSheet -->
@@ -35,13 +28,11 @@
 
     <!--    Quote Text-->
     <div class="quote-txt-box" id="quote-txt"></div>
-    <!--    back button -->
 
     <!--    help Text-->
     <!--    https://www.ultraboardgames.com/simon/game-rules.php -->
     <div class="help-txt-box" id="help-txt">
-        <div class="modal-back" id="backbtn"><img alt="help button image" src="assets/images/Back%20btn.png">
-        </div>
+
         <h1>Instructions</h1>
         <h2>Object of the Game</h2>
         <br>
@@ -57,6 +48,7 @@
 
 
         <h2>Classic Game Mode</h2>
+        <br>
         <p>
             Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color
             buttons, in order.</p>
@@ -66,48 +58,76 @@
         <p>
             Continue playing as long as you can repeat each sequence of signals correctly. After the 5th, 10th and 15th
             signals in a sequence, Simon automatically speeds up.</p><br>
-        If you fail to repeat a sequence exactly then it's <strong>GAME
-        OVER</strong>.
+        <p>
+            If you fail to repeat a sequence exactly then it's <strong>GAME
+            OVER</strong>.
         </p></div>
 
     <!--    buttons-->
     <div class="row">
+
         <div class="col3 modal-help" id="helpbtn"><img alt="help button image" src="assets/images/Help%20btn.png">
         </div>
 
-        <div class="col3 modal-playbtn" id="playbtn"><img alt="play button image"
-                                                          src="assets/images/Play%20btn.png">
+        <div class="col3 modal-play" id="playbtn"><img alt="play button image"
+                                                       src="assets/images/Play%20btn.png">
         </div>
         <div class="col3 modal-settings" id="settingsbtn"><img alt="settings button image"
                                                                src="assets/images/Settings%20btn.png"></div>
+    </div>
+    <!--settings mode-->
+    <div class="modal-close"><img alt="close icon" class="close" id="closebtn" src="assets/images/X%20icon.png"/></div>
+    <!--    close Button -->
+
+
+    <!--    game Modes-->
+    <div class="settings-items" id="game-mode">
+        <div class="settings-menu"><p>Game Mode</p></div>
+    </div>
+    <div class="row" id="difficulty-settings">
+        <div class="col3 modal-prev" id="mode-prevbtn"><img alt="prev button image" src="assets/images/Back%20btn.png">
+        </div>
+        <div class="col3 settings-txt"><p id="mode-txtbox">CLASSIC</p></div>
+        <div class="col3 modal-next" id="mode-nexbtn"><img alt="next button image"
+                                                           src="assets/images/Forward%20btn.png">
+        </div>
     </div>
 
 
 </div>
 
-</div>
 
 <!-- Main game buttons -->
 <div id="game-buttons">
     <div
-            id="green-game-button"
-            class="button-green "
+            class="button-green"
             data-button="green"
+            id="green-game-button"
     ></div>
-    <div class="button-red " data-button="red" id="red-game-button"></div>
     <div
-            id="yellow-game-button"
+            class="button-red"
+            data-button="red"
+            id="red-game-button">
+
+    </div>
+    <div
             class="button-yellow"
             data-button="yellow"
+            id="yellow-game-button"
     ></div>
-    <div id="blue-game-button" class="button-blue" data-button="blue"></div>
+    <div
+            class="button-blue"
+            data-button="blue"
+            id="blue-game-button">
+
+    </div>
 
     <!-- Main game center circle -->
 </div>
-<div id="game-center-circle" class="center-circle">
+<div class="center-circle" id="game-center-circle">
 
 </div>
-<div id="game-center-circle-textbox" class="game-circle"><p id="game-circle-txt">0</p></div>
+<div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
 
 
 <!-- Imports audio files -->
@@ -128,8 +148,18 @@
 <audio id="crack-audio">
     <source src="assets/sounds/Crack.wav" type="audio/wav"/>
 </audio>
+<!-- All Scripts -->
+<!-- link to jQuery -->
+<script
+        crossorigin="anonymous"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+></script>
 
+<!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <!-- links to my main JavaScript file -->
-<script type="text/javascript" src="assets/js/game.js"></script>
+<script src="assets/js/game.js" type="text/javascript"></script>
+
 </body>
 </html>
