@@ -9,10 +9,15 @@ const playButton = $("#playbtn");
 const helpButton = $("#helpbtn");
 const settingsButton = $("#settingsbtn");
 const backButton = $("#backbtn");
+const modePevButton = $("#mode-prevbtn");
+const modeNextButton = $("#mode-nexbtn");
+const modeText = $("#mode-txtbox");
+const closeButton = $("#closebtn");
 
 //---------- Modals ----------//
 const mainModal = $("#main-modal");
 const modalTitle = $("#title");
+const gameModeTitle = $("#game-mode");
 
 
 //---------- Quote URL ----------//
@@ -28,6 +33,7 @@ const crackAudio = $("#crack-audio");
 
 //---------- Game Variables ----------//
 let gameSpeed = 600; // current speed the game is running
+let gameMode = 0; // Game Modes
 let roundArray = []; // current array of button presses for the round
 let playerActive = true; // sets the player to an active state
 let playerChoice = 0; //players current selection in the round
@@ -38,13 +44,16 @@ let quotePhrase = {
 };
 
 
-/* check if touch screen -
- * https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices/28058919
- */
-let isTouch =
-    ("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
 $(document).ready(function () {
+
+        function preload() {
+            greenGameButton.removeClass("cracked");
+            redGameButton.removeClass("cracked");
+            yellowGameButton.removeClass("cracked");
+            blueGameButton.removeClass("cracked");
+        }
+
+        preload();
 
         /*---------- Get Quotes ----------//
         from https://type.fit/api/quotes found
@@ -73,14 +82,16 @@ $(document).ready(function () {
 
         //---------- Show Main Modal ----------//
         function showMainModal() {
-            //hide buttons
-            modalTitle.show();
-            quoteTXT.show();
-            settingsButton.show();
             helpButton.show();
             playButton.show();
             backButton.hide();
             helpTXT.hide();
+            modeNextButton.hide();
+            modePevButton.hide();
+            modeText.hide();
+            closeButton.hide();
+            gameModeTitle.hide();
+
             // Adds the quote to the main modal
             quoteTXT.html(`<p>${quotePhrase.quote}</p><br>
                      <p><em>"${quotePhrase.author}"</em></p>`);
@@ -105,8 +116,27 @@ $(document).ready(function () {
             settingsButton.hide();
             helpButton.hide();
             playButton.hide();
-            backButton.show();
             helpTXT.show();
+            closeButton.show();
+            gameModeTitle.hide();
+        }
+
+        //---------- Show settings Modal ----------//
+        function showSettingsModal() {
+            modalTitle.hide();
+            quoteTXT.hide();
+            settingsButton.hide();
+            helpButton.hide();
+            playButton.hide();
+            helpTXT.hide();
+            modePevButton.show();
+            modeText.show();
+            modeNextButton.show();
+            closeButton.show();
+            gameModeTitle.show();
+
+            // TODO: Show difficulty settings
+
         }
 
         //---------- Main Play Button ----------//
@@ -121,15 +151,59 @@ $(document).ready(function () {
             showHelpModal();
         });
 
-        //---------- help Button ----------//
-        backButton.unbind().click(function () {
+
+        //---------- settings Button ----------//
+        settingsButton.unbind().click(function () {
+            showSettingsModal();
+        });
+
+        //---------- prev mode Button ----------//
+        modePevButton.unbind().click(function () {
+            if (gameMode > 0) {
+                gameMode--;
+                changeGameMode();
+            }
+        });
+
+        //---------- next mode Button ----------//
+        modeNextButton.unbind().click(function () {
+            if (gameMode < 3) {
+                gameMode++;
+                changeGameMode();
+            }
+        });
+
+        function changeGameMode() {
+            switch (gameMode) {
+                case 0 :
+                    modeText.text("CLASSIC");
+                    break;
+                case 1:
+                    modeText.text("RANDOM");
+                    break;
+                case 2:
+                    modeText.text("LAST-ONLY");
+                    break;
+                case 3:
+                    modeText.text("REVERSE");
+                    break;
+            }
+        }
+
+        //---------- close Button ----------//
+        closeButton.unbind().click(function () {
             modalTitle.show();
             quoteTXT.show();
             settingsButton.show();
             helpButton.show();
             playButton.show();
-            backButton.hide();
             helpTXT.hide();
+            modeNextButton.hide();
+            modePevButton.hide();
+            modeText.hide();
+            closeButton.hide();
+            gameModeTitle.hide();
+
         });
 
         //---------- Play Sound ----------//
@@ -263,6 +337,7 @@ $(document).ready(function () {
             }
         }
 
+        //---------- Play crack sound and display crack overlay if player loses ----------//
         function crackedButton(button) {
 
             switch (button) {
@@ -274,6 +349,7 @@ $(document).ready(function () {
                 case "red":
                     redGameButton.addClass("cracked");
                     crackAudio[0].play();
+                    break;
 
                 case "yellow":
                     yellowGameButton.addClass("cracked");
@@ -304,7 +380,5 @@ $(document).ready(function () {
             }, 500);
             // location.reload();
         }
-
-
     }
 );

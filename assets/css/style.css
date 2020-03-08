@@ -12,7 +12,7 @@
     background-color: black;
     padding: 5px;
     border: 5px solid #c0c0c0;
-    border-radius: 20px;
+    border-radius: 15px;
     max-width: 600px;
 }
 
@@ -20,6 +20,7 @@
 .modal-title {
     padding: 5% 5% 0 5%;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* Title Image */
@@ -36,61 +37,135 @@
     padding: 1em;
 }
 
+.row {
+    padding: 1em;
+}
+
 /* Modal Game Buttons*/
 .col3 {
     float: left;
     width: 33.33%;
-    padding: 1em 0;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0);
 }
+
 
 .play-small {
     width: 20px;
-}
-
-/*Modal Back button*/
-.modal-back {
-    display: flex;
-    float: left;
-    /*width: 5%;*/
-    padding: 1em;
-    text-align: left;
-    transform: scale(0.7);
 }
 
 /* help text */
 .help-txt-box {
     color: #fff;
     font-family: 'Oxanium', cursive;
-    text-align: left;
     font-size: 1em;
-
     padding: 1em;
+    text-align: center;
 }
 
 .help-txt-box h1 {
-    text-align: center;
-    margin: 1em;
+    font-size: 2em;
+    border-bottom: 2px solid #ff0000;
+    margin: 5px;
+    display: inline-block;
 }
 
 .help-txt-box h2 {
+    font-size: 1.5em;
     text-align: left;
+    margin-top: 1em;
+    border-bottom: 1px solid #ff0000;
+    display: table;
+}
+
+.help-txt-box p {
+    text-align: left;
+}
+
+.settings-txt {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    font-size: 1.5em;
+}
+
+.settings-items {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.settings-menu {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 1px solid #ff0000;
+    margin: 5px;
+    display: inline-block;
+
+}
+
+.modal-prev {
+    text-align: right;
+}
+
+.modal-next {
+    text-align: left;
+}
+
+/* close modal */
+.close {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    font-size: 2em;
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-help {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5em;
+    text-align: left;
+}
+
+.modal-settings {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    padding: 0.5em;
+}
+
+.modal-play {
+    width: 100%;
+    padding: 1em 1em 1em 0;
 }
 
 
 /* Play Button properties*/
-.modal-playbtn img,
+.modal-play img,
 .modal-help img,
 .modal-settings img,
-.modal-back img {
+.modal-close img,
+.modal-next img,
+.modal-prev img {
     transition: all .2s;
 }
 
-/* Play Button Hover*/
-.modal-playbtn img:hover,
+/* Button Hover*/
+.modal-play img:hover,
 .modal-help img:hover,
 .modal-settings img:hover,
-.modal-back img:hover {
+.modal-close img:hover,
+.modal-next img:hover,
+.modal-prev img:hover {
     cursor: grab;
     transform: scale(1.1);
 }
@@ -105,7 +180,7 @@
     background: linear-gradient(
             rgba(79, 172, 0, 0.1),
             rgba(50, 50, 50, 0.2)
-    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583633301/Simon/Crack.png) no-repeat;
+    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
     background-size: cover;
     bottom: 50%;
     right: 50%;
