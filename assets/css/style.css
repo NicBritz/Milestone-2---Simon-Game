@@ -10,8 +10,9 @@
 /* modal styling*/
 .modal {
     background-color: black;
-    padding: 0;
-    border: 3px solid #c0c0c0;
+    padding: 5px;
+    border: 5px solid #c0c0c0;
+    border-radius: 20px;
     max-width: 600px;
 }
 
@@ -23,7 +24,6 @@
 
 /* Title Image */
 .modal-title img {
-
     width: 100%;
 }
 
@@ -37,33 +37,79 @@
 }
 
 /* Modal Game Buttons*/
-.column {
+.col3 {
     float: left;
     width: 33.33%;
     padding: 1em 0;
     text-align: center;
 }
 
+.play-small {
+    width: 20px;
+}
+
+/*Modal Back button*/
+.modal-back {
+    display: flex;
+    float: left;
+    /*width: 5%;*/
+    padding: 1em;
+    text-align: left;
+    transform: scale(0.7);
+}
+
+/* help text */
+.help-txt-box {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    text-align: left;
+    font-size: 1em;
+
+    padding: 1em;
+}
+
+.help-txt-box h1 {
+    text-align: center;
+    margin: 1em;
+}
+
+.help-txt-box h2 {
+    text-align: left;
+}
+
+
 /* Play Button properties*/
 .modal-playbtn img,
 .modal-help img,
-.modal-settings {
+.modal-settings img,
+.modal-back img {
     transition: all .2s;
 }
 
 /* Play Button Hover*/
 .modal-playbtn img:hover,
 .modal-help img:hover,
-.modal-settings img:hover {
+.modal-settings img:hover,
+.modal-back img:hover {
     cursor: grab;
     transform: scale(1.1);
 }
 
 
-/* Help Button */
-
-
 /* ---------- Game Colour Buttons setup ---------- */
+
+/*crack Image https://www.searchpng.com/download-png/?imageid=3548*/
+/* Cracked */
+.cracked {
+    /*https://css-tricks.com/tinted-images-multiple-backgrounds/*/
+    background: linear-gradient(
+            rgba(79, 172, 0, 0.1),
+            rgba(50, 50, 50, 0.2)
+    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583633301/Simon/Crack.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
 
 /* common settings for the colour buttons*/
 .button-green,
@@ -73,24 +119,20 @@
     position: fixed;
     height: 40%;
     width: 45%;
-    border-radius: 10px;
+    border-radius: 20px;
     max-width: 460px;
     max-height: 460px;
+    border: 5px solid #000000;
+    box-shadow: inset 0 0 50px #9b9b9b;
+
 }
 
 /* Green Button Settings */
 .button-green {
     background-color: #00ff00;
-    /*https://css-tricks.com/tinted-images-multiple-backgrounds/*/
-    /*background:  linear-gradient(*/
-    /*  rgba(0, 255, 0, 0.6),*/
-    /*  rgba(0, 255, 0, 0.6)*/
-    /*), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583542756/Simon/test_Pat.jpg) no-repeat;*/
-    /*background-size: cover;*/
     bottom: 50%;
     right: 50%;
-    /*border: 5px solid black;*/
-    box-shadow: inset 0 0 50px #aeffae;
+
 }
 
 /* Red Button Settings */
@@ -98,7 +140,7 @@
     background-color: #ff0000;
     bottom: 50%;
     left: 50%;
-    box-shadow: inset 0 0 50px #ffaeae;
+
 }
 
 /* Yellow Button Settings */
@@ -106,7 +148,7 @@
     background-color: #ffff00;
     right: 50%;
     top: 50%;
-    box-shadow: inset 0 0 50px #ffffae;
+
 }
 
 /* Blue Button Settings */
@@ -115,7 +157,7 @@
     background-color: #0000ff;
     left: 50%;
     top: 50%;
-    box-shadow: inset 0 0 50px #aeaeff;
+
 }
 
 /* Game button pressed */
