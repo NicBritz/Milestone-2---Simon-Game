@@ -6,25 +6,50 @@ const greenGameButton = $("#green-game-button");
 const redGameButton = $("#red-game-button");
 const yellowGameButton = $("#yellow-game-button");
 const blueGameButton = $("#blue-game-button");
-const playButton = $("#playbtn");
-const helpButton = $("#helpbtn");
-const settingsButton = $("#settingsbtn");
-const backButton = $("#backbtn");
-const modePevButton = $("#mode-prevbtn");
-const modeNextButton = $("#mode-nexbtn");
-const modeText = $("#mode-txtbox");
-const closeButton = $("#closebtn");
+
+//=================================================== NEW =====================//
+
+//=========== MENUS ================//
+const MAIN_MENU = $("#main_menu");
+const HELP_MENU = $("#help_menu");
+const SETTINGS_MENU = $("#settings_menu");
+
+//=========== Buttons ================//
+const HELP_BUTTON = $("#help_button");
+const SETTINGS_BUTTON = $("#settings_button");
+const PLAY_BUTTON = $("#play_button");
+const CLOSE_BUTTON = $("#close_button");
+const MODE_PREV_BUTTON = $("#mode_prev_button");
+const MODE_NEXT_BUTTON = $("#mode_next_button");
 
 //---------- Modals ----------//
 const mainModal = $("#main-modal");
-const modalTitle = $("#title");
-const gameModeTitle = $("#game-mode");
 
+const GAME_MODES = [
+    {
+        name: "CLASSIC",
+        desc: "This is the classic mode"
+    },
+    {
+        name: "RANDOM",
+        desc: "This is the random mode"
+    },
+    {
+        name: "LAST-ONLY",
+        desc: "This is the last-only mode"
+    },
+    {
+        name: "REVERSE",
+        desc: "This is the reverse mode"
+    }];
+const GAME_MODE_TEXT = $("#game-mode-text");
+const GAME_MODE_DESC = $("#mode_description");
+let currentGameMode = 0;
 
 //---------- Quote URL ----------//
-const quoteURL = "https://type.fit/api/quotes";
+const QUOTE_URL = "https://type.fit/api/quotes";
 const quoteTXT = $("#quote-txt");
-const helpTXT = $("#help-txt");
+
 //---------- Audio selectors ----------//
 const greenClassicAudio = $("#green-classic-audio");
 const redClassicAudio = $("#red-classic-audio");
@@ -40,64 +65,49 @@ let playerActive = true; // sets the player to an active state
 let playerChoice = 0; //players current selection in the round
 let score = 0; //players score or level
 let quotePhrase = {
-    quote: "Kind words can be short and easy to speak, but their echoes are truly endless.",
+    text: "Kind words can be short and easy to speak, but their echoes are truly endless.",
     author: "Mother Teresa"
 };
 
 
 $(document).ready(function () {
 
-        function preload() {
-            greenGameButton.removeClass("cracked");
-            redGameButton.removeClass("cracked");
-            yellowGameButton.removeClass("cracked");
-            blueGameButton.removeClass("cracked");
-        }
-
-        preload();
-
-        /*---------- Get Quotes ----------//
-        from https://type.fit/api/quotes found
+        /*---------- Fetch a random Quote from Quotes API ---------->
+        *from https://type.fit/api/quotes found
         *via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
-        * */
-
-        $.when(
-            $.getJSON(quoteURL))
-            .then(function (response) {
-                const data = response;
+        * ----------------------------------------------------------*/
+        fetch(QUOTE_URL)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('No network response');
+                }
+                return response.json();
+            })
+            .then((data) => {
                 let rnd = Math.floor(Math.random() * data.length);
-                quotePhrase.quote = data[rnd].text;
-                quotePhrase.author = data[rnd].author;
+                quotePhrase = data[rnd];
+
+                // add Unknown author if there is none in the object
                 if (quotePhrase.author === null || quotePhrase.author === undefined) {
                     quotePhrase.author = "Unknown"
                 }
-                //---------- Game Start ----------//
-                showMainModal();
 
-            }, function (errorResponse) {
-                // url Not Found
-                if (errorResponse === 404) {
-                    quotePhrase.quote = "404 - Not Found!";
-                }
+                // Adds the quote text to the quote html
+                quoteTXT.html(`<p>${quotePhrase.text}</p><br>
+                     <p><em>"${quotePhrase.author}"</em></p>`);
+                showMainModal()
+
+            })
+            .catch((error) => {
+                console.error('Oops there was a problem...', error);
             });
 
-        //---------- Show Main Modal ----------//
+
+        //-------------------------------------------- Show Main Modal ----------//
         function showMainModal() {
-            helpButton.show();
-            playButton.show();
-            backButton.hide();
-            helpTXT.hide();
-            modeNextButton.hide();
-            modePevButton.hide();
-            modeText.hide();
-            closeButton.hide();
-            gameModeTitle.hide();
+            // Display the Main Menu
+            mainMenu();
 
-            // Adds the quote to the main modal
-            quoteTXT.html(`<p>${quotePhrase.quote}</p><br>
-                     <p><em>"${quotePhrase.author}"</em></p>`);
-
-            // Display the modal
             //source: https://github.com/kylefox/jquery-modal
             mainModal.modal({
                 fadeDuration: 500, // Fade In
@@ -106,106 +116,89 @@ $(document).ready(function () {
                 clickClose: false,
                 showClose: false
             });
+        }
 
+        //--------------------------------------------- GUI/MENU ----------//
+        function mainMenu() {
+            MAIN_MENU.show();
+            HELP_MENU.hide();
+            SETTINGS_MENU.hide();
+            CLOSE_BUTTON.hide();
+        }
+
+        function helpMenu() {
+            MAIN_MENU.hide();
+            HELP_MENU.show();
+            SETTINGS_MENU.hide();
+            CLOSE_BUTTON.show();
+        }
+
+        function settingsMenu() {
+            MAIN_MENU.hide();
+            HELP_MENU.hide();
+            SETTINGS_MENU.show();
+            CLOSE_BUTTON.show();
         }
 
 
-        //---------- Show help Modal ----------//
-        function showHelpModal() {
-            modalTitle.hide();
-            quoteTXT.hide();
-            settingsButton.hide();
-            helpButton.hide();
-            playButton.hide();
-            helpTXT.show();
-            closeButton.show();
-            gameModeTitle.hide();
+        //--------------------------------------------- MENU Button Presses ----------//
+
+        CLOSE_BUTTON.on("click touch", function () {
+            mainMenu();
+        });
+
+        HELP_BUTTON.on("click touch", function () {
+            helpMenu();
+        });
+
+        SETTINGS_BUTTON.on("click touch", function () {
+            settingsMenu();
+        });
+
+        MODE_NEXT_BUTTON.on("click touch", function () {
+
+            if (currentGameMode < 3) {
+                currentGameMode++;
+                updateGameMode(this);
+            }
+        });
+
+        MODE_PREV_BUTTON.on("click touch", function () {
+
+            if (currentGameMode > 0) {
+                currentGameMode--;
+                updateGameMode(this);
+            }
+        });
+
+        //------------- Update the game mode
+        function updateGameMode(buttonObj) {
+                //Prev Button
+            if (buttonObj.id === "mode_prev_button") {
+                MODE_NEXT_BUTTON.removeClass("gray-out");
+                if (currentGameMode === 0) {
+                    MODE_PREV_BUTTON.addClass("gray-out");
+                }
+            } else {
+                //Next Button
+                MODE_PREV_BUTTON.removeClass("gray-out");
+                if (currentGameMode === 3) {
+                    MODE_NEXT_BUTTON.addClass("gray-out");
+                }
+            }
+            //Change the game mode display text
+            GAME_MODE_TEXT.text(GAME_MODES[currentGameMode].name);
+            GAME_MODE_DESC.text(GAME_MODES[currentGameMode].desc);
         }
 
-        //---------- Show settings Modal ----------//
-        function showSettingsModal() {
-            modalTitle.hide();
-            quoteTXT.hide();
-            settingsButton.hide();
-            helpButton.hide();
-            playButton.hide();
-            helpTXT.hide();
-            modePevButton.show();
-            modeText.show();
-            modeNextButton.show();
-            closeButton.show();
-            gameModeTitle.show();
-
-            // TODO: Show difficulty settings
-
-        }
-
-        //---------- Main Play Button ----------//
-        playButton.unbind().click(function () {
-            $.modal.close(); // close all open modals -- source: https://github.com/kylefox/jquery-modal
+        PLAY_BUTTON.on("click touch", function () {
+            //-- Close any open modals --//
+            $.modal.close();
+            //-- Computers Turn --//
             computerPlayRound(gameSpeed);
             updateScore();
         });
 
-        //---------- help Button ----------//
-        helpButton.unbind().click(function () {
-            showHelpModal();
-        });
-
-
-        //---------- settings Button ----------//
-        settingsButton.unbind().click(function () {
-            showSettingsModal();
-        });
-
-        //---------- prev mode Button ----------//
-        modePevButton.unbind().click(function () {
-            if (gameMode > 0) {
-                gameMode--;
-                changeGameMode();
-            }
-        });
-
-        //---------- next mode Button ----------//
-        modeNextButton.unbind().click(function () {
-            if (gameMode < 3) {
-                gameMode++;
-                changeGameMode();
-            }
-        });
-
-        function changeGameMode() {
-            switch (gameMode) {
-                case 0 :
-                    modeText.text("CLASSIC");
-                    break;
-                case 1:
-                    modeText.text("RANDOM");
-                    break;
-                case 2:
-                    modeText.text("LAST-ONLY");
-                    break;
-                case 3:
-                    modeText.text("REVERSE");
-                    break;
-            }
-        }
-
-        //---------- close Button ----------//
-        closeButton.unbind().click(function () {
-            modalTitle.show();
-            quoteTXT.show();
-            settingsButton.show();
-            helpButton.show();
-            playButton.show();
-            helpTXT.hide();
-            modeNextButton.hide();
-            modePevButton.hide();
-            modeText.hide();
-            closeButton.hide();
-            gameModeTitle.hide();
-
-        });
 
         //---------- Play Sound ----------//
         function playSound(sound) {

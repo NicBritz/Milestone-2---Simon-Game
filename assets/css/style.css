@@ -27,7 +27,7 @@
 
 /* Title Image */
 .modal-title img {
-    width: 100%;
+    width: 50%;
 }
 
 /* Main menu text */
@@ -39,6 +39,19 @@
     padding: 1em;
 }
 
+.gray-out{
+    filter:grayscale(100%);
+}
+
+/*Mode Description */
+
+.mode-desc-text{
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    font-size: 1em;
+    padding: 2em;
+    text-align: center;
+}
 .row {
     padding: 1em;
 }
