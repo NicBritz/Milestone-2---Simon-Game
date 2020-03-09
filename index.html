@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="Description" content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz ">
+    <meta name="Description"
+          content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz ">
 
     <!--  Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
@@ -16,83 +17,92 @@
     <!-- link to my StyleSheet -->
     <link href="assets/css/style.css" rel="stylesheet"/>
 
-
     <title>Simon Game</title>
 </head>
 <body>
 
 <!-- Main modal  -->
 <div class="modal" id="main-modal">
-    <!--  Title Image -->
-    <div class="modal-title" id="title"><img alt="Simon Says title text" src="assets/images/Title.png"></div>
-
-    <!--    Quote Text-->
-    <div class="quote-txt-box" id="quote-txt"></div>
-
-    <!--    help Text-->
-    <!--    https://www.ultraboardgames.com/simon/game-rules.php -->
-    <div class="help-txt-box" id="help-txt">
-
-        <h1>Instructions</h1>
-        <h2>Object of the Game</h2>
-        <br>
-        <p>
-            The object of the game is to correctly repeat the sequence. Depending on the game mode selected this will
-            vary in complexity.
-        </p>
-        <br>
-        <p> Press <span><img alt="play button image" class="play-small"
-                             src="assets/images/Play%20btn.png"></span> and Simon will give the first signal. Repeat the
-            signal by pressing the same color button.</p>
-        <br>
-
-
-        <h2>Classic Game Mode</h2>
-        <br>
-        <p>
-            Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color
-            buttons, in order.</p>
-        <br>
-        <p>
-            Simon will then duplicate these first two signals and add one.</p><br>
-        <p>
-            Continue playing as long as you can repeat each sequence of signals correctly. After the 5th, 10th and 15th
-            signals in a sequence, Simon automatically speeds up.</p><br>
-        <p>
-            If you fail to repeat a sequence exactly then it's <strong>GAME
-            OVER</strong>.
-        </p></div>
-
-    <!--    buttons-->
-    <div class="row">
-
-        <div class="col3 modal-help" id="helpbtn"><img alt="help button image" src="assets/images/Help%20btn.png">
-        </div>
-
-        <div class="col3 modal-play" id="playbtn"><img alt="play button image"
-                                                       src="assets/images/Play%20btn.png">
-        </div>
-        <div class="col3 modal-settings" id="settingsbtn"><img alt="settings button image"
-                                                               src="assets/images/Settings%20btn.png"></div>
-    </div>
-    <!--settings mode-->
-    <div class="modal-close"><img alt="close icon" class="close" id="closebtn" src="assets/images/X%20icon.png"/></div>
-    <!--    close Button -->
-
-
-    <!--    game Modes-->
-    <div class="settings-items" id="game-mode">
-        <div class="settings-menu"><p>Game Mode</p></div>
-    </div>
-    <div class="row" id="difficulty-settings">
-        <div class="col3 modal-prev" id="mode-prevbtn"><img alt="prev button image" src="assets/images/Back%20btn.png">
-        </div>
-        <div class="col3 settings-txt"><p id="mode-txtbox">CLASSIC</p></div>
-        <div class="col3 modal-next" id="mode-nexbtn"><img alt="next button image"
-                                                           src="assets/images/Forward%20btn.png">
+    <!-------------------------------- Main Menu ------------------>
+    <div id="main_menu">
+        <!--  Main title text -->
+        <div class="modal-title" id="title"><img alt="Simon Says title text" src="assets/images/Title.png"></div>
+        <!--  Quote Text  -->
+        <div class="quote-txt-box" id="quote-txt"></div>
+        <!--  Menu buttons-->
+        <div class="row">
+            <div class="col3 modal-help" id="help_button"><img alt="help button image" src="assets/images/Help%20btn.png">
+            </div>
+            <div class="col3 modal-play" id="play_button"><img alt="play button image" src="assets/images/Play%20btn.png">
+            </div>
+            <div class="col3 modal-settings" id="settings_button"><img alt="settings button image"
+                                                                   src="assets/images/Settings%20btn.png"></div>
         </div>
     </div>
+    <!-------------------------------- Help Menu ------------------>
+    <div id="help_menu">
+        <!--  https://www.ultraboardgames.com/simon/game-rules.php -->
+        <div class="help-txt-box" id="help-txt">
 
+            <h1>Instructions</h1>
+            <h2>Object of the Game</h2>
+            <br>
+            <p>
+                The object of the game is to correctly repeat the sequence. Depending on the game mode selected this
+                will
+                vary in complexity.
+            </p>
+            <br>
+            <p> Press <span><img alt="play button image" class="play-small"
+                                 src="assets/images/Play%20btn.png"></span> and Simon will give the first signal. Repeat
+                the
+                signal by pressing the same color button.</p>
+            <br>
+
+
+            <h2>Classic Game Mode</h2>
+            <br>
+            <p>
+                Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color
+                buttons, in order.</p>
+            <br>
+            <p>
+                Simon will then duplicate these first two signals and add one.</p><br>
+            <p>
+                Continue playing as long as you can repeat each sequence of signals correctly. After the 5th, 10th and
+                15th
+                signals in a sequence, Simon automatically speeds up.</p><br>
+            <p>
+                If you fail to repeat a sequence exactly then it's <strong>GAME
+                OVER</strong>.
+            </p></div>
+
+    </div>
+    <!-------------------------------- Settings Menu ------------------>
+    <div id="settings_menu">
+        <!-- Game Modes -->
+        <div class="settings-items" id="game-mode">
+            <div class="settings-menu"><p>Game Mode</p></div>
+        </div>
+        <div class="row" id="difficulty-settings">
+            <!-- Previous Mode -->
+            <div class="col3 modal-prev gray-out" id="mode_prev_button"><img alt="prev button image"
+                                                                src="assets/images/Back%20btn.png">
+            </div>
+            <!-- Mode Text -->
+            <div class="col3 settings-txt"><p id="game-mode-text">CLASSIC</p></div>
+            <!-- Next Mode -->
+            <div class="col3 modal-next" id="mode_next_button"><img alt="next button image"
+                                                               src="assets/images/Forward%20btn.png">
+            </div>
+        </div>
+
+        <div id="mode_description" class="mode-desc-text"><p>This is the classic mode</p></div>
+
+    </div>
+    <!--   Close Button -->
+    <div class="modal-close"><img alt="close icon" class="close" id="close_button" src="assets/images/X%20icon.png"/>
+    </div>
 
 </div>
 
