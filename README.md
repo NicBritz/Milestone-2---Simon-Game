@@ -1,28 +1,36 @@
-# Milestone Project 2 - Simon Game
-
+<div align="center">
+<!-- Main Screen PC -->
+<img src="/assets/images/Title.png" alt="Main Screen screen for pc">
+</div>
 <!-- contents -->
 
 ## Contents
 
-- [Overview](#Overview)
-- [UX](#UX)
-- [Wireframes](#Wireframes)
-- [Features](#Features)
-- [Technologies Used](#Technologies-Used)
-  - [Tools for the job](#Tools-for-the-job)
-- [Testing](#Testing)
-- [Deployment](#Deployment)
-- [Credits](#Credits)
-  - [Content](#Content)
-  - [Acknowledgements](#Acknowledgements)
+- [Contents](#contents)
+- [Overview](#overview)
+- [UX](#ux)
+  - [Wireframes](#wireframes)
+    - [PC Mockups](#pc-mockups)
+- [<!-- Top -->](#)
+    - [Tablet Mockups](#tablet-mockups)
+    - [Smartphone Mockups](#smartphone-mockups)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
 
 <!-- overview -->
 
 ## Overview
+Simon is not only a fun and challenging game but also a tool to help improve memory. 
 
-One or two paragraphs providing an overview of your project.
+This particular iteration of the 1978 classic game has four game modes. Each mode brings on a new set of challenges that add a modern twist to the game. 
 
-Essentially, this part is your sales pitch.
+There is also a random inspirational quote shown at the beginning of each game to help mentally prepare you for the challenge. 
 
 <!-- Top -->
 
@@ -36,7 +44,24 @@ Essentially, this part is your sales pitch.
 
 ## UX
 
+The goal of this project was to recreate the classic 1978 
+
+###The user
+As a user I want a way to improve my memory and coordination in a fun but challenging way. I would like an application that I can use on my computer but also one that is available on my mobile devices.The application should have both visual and auditory cues and have various game modes to keep it fresh. 
+
+###The design process
+
+####Scope
+The goal of this project was to recreate the classic 1978 electronic game called Simon. I made this a more modern version and focused on delivering a clean user interface. I kept the effects subtle but still notable, without overwhelming the user with too much information at once. 
+
+####Audio
+Audio plays a big part in the experience of the game and because of this, I decided to make some of it myself. I was also very particular in choosing the best sounds for the job. 
+
+####Visual
+I wanted the experience to feel like a modern game to achieve this I made use of some assets that I purchased. When it came time to create the main game buttons I used very saturated colours and added some visual effects to indicate that the button had been activated. 
 ```
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ADD SCREENSHOTS HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
@@ -132,6 +157,21 @@ These are my wireframes I created during the design process, they were great as 
 <!-- features -->
 
 ## Features
+This project has some great features form different game modes to themes. All of these features combined make for a great overall experience.
+
+###Game Modes
+
+**Classic**
+When playing the game in this mode you will be presented with a set of four coloured buttons. The buttons will light up in a sequence, each step in the sequence is randomly generated. The entire sequence remains the same throughout the round but it gets progressively longer. After every 5th step, the sequence gets faster. If the player hits the incorrect coloured button the button plays a cracking sound and shows a cracked image overlay. 
+
+**Random** 
+This mode behaves similarly to the Classic mode with the added twist of randomizing the sequence every round. This makes it more challenging as the player is unable to memorize the sequence as a whole and is forced to rely on short bursts of memory. 
+
+**Last-Only**
+With this mode you are getting the same type of sequence you would get with the Classic mode with the added challenge of only seeing the last step in the sequence. The player must then replicate the entire sequence relying heavily on their memory of the sequence.
+
+**Reverse**
+The sequence is created and presented in the same way as the Classic mode. This time, however, the player must play back the sequence in reverse. This makes for some interesting gameplay.
 
 ```
  In this section, you should go over the different parts of your project, and describe each in a sentence or so.
@@ -159,7 +199,6 @@ In addition, you may also use this section to discuss plans for additional featu
 <!-- technologies used -->
 
 ## Technologies Used
-
 ```
 I used the following technologies to create this website:
 
@@ -190,7 +229,6 @@ Below is a list of tools I used to create this website.
 - [W3C Markup](https://validator.w3.org/) - used this to check my HTML for errors and typos.
 - [W3C CSS](https://jigsaw.w3.org/css-validator/) - used this to check my CSS for errors.
 - [Autoprefixer](https://autoprefixer.github.io/) - I used this tool to make sure I did not miss any prefixing in my code.
-
 ```
 
   <!-- Top -->
