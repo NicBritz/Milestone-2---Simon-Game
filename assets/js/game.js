@@ -74,7 +74,7 @@ let quotePhrase = {
 };
 let gameEnd = false;
 let lastOnly = false;
-
+let reverse = false;
 
 $(document).ready(function () {
 
@@ -322,25 +322,35 @@ $(document).ready(function () {
         //current choice
         playerChoice = 0;
         if (currentGameMode === 0) {
-            //generate next round element
+            reverse = false;
+            //Classic Mode
             generateRound();
+            lastOnly = false;
         } else if (currentGameMode === 1) {
-
+            //Random Mode
+            reverse = false;
             randomiseRound();
+            lastOnly = false;
         } else if (currentGameMode === 2) {
-            //Last Only
+            //Last Only Mode
+            reverse = false;
             generateRound();
             lastOnly = true;
-
+        } else if (currentGameMode === 3) {
+            //Reverse
+            lastOnly = false;
+            reverse = true;
+            generateRound();
         }
 
         if (lastOnly) {
             setTimeout(function () {
-                buttonPressed(roundArray[roundArray.length-1]);
+                buttonPressed(roundArray[roundArray.length - 1]);
                 playerRound();
             }, gameSpeed)
 
         } else {
+
             let i = 0;
             (function loop() {
                 buttonPressed(roundArray[i]);
@@ -348,6 +358,9 @@ $(document).ready(function () {
                     setTimeout(loop, gameSpeed);  // call myself in 3 seconds time if required
                 } else if (i === roundArray.length) {
                     setTimeout(function () {
+                        if (reverse) {
+                            roundArray.reverse();
+                        }
                         playerRound();
                     }, gameSpeed)
                 }
@@ -404,6 +417,7 @@ $(document).ready(function () {
 //---------- Check if player wins or loses ----------//
     function checkResult(button) {
 
+        //normal order
         if (button !== roundArray[playerChoice]) {
             //Player Failed!!
             crackedButton(button);
@@ -411,14 +425,18 @@ $(document).ready(function () {
         } else {
             if (playerChoice + 1 === roundArray.length) {
                 //Round over
-
                 setTimeout(function () {
+                    if (reverse) {
+                        roundArray.reverse();
+                    }
                     computerPlayRound();
                     updateScore();
                 }, 800)
 
             }
         }
+
+
         playerChoice++
 
     }
@@ -463,4 +481,5 @@ $(document).ready(function () {
 
     }
 
-});
+})
+;
