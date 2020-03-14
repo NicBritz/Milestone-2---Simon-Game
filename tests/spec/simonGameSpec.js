@@ -13,19 +13,19 @@ describe("Simon Says Game", function () {
         });
 
         it("There should be a valid greenGameButton jQuery object", function () {
-            expect(greenGameButton).toBeInstanceOf(Object);
+            expect(GREEN_GAME_BUTTON).toBeInstanceOf(Object);
         });
 
         it("There should be a valid redGameButton jQuery object", function () {
-            expect(redGameButton).toBeInstanceOf(Object);
+            expect(RED_GAME_BUTTON).toBeInstanceOf(Object);
         });
 
         it("There should be a valid yellowGameButton jQuery object", function () {
-            expect(yellowGameButton).toBeInstanceOf(Object);
+            expect(YELLOW_GAME_BUTTON).toBeInstanceOf(Object);
         });
 
         it("There should be a valid blueGameButton jQuery object", function () {
-            expect(blueGameButton).toBeInstanceOf(Object);
+            expect(BLUE_GAME_BUTTON).toBeInstanceOf(Object);
         });
 
         //---------- Audio selectors ----------//
