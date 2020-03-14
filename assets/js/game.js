@@ -17,14 +17,14 @@ const SETTINGS_MENU = $("#settings_menu");
 const GAME_OVER_MENU = $("#gameOver-menu");
 
 //=========== Buttons ================//
-const HELP_BUTTON = $("#help_button");
-const SETTINGS_BUTTON = $("#settings_button");
-const PLAY_BUTTON = $("#play_button");
+const HELP_BUTTON = $("#help_button > img");
+const SETTINGS_BUTTON = $("#settings_button > img");
+const PLAY_BUTTON = $("#play_button > img");
 const CLOSE_BUTTON = $("#close_button");
-const MODE_PREV_BUTTON = $("#mode_prev_button");
-const MODE_NEXT_BUTTON = $("#mode_next_button");
-const MENU_BUTTON = $("#main_menu_button");
-const REPLAY_BUTTON = $("#replay_button");
+const MODE_PREV_BUTTON = $("#mode_prev_button > img");
+const MODE_NEXT_BUTTON = $("#mode_next_button > img");
+const MENU_BUTTON = $("#main_menu_button > img");
+const REPLAY_BUTTON = $("#replay_button > img");
 
 //---------- Modals ----------//
 const mainModal = $("#main-modal");
