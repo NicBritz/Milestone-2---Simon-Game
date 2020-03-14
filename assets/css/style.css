@@ -39,21 +39,23 @@
     padding: 1em;
 }
 
-.gray-out{
-    filter:grayscale(100%);
+.gray-out {
+    filter: grayscale(100%);
 }
 
 /*Mode Description */
 
-.mode-desc-text{
+.mode-desc-text {
     color: #fff;
     font-family: 'Oxanium', cursive;
     font-size: 1em;
     padding: 2em;
     text-align: center;
 }
+
 .row {
-    padding: 1em;
+
+    display: flex;
 }
 
 /* Modal Game Buttons*/
@@ -96,6 +98,23 @@
 .help-txt-box p {
     text-align: left;
 }
+
+.col2 {
+    float: left;
+    width: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.score {
+    color: #fff;
+    font-family: 'Oxanium', cursive;
+    font-size: 2em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 5px;
+}
+
 
 .settings-txt {
     color: #fff;
@@ -222,8 +241,8 @@
     /*);*/
 }
 
-.overlay{
-    background-color: rgba(0,0,0,0);
+.overlay {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* common settings for the colour buttons*/
@@ -243,7 +262,7 @@
 
 }
 
-.active{
+.active {
     cursor: grab;
 }
 
@@ -283,9 +302,9 @@
 
 /* Game button pressed */
 .game-button-pressed {
-    -webkit-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    transform: scale(0.95);
+    -webkit-transform: scale(0.90);
+    -ms-transform: scale(0.90);
+    transform: scale(0.90);
 }
 
 /* The Center Game Circle */
