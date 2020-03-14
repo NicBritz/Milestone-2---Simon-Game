@@ -2,10 +2,10 @@
 const gameCenterCircle = $("#game-circle-txt");
 const gameCenterCircleBorder = $("#game-center-circle");
 const allGameButtons = $("#game-buttons > div");
-const greenGameButton = $("#green-game-button");
-const redGameButton = $("#red-game-button");
-const yellowGameButton = $("#yellow-game-button");
-const blueGameButton = $("#blue-game-button");
+const GREEN_GAME_BUTTON = $("#green-game-button");
+const RED_GAME_BUTTON = $("#red-game-button");
+const YELLOW_GAME_BUTTON = $("#yellow-game-button");
+const BLUE_GAME_BUTTON = $("#blue-game-button");
 
 //=================================================== NEW =====================//
 
@@ -216,6 +216,12 @@ $(document).ready(function () {
         setTimeout(function () {
             $(`#${button}-game-button`).removeClass("game-button-pressed");
         }, 100);
+
+        //Pause current audio
+        $("audio").each(function (snd) {
+            this.load();
+        });
+
         //play button sound
         $(`#${button}-classic-audio`)[0].play();
     }
@@ -243,15 +249,28 @@ $(document).ready(function () {
 
     }
 
+    function deactivatePlayer() {
+        playerActive = false;
+        GREEN_GAME_BUTTON.off();
+        RED_GAME_BUTTON.off();
+        BLUE_GAME_BUTTON.off();
+        YELLOW_GAME_BUTTON.off();
+        gameCenterCircleBorder.addClass("center-circle-stop");
+        gameCenterCircleBorder.removeClass("center-circle-go");
+        allGameButtons.removeClass("active")
+    }
+
+    function activatePlayer() {
+        playerActive = true;
+        gameCenterCircleBorder.removeClass("center-circle-stop");
+        gameCenterCircleBorder.addClass("center-circle-go");
+        allGameButtons.addClass("active")
+    }
+
 
 //---------- Computers Turn ----------//
-    function computerPlayRound(speed) {
-        // setTimeout(function () {
-        //     //computer stop ring
-        //     gameCenterCircleBorder.addClass("center-circle-stop");
-        //     // player go ring
-        //     gameCenterCircleBorder.removeClass("center-circle-go");
-        // }, gameSpeed);
+    function computerPlayRound() {
+        deactivatePlayer();
 
         //current choice
         playerChoice = 0;
@@ -262,83 +281,85 @@ $(document).ready(function () {
             randomiseRound();
         }
 
-        var i = 0;
+        let i = 0;
 
         (function loop() {
-            console.log(i);
             buttonPressed(roundArray[i]);
             if (++i < roundArray.length) {
                 setTimeout(loop, gameSpeed);  // call myself in 3 seconds time if required
             } else if (i === roundArray.length) {
                 setTimeout(function () {
-                    playerActive = true;
                     playerRound();
                 }, gameSpeed)
             }
         })();
-        // Computer
-        // play
-        // Round
-        // setTimeout(function () {
-        //     // delays between each round iteration
-        //     roundArray.forEach(function (value, ind) {
-        //         setTimeout(function () {
-        //             buttonPressed(value);
-        //             if (ind + 1 === roundArray.length) {
-        //                 playerActive = true;
-        //                 playerRound();
-        //             }
-        //         }, ind * speed);
-        //     });
-        // }, speed);
+
     }
 
 //---------- Players Turn ----------//
     function playerRound() {
-        // setTimeout(function () {
-        //     //computer stop ring
-        //     gameCenterCircleBorder.removeClass("center-circle-stop");
-        //     gameCenterCircleBorder.addClass("center-circle-go");
-        //     // player go ring
-        //
-        // }, gameSpeed);
+        activatePlayer();
 
-        allGameButtons.unbind().on("click touch", function () {
-
+        GREEN_GAME_BUTTON.off().on("click touch", function () {
             let button = this.dataset.button;
-
+            console.log(button);
             if (playerActive) {
                 buttonPressed(button);
                 checkResult(button);
             }
+
         });
+        RED_GAME_BUTTON.off().on("click touch", function () {
+            let button = this.dataset.button;
+            console.log(button);
+            if (playerActive) {
+                buttonPressed(button);
+                checkResult(button);
+            }
+
+        });
+        BLUE_GAME_BUTTON.off().on("click touch", function () {
+            let button = this.dataset.button;
+            console.log(button);
+            if (playerActive) {
+                buttonPressed(button);
+                checkResult(button);
+            }
+
+        });
+        YELLOW_GAME_BUTTON.off().on("click touch", function () {
+            let button = this.dataset.button;
+            console.log(button);
+            if (playerActive) {
+                buttonPressed(button);
+                checkResult(button);
+            }
+
+        });
+
     }
 
 
 //---------- Check if player wins or loses ----------//
     function checkResult(button) {
-        //Check if the players last last choice is correct
-        if (button === roundArray[playerChoice]) {
 
-            if (playerChoice + 1 === roundArray.length) {
-                updateScore();
-                setTimeout(function () {
-                    playerActive = false;
-                    computerPlayRound(gameSpeed)
-                }, gameSpeed);
-
-
-            } else {
-                //step
-                playerChoice++;
-            }
-
-        } else {
+        if (button !== roundArray[playerChoice]) {
             //Player Failed!!
             crackedButton(button);
             gameOver();
+        } else {
+            if (playerChoice + 1 === roundArray.length) {
+                //Round over
 
+                setTimeout(function () {
+                    computerPlayRound();
+                    updateScore();
+                }, 800)
+
+            }
         }
+        playerChoice++
+
     }
 
 //---------- Play crack sound and display crack overlay if player loses ----------//
