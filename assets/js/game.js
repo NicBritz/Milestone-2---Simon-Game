@@ -72,343 +72,297 @@ let quotePhrase = {
 
 $(document).ready(function () {
 
-        /*---------- Fetch a random Quote from Quotes API ---------->
-        *from https://type.fit/api/quotes found
-        *via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
-        * ----------------------------------------------------------*/
-        fetch(QUOTE_URL)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('No network response');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                let rnd = Math.floor(Math.random() * data.length);
-                quotePhrase = data[rnd];
 
-                // add Unknown author if there is none in the object
-                if (quotePhrase.author === null || quotePhrase.author === undefined) {
-                    quotePhrase.author = "Unknown"
-                }
+    /*---------- Fetch a random Quote from Quotes API ---------->
+    *from https://type.fit/api/quotes found
+    *via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
+    * ----------------------------------------------------------*/
+    fetch(QUOTE_URL)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('No network response');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // Fetch a random quote form the retrieved Json file
+            quotePhrase = data[Math.floor(Math.random() * data.length)];
 
-                // Adds the quote text to the quote html
-                quoteTXT.html(`<p>${quotePhrase.text}</p><br>
+            // Add Unknown author if there is none in the object
+            if (!quotePhrase.author) {
+                quotePhrase.author = "Unknown"
+            }
+
+            // Adds the quote text to the quote html
+            quoteTXT.html(`<p>${quotePhrase.text}</p><br>
                      <p><em>"${quotePhrase.author}"</em></p>`);
-                showMainModal()
 
-            })
-            .catch((error) => {
-                console.error('Oops there was a problem...', error);
-            });
+            //Launch the main menu
+            showMainModal()
 
-
-        //-------------------------------------------- Show Main Modal ----------//
-        function showMainModal() {
-            // Display the Main Menu
-            mainMenu();
-
-            //source: https://github.com/kylefox/jquery-modal
-            mainModal.modal({
-                fadeDuration: 500, // Fade In
-                // Prevent user from closing the modal without a valid selection
-                escapeClose: false,
-                clickClose: false,
-                showClose: false
-            });
-        }
-
-        //--------------------------------------------- GUI/MENU ----------//
-        function mainMenu() {
-            MAIN_MENU.show();
-            HELP_MENU.hide();
-            SETTINGS_MENU.hide();
-            CLOSE_BUTTON.hide();
-        }
-
-        function helpMenu() {
-            MAIN_MENU.hide();
-            HELP_MENU.show();
-            SETTINGS_MENU.hide();
-            CLOSE_BUTTON.show();
-        }
-
-        function settingsMenu() {
-            MAIN_MENU.hide();
-            HELP_MENU.hide();
-            SETTINGS_MENU.show();
-            CLOSE_BUTTON.show();
-        }
-
-
-        //--------------------------------------------- MENU Button Presses ----------//
-
-        CLOSE_BUTTON.on("click touch", function () {
-            mainMenu();
+        })
+        .catch((error) => {
+            console.error('Oops there was a problem...', error);
         });
 
-        HELP_BUTTON.on("click touch", function () {
-            helpMenu();
+
+    //-------------------------------------------- Show Main Modal ----------//
+    function showMainModal() {
+        // Display the Main Menu
+        mainMenu();
+
+        //source: https://github.com/kylefox/jquery-modal
+        mainModal.modal({
+            fadeDuration: 250, // Fade In
+            // Prevent user from closing the modal without a valid selection
+            escapeClose: false,
+            clickClose: false,
+            showClose: false
         });
+    }
 
-        SETTINGS_BUTTON.on("click touch", function () {
-            settingsMenu();
-        });
+    //--------------------------------------------- GUI/MENU ----------//
+    function mainMenu() {
+        MAIN_MENU.show();
+        HELP_MENU.hide();
+        SETTINGS_MENU.hide();
+        CLOSE_BUTTON.hide();
+    }
 
-        MODE_NEXT_BUTTON.on("click touch", function () {
+    function helpMenu() {
+        MAIN_MENU.hide();
+        HELP_MENU.show();
+        SETTINGS_MENU.hide();
+        CLOSE_BUTTON.show();
+    }
 
-            if (currentGameMode < 3) {
-                currentGameMode++;
-                updateGameMode(this);
+    function settingsMenu() {
+        MAIN_MENU.hide();
+        HELP_MENU.hide();
+        SETTINGS_MENU.show();
+        CLOSE_BUTTON.show();
+    }
+
+
+    //--------------------------------------------- MENU Button Presses ----------//
+
+    CLOSE_BUTTON.on("click touch", function () {
+        mainMenu();
+    });
+
+    HELP_BUTTON.on("click touch", function () {
+        helpMenu();
+    });
+
+    SETTINGS_BUTTON.on("click touch", function () {
+        settingsMenu();
+    });
+
+    MODE_NEXT_BUTTON.on("click touch", function () {
+
+        if (currentGameMode < 3) {
+            currentGameMode++;
+            updateGameMode(this);
+        }
+    });
+
+    MODE_PREV_BUTTON.on("click touch", function () {
+
+        if (currentGameMode > 0) {
+            currentGameMode--;
+            updateGameMode(this);
+        }
+    });
+
+    //------------- Update the game mode
+    function updateGameMode(buttonObj) {
+
+        //Prev Button
+        if (buttonObj.id === "mode_prev_button") {
+            MODE_NEXT_BUTTON.removeClass("gray-out");
+
+            //(currentGameMode === 0) ? MODE_PREV_BUTTON.addClass("gray-out"):MODE_PREV_BUTTON.removeClass("gray-out");
+            if (currentGameMode === 0) {
+                MODE_PREV_BUTTON.addClass("gray-out");
             }
-        });
+        } else {
+            //Next Button
+            MODE_PREV_BUTTON.removeClass("gray-out");
 
-        MODE_PREV_BUTTON.on("click touch", function () {
-
-            if (currentGameMode > 0) {
-                currentGameMode--;
-                updateGameMode(this);
-            }
-        });
-
-        //------------- Update the game mode
-        function updateGameMode(buttonObj) {
-                //Prev Button
-            if (buttonObj.id === "mode_prev_button") {
-                MODE_NEXT_BUTTON.removeClass("gray-out");
-                if (currentGameMode === 0) {
-                    MODE_PREV_BUTTON.addClass("gray-out");
-                }
-            } else {
-                //Next Button
-                MODE_PREV_BUTTON.removeClass("gray-out");
-                if (currentGameMode === 3) {
-                    MODE_NEXT_BUTTON.addClass("gray-out");
-                }
-            }
-            //Change the game mode display text
-            GAME_MODE_TEXT.text(GAME_MODES[currentGameMode].name);
-            GAME_MODE_DESC.text(GAME_MODES[currentGameMode].desc);
-        }
-
-        PLAY_BUTTON.on("click touch", function () {
-            //-- Close any open modals --//
-            $.modal.close();
-            //-- Computers Turn --//
-            computerPlayRound(gameSpeed);
-            updateScore();
-        });
-
-
-        //---------- Play Sound ----------//
-        function playSound(sound) {
-            // play appropriate audio file
-            switch (sound) {
-                case "green":
-                    greenClassicAudio[0].play();
-                    break;
-                case "red":
-                    redClassicAudio[0].play();
-                    break;
-                case "yellow":
-                    yellowClassicAudio[0].play();
-                    break;
-                case "blue":
-                    blueClassicAudio[0].play();
-                    break;
+            if (currentGameMode === 3) {
+                MODE_NEXT_BUTTON.addClass("gray-out");
             }
         }
+        //Change the game mode display text
+        GAME_MODE_TEXT.text(GAME_MODES[currentGameMode].name);
+        GAME_MODE_DESC.text(GAME_MODES[currentGameMode].desc);
+    }
 
-        //---------- Colour buttons pressed ----------//
+    PLAY_BUTTON.one("click touch", function () {
 
-        function buttonPressed(button) {
+        //-- Close any open modals --//
+        $.modal.close();
+        //-- Computers Turn --//
+        computerPlayRound(gameSpeed);
+        updateScore();
+    });
 
-            switch (button) {
-                case "green":
-                    greenGameButton.addClass("game-button-pressed");
-                    setTimeout(function () {
-                        greenGameButton.removeClass("game-button-pressed");
-                    }, 100);
-                    break;
-                case "red":
-                    redGameButton.addClass("game-button-pressed");
-                    setTimeout(function () {
-                        redGameButton.removeClass("game-button-pressed");
-                    }, 100);
-                    break;
-                case "yellow":
-                    yellowGameButton.addClass("game-button-pressed");
-                    setTimeout(function () {
-                        yellowGameButton.removeClass("game-button-pressed");
-                    }, 100);
-                    break;
-                case "blue":
-                    blueGameButton.addClass("game-button-pressed");
-                    setTimeout(function () {
-                        blueGameButton.removeClass("game-button-pressed");
-                    }, 100);
-                    break;
-            }
-        }
+
+    //---------- Colour buttons pressed ----------//
+
+    function buttonPressed(button) {
+        //adds button pressed class
+        $(`#${button}-game-button`).addClass("game-button-pressed");
+        setTimeout(function () {
+            $(`#${button}-game-button`).removeClass("game-button-pressed");
+        }, 100);
+        //play button sound
+        $(`#${button}-classic-audio`)[0].play();
+    }
 
 
 //---------- Randomly add an element to the round array ----------//
-        function generateRound() {
-            let choices = ["red", "green", "blue", "yellow"];
-            roundArray.push(choices[Math.floor(Math.random() * choices.length)]);
+    function generateRound() {
+        let choices = ["red", "green", "blue", "yellow"];
+        roundArray.push(choices[Math.floor(Math.random() * choices.length)]);
 
-        }
+    }
 
 //        randomize round
-        function randomiseRound() {
-            if (roundArray.length < 2) {
+    function randomiseRound() {
+        if (roundArray.length < 2) {
+            generateRound();
+        } else {
+            let currentLength = roundArray.length + 1;
+            roundArray = [];
+            //randomise results based on the arrays elements
+            for (let i = 0; i < currentLength; i++) {
                 generateRound();
-            } else {
-                let currentLength = roundArray.length + 1;
-                roundArray = [];
-                //randomise results based on the arrays elements
-                for (let i = 0; i < currentLength; i++) {
-                    generateRound();
-                }
-            }
-
-        }
-
-
-//    level up
-        function levelUP() {
-            if (gameSpeed > 200) {
-                if (score % 5 === 0) {
-                    console.log("level up");
-                    gameSpeed -= 50;
-                }
             }
         }
+
+    }
+
 
 //---------- Computers Turn ----------//
-        function computerPlayRound(speed) {
-            setTimeout(function () {
-                //computer stop ring
-                gameCenterCircleBorder.addClass("center-circle-stop");
-                // player go ring
-                gameCenterCircleBorder.removeClass("center-circle-go");
-            }, gameSpeed);
-            //current choice
-            playerChoice = 0;
-            if (gameMode === 0) {
-                //generate next round element
-                generateRound();
-            } else if (gameMode === 1) {
-                randomiseRound();
-            }
+    function computerPlayRound(speed) {
+        // setTimeout(function () {
+        //     //computer stop ring
+        //     gameCenterCircleBorder.addClass("center-circle-stop");
+        //     // player go ring
+        //     gameCenterCircleBorder.removeClass("center-circle-go");
+        // }, gameSpeed);
 
-            //Player is deactivated
-            playerActive = false;
-            //Computer play Round
-            setTimeout(function () {
-                // delays between each round iteration
-                roundArray.forEach(function (value, ind) {
-                    setTimeout(function () {
-                        buttonPressed(value);
-                        playSound(value);
-                        if (ind + 1 === roundArray.length) {
-                            playerActive = true;
-                            playerRound();
-                        }
-                    }, ind * speed);
-                });
-            }, speed);
+        //current choice
+        playerChoice = 0;
+        if (gameMode === 0) {
+            //generate next round element
+            generateRound();
+        } else if (gameMode === 1) {
+            randomiseRound();
         }
+
+        var i = 0;
+
+        (function loop() {
+            console.log(i);
+            buttonPressed(roundArray[i]);
+            if (++i < roundArray.length) {
+                setTimeout(loop, gameSpeed);  // call myself in 3 seconds time if required
+            } else if (i === roundArray.length) {
+                setTimeout(function () {
+                    playerActive = true;
+                    playerRound();
+                }, gameSpeed)
+            }
+        })();
+        // Computer
+        // play
+        // Round
+        // setTimeout(function () {
+        //     // delays between each round iteration
+        //     roundArray.forEach(function (value, ind) {
+        //         setTimeout(function () {
+        //             buttonPressed(value);
+        //             if (ind + 1 === roundArray.length) {
+        //                 playerActive = true;
+        //                 playerRound();
+        //             }
+        //         }, ind * speed);
+        //     });
+        // }, speed);
+    }
 
 //---------- Players Turn ----------//
-        function playerRound() {
-            setTimeout(function () {
-                //computer stop ring
-                gameCenterCircleBorder.removeClass("center-circle-stop");
-                gameCenterCircleBorder.addClass("center-circle-go");
-                // player go ring
+    function playerRound() {
+        // setTimeout(function () {
+        //     //computer stop ring
+        //     gameCenterCircleBorder.removeClass("center-circle-stop");
+        //     gameCenterCircleBorder.addClass("center-circle-go");
+        //     // player go ring
+        //
+        // }, gameSpeed);
 
-            }, gameSpeed);
+        allGameButtons.unbind().on("click touch", function () {
 
-            allGameButtons.unbind().click(function () {
-                let pressed = this.dataset.button;
-                if (playerActive) {
-                    playSound(pressed);
-                    // buttonPressed(pressed);
-                    checkResult(pressed);
-                }
-            });
-        }
+            let button = this.dataset.button;
+
+            if (playerActive) {
+                buttonPressed(button);
+                checkResult(button);
+            }
+        });
+    }
 
 
 //---------- Check if player wins or loses ----------//
-        function checkResult(button) {
-            //Check if the players last last choice is correct
-            if (button === roundArray[playerChoice]) {
-                console.log("yes");
-                if (playerChoice + 1 === roundArray.length) {
-                    updateScore();
-                    console.log("Round WON!!!!");
-                    //wait a couple to give clear indication of next round
-                    setTimeout(function () {
-                        computerPlayRound(gameSpeed)
-                    }, gameSpeed / 2);
+    function checkResult(button) {
+        //Check if the players last last choice is correct
+        if (button === roundArray[playerChoice]) {
 
-                } else {
-                    playerChoice++;
-                    return true;
-                }
+            if (playerChoice + 1 === roundArray.length) {
+                updateScore();
+                setTimeout(function () {
+                    playerActive = false;
+                    computerPlayRound(gameSpeed)
+                }, gameSpeed);
+
+
             } else {
-                crackedButton(button);
-                console.log("nope");
-                gameOver();
-                return false;
+                //step
+                playerChoice++;
             }
-        }
 
-//---------- Play crack sound and display crack overlay if player loses ----------//
-        function crackedButton(button) {
+        } else {
+            //Player Failed!!
+            crackedButton(button);
+            gameOver();
 
-            switch (button) {
-                case "green":
-                    greenGameButton.addClass("cracked");
-                    crackAudio[0].play();
-                    break;
-
-                case "red":
-                    redGameButton.addClass("cracked");
-                    crackAudio[0].play();
-                    break;
-
-                case "yellow":
-                    yellowGameButton.addClass("cracked");
-                    crackAudio[0].play();
-                    break;
-
-                case "blue":
-                    blueGameButton.addClass("cracked");
-                    crackAudio[0].play();
-                    break;
-            }
-        }
-
-//---------- Update Score----------//
-        function updateScore() {
-            score++;
-            setTimeout(function () {
-                levelUP();
-                gameCenterCircle.text(score);
-            }, gameSpeed);
-
-        }
-
-//---------- Game Over ----------//
-        function gameOver() {
-            setTimeout(function () {
-                location.reload();
-            }, 500);
-            // location.reload();
         }
     }
-)
-;
+
+//---------- Play crack sound and display crack overlay if player loses ----------//
+    function crackedButton(button) {
+        $(`#${button}-game-button`).addClass("cracked");
+        crackAudio[0].play();
+    }
+
+//---------- Update Score----------//
+    function updateScore() {
+        score++;
+        //Level up if c=score is multiple of 5
+        if (gameSpeed > 200 && score % 5 === 0) {
+            gameSpeed -= 50;
+        }
+
+        gameCenterCircle.text(score);
+    }
+
+//---------- Game Over ----------//
+    function gameOver() {
+        setTimeout(function () {
+            location.reload();
+        }, 500);
+        // location.reload();
+    }
+})

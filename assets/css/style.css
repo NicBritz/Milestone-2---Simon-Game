@@ -267,14 +267,14 @@
 }
 
 /* activate button */
-.button-blue:active,
-.button-green:active,
-.button-yellow:active,
-.button-red:active {
-    -webkit-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    transform: scale(0.95);
-}
+/*.button-blue:active,*/
+/*.button-green:active,*/
+/*.button-yellow:active,*/
+/*.button-red:active {*/
+/*    -webkit-transform: scale(0.95);*/
+/*    -ms-transform: scale(0.95);*/
+/*    transform: scale(0.95);*/
+/*}*/
 
 /* Game button pressed */
 .game-button-pressed {
