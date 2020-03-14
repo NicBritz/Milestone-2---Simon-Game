@@ -31,19 +31,19 @@ const mainModal = $("#main-modal");
 const GAME_MODES = [
     {
         name: "CLASSIC",
-        desc: "This is the classic mode"
+        desc: "Repeat the steps in the order they are presented, each round will increase in length."
     },
     {
         name: "RANDOM",
-        desc: "This is the random mode"
+        desc: "Repeat the steps in the order they are presented, each round will be random and increase in length."
     },
     {
         name: "LAST-ONLY",
-        desc: "This is the last-only mode"
+        desc: "Repeat the steps in the order they were presented, only the final step will play back."
     },
     {
         name: "REVERSE",
-        desc: "This is the reverse mode"
+        desc: "Repeat the steps in a reverse order to which they are presented."
     }];
 const GAME_MODE_TEXT = $("#game-mode-text");
 const GAME_MODE_DESC = $("#mode_description");
@@ -73,6 +73,7 @@ let quotePhrase = {
     author: "Mother Teresa"
 };
 let gameEnd = false;
+let lastOnly = false;
 
 
 $(document).ready(function () {
@@ -268,6 +269,8 @@ $(document).ready(function () {
         $(`#${button}-classic-audio`)[0].play();
     }
 
+// -----------Last only ----------------//
+
 
 //---------- Randomly add an element to the round array ----------//
     function generateRound() {
@@ -322,22 +325,35 @@ $(document).ready(function () {
             //generate next round element
             generateRound();
         } else if (currentGameMode === 1) {
-            console.log("time to randonize");
+
             randomiseRound();
+        } else if (currentGameMode === 2) {
+            //Last Only
+            generateRound();
+            lastOnly = true;
+
         }
 
-        let i = 0;
+        if (lastOnly) {
+            setTimeout(function () {
+                buttonPressed(roundArray[roundArray.length-1]);
+                playerRound();
+            }, gameSpeed)
 
-        (function loop() {
-            buttonPressed(roundArray[i]);
-            if (++i < roundArray.length) {
-                setTimeout(loop, gameSpeed);  // call myself in 3 seconds time if required
-            } else if (i === roundArray.length) {
-                setTimeout(function () {
-                    playerRound();
-                }, gameSpeed)
-            }
-        })();
+        } else {
+            let i = 0;
+            (function loop() {
+                buttonPressed(roundArray[i]);
+                if (++i < roundArray.length) {
+                    setTimeout(loop, gameSpeed);  // call myself in 3 seconds time if required
+                } else if (i === roundArray.length) {
+                    setTimeout(function () {
+                        playerRound();
+                    }, gameSpeed)
+                }
+            })();
+        }
+
 
     }
 
