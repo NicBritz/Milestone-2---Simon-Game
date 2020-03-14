@@ -177,6 +177,37 @@
     padding: 0.5em;
 }
 
+.level-up img {
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.level-up {
+    background-color: rgba(0, 0, 0, 0);;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    transform: scale(0);
+}
+
+
+.scale-up {
+    animation: scale-animation 0.3s ease-in;
+}
+
+@keyframes scale-animation {
+    0% {
+        opacity: 1.0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+
+}
+
+
 .modal-play {
     width: 100%;
     padding: 1em 1em 1em 0;

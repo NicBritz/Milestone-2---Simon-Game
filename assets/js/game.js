@@ -6,6 +6,7 @@ const GREEN_GAME_BUTTON = $("#green-game-button");
 const RED_GAME_BUTTON = $("#red-game-button");
 const YELLOW_GAME_BUTTON = $("#yellow-game-button");
 const BLUE_GAME_BUTTON = $("#blue-game-button");
+const LEVEL_UP_TEXT = $("#level-up-text");
 
 //=================================================== NEW =====================//
 
@@ -172,19 +173,19 @@ $(document).ready(function () {
 
     //--------------------------------------------- MENU Button Presses ----------//
 
-    CLOSE_BUTTON.on("click touch", function () {
+    CLOSE_BUTTON.off().on("click touch", function () {
         mainMenu();
     });
 
-    HELP_BUTTON.on("click touch", function () {
+    HELP_BUTTON.off().on("click touch", function () {
         helpMenu();
     });
 
-    SETTINGS_BUTTON.on("click touch", function () {
+    SETTINGS_BUTTON.off().on("click touch", function () {
         settingsMenu();
     });
 
-    MODE_NEXT_BUTTON.on("click touch", function () {
+    MODE_NEXT_BUTTON.off().on("click touch", function () {
 
         if (currentGameMode < 3) {
             currentGameMode++;
@@ -192,7 +193,7 @@ $(document).ready(function () {
         }
     });
 
-    MODE_PREV_BUTTON.on("click touch", function () {
+    MODE_PREV_BUTTON.off().on("click touch", function () {
 
         if (currentGameMode > 0) {
             currentGameMode--;
@@ -200,7 +201,7 @@ $(document).ready(function () {
         }
     });
 
-    MENU_BUTTON.on("click touch", function () {
+    MENU_BUTTON.off().on("click touch", function () {
         mainMenu();
     });
 
@@ -228,7 +229,7 @@ $(document).ready(function () {
         GAME_MODE_DESC.text(GAME_MODES[currentGameMode].desc);
     }
 
-    PLAY_BUTTON.on("click touch", function () {
+    PLAY_BUTTON.off().on("click touch", function () {
         updateScore();
         //-- Close any open modals --//
         $.modal.close();
@@ -239,7 +240,7 @@ $(document).ready(function () {
 
     });
 
-    REPLAY_BUTTON.on("click touch", function () {
+    REPLAY_BUTTON.off().on("click touch", function () {
         updateScore();
         //-- Close any open modals --//
         $.modal.close();
@@ -453,10 +454,13 @@ $(document).ready(function () {
 
 //---------- Update Score----------//
     function updateScore() {
+
         score++;
-        //Level up if c=score is multiple of 5
+        LEVEL_UP_TEXT.removeClass("scale-up");
+        //Level up if score is multiple of 5
         if (gameSpeed > 200 && score % 5 === 0) {
-            gameSpeed -= 50;
+            LEVEL_UP_TEXT.addClass("scale-up");
+            gameSpeed -= 100;
         }
         if (score > bestScore) {
             bestScore = score - 1;
@@ -476,7 +480,6 @@ $(document).ready(function () {
         roundArray = [];
         score = 0;
         gameSpeed = 600;
-
         showMainModal();
 
     }
