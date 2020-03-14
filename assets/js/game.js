@@ -21,8 +21,8 @@ const HELP_BUTTON = $("#help_button > img");
 const SETTINGS_BUTTON = $("#settings_button > img");
 const PLAY_BUTTON = $("#play_button > img");
 const CLOSE_BUTTON = $("#close_button");
-const MODE_PREV_BUTTON = $("#mode_prev_button > img");
-const MODE_NEXT_BUTTON = $("#mode_next_button > img");
+const MODE_PREV_BUTTON = $("#mode_prev_button");
+const MODE_NEXT_BUTTON = $("#mode_next_button");
 const MENU_BUTTON = $("#main_menu_button > img");
 const REPLAY_BUTTON = $("#replay_button > img");
 
