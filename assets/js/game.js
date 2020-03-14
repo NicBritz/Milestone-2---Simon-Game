@@ -13,6 +13,7 @@ const BLUE_GAME_BUTTON = $("#blue-game-button");
 const MAIN_MENU = $("#main_menu");
 const HELP_MENU = $("#help_menu");
 const SETTINGS_MENU = $("#settings_menu");
+const GAME_OVER_MENU = $("#gameOver-menu");
 
 //=========== Buttons ================//
 const HELP_BUTTON = $("#help_button");
@@ -21,6 +22,8 @@ const PLAY_BUTTON = $("#play_button");
 const CLOSE_BUTTON = $("#close_button");
 const MODE_PREV_BUTTON = $("#mode_prev_button");
 const MODE_NEXT_BUTTON = $("#mode_next_button");
+const MENU_BUTTON = $("#main_menu_button");
+const REPLAY_BUTTON = $("#replay_button");
 
 //---------- Modals ----------//
 const mainModal = $("#main-modal");
@@ -59,15 +62,17 @@ const crackAudio = $("#crack-audio");
 
 //---------- Game Variables ----------//
 let gameSpeed = 600; // current speed the game is running
-let gameMode = 0; // Game Modes
+
 let roundArray = []; // current array of button presses for the round
 let playerActive = true; // sets the player to an active state
 let playerChoice = 0; //players current selection in the round
 let score = 0; //players score or level
+let bestScore = 0;
 let quotePhrase = {
     text: "Kind words can be short and easy to speak, but their echoes are truly endless.",
     author: "Mother Teresa"
 };
+let gameEnd = false;
 
 
 $(document).ready(function () {
@@ -108,8 +113,16 @@ $(document).ready(function () {
 
     //-------------------------------------------- Show Main Modal ----------//
     function showMainModal() {
-        // Display the Main Menu
-        mainMenu();
+
+        if (!gameEnd) {
+            // Display the Main Menu
+            mainMenu();
+        } else {
+            // Display Game Over
+            gameOverMenu();
+            gameEnd = false;
+        }
+
 
         //source: https://github.com/kylefox/jquery-modal
         mainModal.modal({
@@ -127,6 +140,8 @@ $(document).ready(function () {
         HELP_MENU.hide();
         SETTINGS_MENU.hide();
         CLOSE_BUTTON.hide();
+        GAME_OVER_MENU.hide();
+
     }
 
     function helpMenu() {
@@ -134,6 +149,7 @@ $(document).ready(function () {
         HELP_MENU.show();
         SETTINGS_MENU.hide();
         CLOSE_BUTTON.show();
+        GAME_OVER_MENU.hide();
     }
 
     function settingsMenu() {
@@ -141,6 +157,15 @@ $(document).ready(function () {
         HELP_MENU.hide();
         SETTINGS_MENU.show();
         CLOSE_BUTTON.show();
+        GAME_OVER_MENU.hide();
+    }
+
+    function gameOverMenu() {
+        MAIN_MENU.hide();
+        HELP_MENU.hide();
+        SETTINGS_MENU.hide();
+        CLOSE_BUTTON.hide();
+        GAME_OVER_MENU.show();
     }
 
 
@@ -174,6 +199,10 @@ $(document).ready(function () {
         }
     });
 
+    MENU_BUTTON.on("click touch", function () {
+        mainMenu();
+    });
+
     //------------- Update the game mode
     function updateGameMode(buttonObj) {
 
@@ -198,13 +227,26 @@ $(document).ready(function () {
         GAME_MODE_DESC.text(GAME_MODES[currentGameMode].desc);
     }
 
-    PLAY_BUTTON.one("click touch", function () {
-
+    PLAY_BUTTON.on("click touch", function () {
+        updateScore();
         //-- Close any open modals --//
         $.modal.close();
         //-- Computers Turn --//
-        computerPlayRound(gameSpeed);
+        setTimeout(function () {
+            computerPlayRound(gameSpeed);
+        }, 300)
+
+    });
+
+    REPLAY_BUTTON.on("click touch", function () {
         updateScore();
+        //-- Close any open modals --//
+        $.modal.close();
+        //-- Computers Turn --//
+        setTimeout(function () {
+            computerPlayRound(gameSpeed);
+        }, 300)
+
     });
 
 
@@ -215,7 +257,7 @@ $(document).ready(function () {
         $(`#${button}-game-button`).addClass("game-button-pressed");
         setTimeout(function () {
             $(`#${button}-game-button`).removeClass("game-button-pressed");
-        }, 100);
+        }, 200);
 
         //Pause current audio
         $("audio").each(function (snd) {
@@ -270,14 +312,17 @@ $(document).ready(function () {
 
 //---------- Computers Turn ----------//
     function computerPlayRound() {
+
+        console.log(GAME_MODES[currentGameMode].name);
         deactivatePlayer();
 
         //current choice
         playerChoice = 0;
-        if (gameMode === 0) {
+        if (currentGameMode === 0) {
             //generate next round element
             generateRound();
-        } else if (gameMode === 1) {
+        } else if (currentGameMode === 1) {
+            console.log("time to randonize");
             randomiseRound();
         }
 
@@ -366,6 +411,10 @@ $(document).ready(function () {
     function crackedButton(button) {
         $(`#${button}-game-button`).addClass("cracked");
         crackAudio[0].play();
+
+        setTimeout(function () {
+            $(`#${button}-game-button`).removeClass("cracked");
+        }, 500)
     }
 
 //---------- Update Score----------//
@@ -375,15 +424,27 @@ $(document).ready(function () {
         if (gameSpeed > 200 && score % 5 === 0) {
             gameSpeed -= 50;
         }
+        if (score > bestScore) {
+            bestScore = score - 1;
+        }
 
         gameCenterCircle.text(score);
+
     }
 
 //---------- Game Over ----------//
     function gameOver() {
-        setTimeout(function () {
-            location.reload();
-        }, 500);
-        // location.reload();
+
+        gameEnd = true;
+        $("#current-score").text(score - 1);
+        $("#best-score").text(bestScore);
+        $("#mode-text").text(GAME_MODES[currentGameMode].name);
+        roundArray = [];
+        score = 0;
+        gameSpeed = 600;
+
+        showMainModal();
+
     }
-})
+
+});

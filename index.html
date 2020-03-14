@@ -26,7 +26,7 @@
     <!-------------------------------- Main Menu ------------------>
     <div id="main_menu">
         <!--  Main title text -->
-        <div class="modal-title" id="title"><img alt="Simon Says title text" src="assets/images/Title.png"></div>
+        <div class="modal-title" id="title"><img alt="Simon title text" src="assets/images/Title.png"></div>
         <!--  Quote Text  -->
         <div class="quote-txt-box" id="quote-txt"></div>
         <!--  Menu buttons-->
@@ -102,6 +102,46 @@
         <div id="mode_description" class="mode-desc-text"><p>This is the classic mode</p></div>
 
     </div>
+    <!-------------------------------- GameOver Menu ------------------>
+    <div id="gameOver-menu">
+        <!--  Main title text -->
+        <div class="modal-title" id="game-over-text"><img alt="Game Over text" src="assets/images/GameOver.png"></div>
+        <!--  Score text -->
+        <div class="settings-items" id="score">
+            <div class="settings-menu"><p>Results</p></div>
+
+        </div>
+        <div class="row">
+            <!--            current round score-->
+            <div class="col2 score"><p>Score:</p></div>
+            <div id="current-score" class="col2 score"><p>20</p></div>
+
+        </div>
+        <div class="row">
+            <!--            best score -->
+            <div class="col2 score"><p>Best:</p></div>
+            <div id="best-score" class="col2 score"><p>50</p></div>
+
+        </div>
+
+        <div class="row">
+            <!--            Game Mode -->
+            <div class="col2 score"><p>Mode:</p></div>
+            <div id="mode-text" class="col2 score"><p></p></div>
+
+        </div>
+
+        <!--  Menu buttons-->
+        <div class="row">
+
+            <div class="col3 modal-play" id="replay_button"><img alt="replay button image"
+                                                                 src="assets/images/Replay%20btn.png">
+            </div>
+            <div class="col3 modal-settings" id="main_menu_button"><img alt="main menu button image"
+                                                                        src="assets/images/Menu%20btn.png"></div>
+        </div>
+
+    </div>
     <!--   Close Button -->
     <div class="modal-close"><img alt="close icon" class="close" id="close_button" src="assets/images/X%20icon.png"/>
     </div>
@@ -123,20 +163,20 @@
             data-button="red"
             id="red-game-button">
 
-        <div id="green-button-overlay" class="cracked"></div>
+        <div id="red-button-overlay" class="cracked"></div>
     </div>
     <div
             class="button-yellow "
             data-button="yellow"
             id="yellow-game-button"
     >
-        <div id="green-button-overlay" class="cracked"></div>
+        <div id="yellow-button-overlay" class="cracked"></div>
     </div>
     <div
             class="button-blue "
             data-button="blue"
             id="blue-game-button">
-        <div id="green-button-overlay" class="cracked"></div>
+        <div id="blue-button-overlay" class="cracked"></div>
     </div>
 
     <!-- Main game center circle -->
