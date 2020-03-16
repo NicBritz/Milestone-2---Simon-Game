@@ -31,7 +31,8 @@ const crackAudio = $("#crack-audio");
 
 //audio delay??
 
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const audioCtx = new AudioContext();
 
 let currentGameMode = 0;
 let gameSpeed = 600; // current speed the game is running
