@@ -28,6 +28,11 @@ const redClassicAudio = $("#red-classic-audio");
 const yellowClassicAudio = $("#yellow-classic-audio");
 const blueClassicAudio = $("#blue-classic-audio");
 const crackAudio = $("#crack-audio");
+
+//audio delay??
+
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
 let currentGameMode = 0;
 let gameSpeed = 600; // current speed the game is running
 let roundArray = []; // current array of button presses for the round
