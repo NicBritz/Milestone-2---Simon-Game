@@ -354,12 +354,12 @@
     box-shadow: inset 0 0 40px #ff0000;
 }
 
-.center-circle-stop {
+.circle-red {
     -webkit-box-shadow: inset 0 0 40px #ff0000;
     box-shadow: inset 0 0 40px #ff0000;
 }
 
-.center-circle-go {
+.circle-green {
     -webkit-box-shadow: inset 0 0 40px #00ff00;
     box-shadow: inset 0 0 40px #00ff00;
 }

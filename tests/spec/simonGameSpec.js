@@ -9,7 +9,7 @@ describe("Simon Says Game", function () {
         });
 
         it("There should be a valid allGameButtons jQuery object", function () {
-            expect(allGameButtons).toBeInstanceOf(Object);
+            expect(ALL_GAME_BUTTONS).toBeInstanceOf(Object);
         });
 
         it("There should be a valid greenGameButton jQuery object", function () {

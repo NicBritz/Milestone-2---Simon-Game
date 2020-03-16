@@ -19,8 +19,8 @@
 
     <title>Simon Game</title>
 </head>
-<body>
 
+<body >
 <!-- Main modal  -->
 <div class="modal" id="main-modal">
     <!-------------------------------- Main Menu ------------------>
@@ -99,7 +99,8 @@
             </div>
         </div>
 
-        <div id="mode_description" class="mode-desc-text"><p>Repeat the steps in the order they are presented, each round will increase in length.</p></div>
+        <div id="mode_description" class="mode-desc-text"><p>Repeat the steps in the order they are presented, each
+            round will increase in length.</p></div>
 
     </div>
     <!-------------------------------- GameOver Menu ------------------>
@@ -181,30 +182,34 @@
 
     <!-- Main game center circle -->
 </div>
-<div class="center-circle" id="game-center-circle">
-
+<div class="center-circle" id="center-circle">
 </div>
 <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
 <!--Level Up -->
 <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
 
 <!-- Imports audio files -->
-<audio id="green-classic-audio">
-    <source src="assets/sounds/green-classic-audio.wav" type="audio/wav"/>
+<audio id="green-classic-audio" preload="auto">
+    <source src="assets/sounds/green-classic-audio.ogg" type="audio/ogg"/>
+    <source src="assets/sounds/green-classic-audio.mp3" type="audio/mpeg"/>
 </audio>
-<audio id="red-classic-audio">
-    <source src="assets/sounds/red-classic-audio.wav" type="audio/wav"/>
+<audio id="red-classic-audio" preload="auto">
+    <source src="assets/sounds/red-classic-audio.ogg" type="audio/ogg"/>
+    <source src="assets/sounds/red-classic-audio.mp3" type="audio/mpeg"/>
 </audio>
-<audio id="yellow-classic-audio">
-    <source src="assets/sounds/yellow-classic-audio.wav" type="audio/wav"/>
+<audio id="yellow-classic-audio" preload="auto">
+    <source src="assets/sounds/yellow-classic-audio.ogg" type="audio/ogg"/>
+    <source src="assets/sounds/yellow-classic-audio.mp3" type="audio/mpeg"/>
 </audio>
-<audio id="blue-classic-audio">
-    <source src="assets/sounds/blue-classic-audio.wav" type="audio/wav"/>
+<audio id="blue-classic-audio" preload="auto">
+    <source src="assets/sounds/blue-classic-audio.ogg" type="audio/ogg"/>
+    <source src="assets/sounds/blue-classic-audio.mp3" type="audio/mpeg"/>
 </audio>
 
 <!--crack sound -->
-<audio id="crack-audio">
-    <source src="assets/sounds/Crack.wav" type="audio/wav"/>
+<audio id="crack-audio" preload="auto">
+    <source src="assets/sounds/Crack.ogg" type="audio/ogg"/>
+    <source src="assets/sounds/Crack.mp3" type="audio/mpeg"/>
 </audio>
 <!-- All Scripts -->
 <!-- link to jQuery -->
@@ -216,6 +221,7 @@
 
 <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
 <!-- links to my main JavaScript file -->
 <script src="assets/js/game.js" type="text/javascript"></script>
 
