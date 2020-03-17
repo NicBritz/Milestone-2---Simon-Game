@@ -12,25 +12,20 @@ const SETTINGS_MENU = $("#settings_menu"); // Settings Menu Area
 const GAME_OVER_MENU = $("#gameOver-menu"); // Game Over Menu Area
 const HELP_BUTTON = $("#help_button > img"); // The Help Button
 const SETTINGS_BUTTON = $("#settings_button > img"); // The Settings Button
-const PLAY_BUTTON = $("#play_button > img");
 const CLOSE_BUTTON = $("#close_button");
 const MODE_PREV_BUTTON = $("#mode_prev_button");
 const MODE_NEXT_BUTTON = $("#mode_next_button");
 const MENU_BUTTON = $("#main_menu_button > img");
-const REPLAY_BUTTON = $("#replay_button > img");
 const mainModal = $("#main-modal");
 const GAME_MODE_TEXT = $("#game-mode-text");
 const GAME_MODE_DESC = $("#mode_description");
 const QUOTE_URL = "https://type.fit/api/quotes";
 const quoteTXT = $("#quote-txt");
-const greenClassicAudio = $("#green-classic-audio");
-const redClassicAudio = $("#red-classic-audio");
-const yellowClassicAudio = $("#yellow-classic-audio");
-const blueClassicAudio = $("#blue-classic-audio");
+
 const crackAudio = $("#crack-audio");
 
-//audio delay??
-
+//Fix Audio Lag in safari browsers
+// https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
@@ -273,7 +268,6 @@ function playerRound() {
 
     GREEN_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
         if (playerActive) {
             buttonPressed(button);
             checkResult(button);
@@ -282,7 +276,6 @@ function playerRound() {
     });
     RED_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
         if (playerActive) {
             buttonPressed(button);
             checkResult(button);
@@ -291,7 +284,6 @@ function playerRound() {
     });
     BLUE_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
         if (playerActive) {
             buttonPressed(button);
             checkResult(button);
@@ -300,7 +292,6 @@ function playerRound() {
     });
     YELLOW_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
         if (playerActive) {
             buttonPressed(button);
             checkResult(button);
@@ -413,22 +404,15 @@ $(document).ready(function () {
             console.error('Oops there was a problem...', error);
         });
 
-    //--------------------------------------------- MENU Button Presses ----------//
+    //--------------------------------------------- BUTTONS ---------------------------------------------//
+    MENU_BUTTON.off().on("click touch", mainMenu);
+    CLOSE_BUTTON.off().on("click touch", mainMenu);
+    HELP_BUTTON.off().on("click touch", helpMenu);
+    SETTINGS_BUTTON.off().on("click touch", settingsMenu);
 
-    CLOSE_BUTTON.off().on("click touch", function () {
-        mainMenu();
-    });
-
-    HELP_BUTTON.off().on("click touch", function () {
-        helpMenu();
-    });
-
-    SETTINGS_BUTTON.off().on("click touch", function () {
-        settingsMenu();
-    });
 
     MODE_NEXT_BUTTON.off().on("click touch", function () {
-
+        //-- go to next game mode --//
         if (currentGameMode < 3) {
             currentGameMode++;
             updateGameMode(this);
@@ -436,38 +420,22 @@ $(document).ready(function () {
     });
 
     MODE_PREV_BUTTON.off().on("click touch", function () {
-
+        //-- go to previous game mode --//
         if (currentGameMode > 0) {
             currentGameMode--;
             updateGameMode(this);
         }
     });
 
-    MENU_BUTTON.off().on("click touch", function () {
-        mainMenu();
-    });
-
-
-    PLAY_BUTTON.off().on("click touch", function () {
+    //-- Start the game when the Play or Replay buttons are pressed --//
+    $(".play").off().on("click touch", function () {
         updateScore();
         //-- Close any open modals --//
         $.modal.close();
-        //-- Computers Turn --//
+        //-- Start the game with the computers turn after 300ms--//
         setTimeout(function () {
             computerPlayRound(gameSpeed);
-        }, 300)
-
-    });
-
-    REPLAY_BUTTON.off().on("click touch", function () {
-        updateScore();
-        //-- Close any open modals --//
-        $.modal.close();
-        //-- Computers Turn --//
-        setTimeout(function () {
-            computerPlayRound(gameSpeed);
-        }, 300)
-
+        }, 300);
     });
 
 

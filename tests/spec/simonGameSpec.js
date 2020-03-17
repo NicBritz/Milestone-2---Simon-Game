@@ -1,86 +1,150 @@
 //define main test
-describe("Simon Says Game", function () {
+describe("Simon Game", function () {
 
-    describe("Constants and Variable tests", function () {
-
-        //---------- Button selectors ----------//
-        it("There should be a valid gameCenterCircle jQuery object", function () {
-            expect(gameCenterCircle).toBeInstanceOf(Object);
+    //----------PLAY / Replay BUTTON---------//
+    describe("Play and Replay Buttons", function () {
+        beforeEach(function () {
+            $("play").click();
         });
 
-        it("There should be a valid allGameButtons jQuery object", function () {
-            expect(ALL_GAME_BUTTONS).toBeInstanceOf(Object);
+        it("should have been defined", function () {
+            expect($("play")).toBeDefined();
         });
 
-        it("There should be a valid greenGameButton jQuery object", function () {
-            expect(GREEN_GAME_BUTTON).toBeInstanceOf(Object);
+        it("should trigger the update score function", function () {
+            spyOn(window, "updateScore");
+            updateScore();
+            expect(window.updateScore).toHaveBeenCalled();
         });
 
-        it("There should be a valid redGameButton jQuery object", function () {
-            expect(RED_GAME_BUTTON).toBeInstanceOf(Object);
-        });
+        // https://makandracards.com/makandra/32477-testing-settimeout-and-setinterval-with-jasmine
+        it("should start the computers round after 300ms", function () {
+            spyOn(window, "computerPlayRound");
+            jasmine.clock().install();
 
-        it("There should be a valid yellowGameButton jQuery object", function () {
-            expect(YELLOW_GAME_BUTTON).toBeInstanceOf(Object);
-        });
+            setTimeout(function () {
+                computerPlayRound(600);
+            }, 300);
 
-        it("There should be a valid blueGameButton jQuery object", function () {
-            expect(BLUE_GAME_BUTTON).toBeInstanceOf(Object);
-        });
+            expect(window.computerPlayRound).not.toHaveBeenCalled();
 
-        //---------- Audio selectors ----------//
+            jasmine.clock().tick(300);
 
-        it("There should be a valid greenClassicAudio jQuery object", function () {
-            expect(greenClassicAudio).toBeInstanceOf(Object);
-        });
+            expect(window.computerPlayRound).toHaveBeenCalled();
 
-        it("There should be a valid redClassicAudio jQuery object", function () {
-            expect(redClassicAudio).toBeInstanceOf(Object);
-        });
-
-        it("There should be a valid yellowClassicAudio jQuery object", function () {
-            expect(yellowClassicAudio).toBeInstanceOf(Object);
-        });
-
-        it("There should be a valid blueClassicAudio jQuery object", function () {
-            expect(blueClassicAudio).toBeInstanceOf(Object);
-        });
-
-        it("There should be a valid playButton jQuery object", function () {
-            expect(playButton).toBeInstanceOf(Object);
-        });
-
-        ///---------- Modals ----------//
-        it("There should be a valid mainModal jQuery object", function () {
-            expect(mainModal).toBeInstanceOf(Object);
-        });
-
-        //---------- Game Variables ----------//
-        it("The gameSpeed variable should have a valid number > 500", function () {
-            expect(gameSpeed).toBeInstanceOf(Number);
-            expect(gameSpeed).toBeGreaterThan(500);
-        });
-
-        it("The roundArray variable should be a valid object of length 0", function () {
-            expect(roundArray).toBeInstanceOf(Object);
-            expect(roundArray.length).toBe(0);
-        });
-
-        it("The playerActive variable should be a valid boolean of value true", function () {
-            expect(playerActive).toBeInstanceOf(Boolean);
-            expect(playerActive).toBe(true);
-        });
-
-        it("The playerChoice variable should be a valid number of value 0", function () {
-            expect(playerChoice).toBeInstanceOf(Number);
-            expect(playerChoice).toBe(0);
-        });
-
-        it("The score variable should be a valid number of value 0", function () {
-            expect(score).toBeInstanceOf(Number);
-            expect(score).toBe(0);
-        });
+            jasmine.clock().uninstall();
+        })
 
     });
+
+
+    //----------Menu BUTTON---------/ /
+    describe("Menu Button", function () {
+
+        beforeEach(function () {
+            MENU_BUTTON.click();
+        });
+
+        it("should have a defined constant", function () {
+            expect(MENU_BUTTON).toBeDefined();
+        });
+
+        it("should trigger the main menu function", function () {
+            spyOn(window, "mainMenu");
+            mainMenu();
+            expect(window.mainMenu).toHaveBeenCalled();
+        });
+    });
+
+    //----------Mode Prev BUTTON---------/ /
+    describe("Mode Previous Button", function () {
+
+        beforeEach(function () {
+            MODE_PREV_BUTTON.click();
+        });
+
+        it("should have a defined constant", function () {
+            expect(MODE_PREV_BUTTON).toBeDefined();
+        });
+
+        it("should trigger the update game mode function", function () {
+            spyOn(window, "updateGameMode");
+            updateGameMode(this);
+            expect(window.updateGameMode).toHaveBeenCalled();
+        });
+    });
+
+    //----------Mode Next BUTTON---------/ /
+    describe("Mode Next Button", function () {
+
+        beforeEach(function () {
+            MODE_NEXT_BUTTON.click();
+        });
+
+        it("should have a defined constant", function () {
+            expect(MODE_NEXT_BUTTON).toBeDefined();
+        });
+
+        it("should trigger the update game mode function", function () {
+            spyOn(window, "updateGameMode");
+            updateGameMode(this);
+            expect(window.updateGameMode).toHaveBeenCalled();
+        });
+    })
+
+    //----------Settings BUTTON---------/ /
+    describe("Settings Button", function () {
+
+        beforeEach(function () {
+            SETTINGS_BUTTON.click();
+        });
+
+        it("should have a defined constant", function () {
+            expect(SETTINGS_BUTTON).toBeDefined();
+        });
+
+        it("should trigger the Settings Menu function", function () {
+            spyOn(window, "settingsMenu");
+            settingsMenu();
+            expect(window.settingsMenu).toHaveBeenCalled();
+        });
+    })
+
+    //----------Help BUTTON---------/ /
+    describe("Help Button", function () {
+
+        beforeEach(function () {
+            HELP_BUTTON.click();
+        });
+
+        it("should have a defined constant", function () {
+            expect(HELP_BUTTON).toBeDefined();
+        });
+
+        it("should trigger the Help Menu function", function () {
+            spyOn(window, "helpMenu");
+            helpMenu();
+            expect(window.helpMenu).toHaveBeenCalled();
+        });
+    });
+
+    //----------Close BUTTON---------/ /
+    describe("Close Button", function () {
+
+        beforeEach(function () {
+            CLOSE_BUTTON.click();
+        });
+
+        it("should have a defined constant", function () {
+            expect(CLOSE_BUTTON).toBeDefined();
+        });
+
+        it("should trigger the Main Menu function", function () {
+            spyOn(window, "mainMenu");
+            mainMenu();
+            expect(window.mainMenu).toHaveBeenCalled();
+        });
+    })
+
 });
 
