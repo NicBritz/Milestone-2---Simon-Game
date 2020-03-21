@@ -1,4 +1,4 @@
-//---------------------------------------- Constants --------------------------------------------------//
+//-- Constants --//
 const CENTER_CIRCLE = $("#center-circle");// Center Score Circle
 const ALL_GAME_BUTTONS = $("#game-buttons > div"); // All The Game Buttons
 const GREEN_GAME_BUTTON = $("#green-game-button"); // Green Button
@@ -10,41 +10,14 @@ const MAIN_MENU = $("#main_menu"); // Main Menu Area
 const HELP_MENU = $("#help_menu"); // Help Menu Area
 const SETTINGS_MENU = $("#settings_menu"); // Settings Menu Area
 const GAME_OVER_MENU = $("#gameOver-menu"); // Game Over Menu Area
-const HELP_BUTTON = $("#help_button > img"); // The Help Button
-const SETTINGS_BUTTON = $("#settings_button > img"); // The Settings Button
-const PLAY_BUTTON = $("#play_button > img");
-const CLOSE_BUTTON = $("#close_button");
-const MODE_PREV_BUTTON = $("#mode_prev_button");
-const MODE_NEXT_BUTTON = $("#mode_next_button");
-const MENU_BUTTON = $("#main_menu_button > img");
-const REPLAY_BUTTON = $("#replay_button > img");
-const mainModal = $("#main-modal");
-const GAME_MODE_TEXT = $("#game-mode-text");
-const GAME_MODE_DESC = $("#mode_description");
-const QUOTE_URL = "https://type.fit/api/quotes";
-const quoteTXT = $("#quote-txt");
-const greenClassicAudio = $("#green-classic-audio");
-const redClassicAudio = $("#red-classic-audio");
-const yellowClassicAudio = $("#yellow-classic-audio");
-const blueClassicAudio = $("#blue-classic-audio");
-const crackAudio = $("#crack-audio");
-
-//audio delay??
-
+const CLOSE_BUTTON = $("#close_button");// Close Button
+const MODE_PREV_BUTTON = $("#mode_prev_button"); // Previous Button
+const MODE_NEXT_BUTTON = $("#mode_next_button"); // Next Button
+/* Fix Audio Lag in safari browsers:
+* https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari*/
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
-
-let currentGameMode = 0;
-let gameSpeed = 600; // current speed the game is running
-let roundArray = []; // current array of button presses for the round
-let playerActive = true; // sets the player to an active state
-let playerChoice = 0; //players current selection in the round
-let score = 0; //players score or level
-let bestScore = 0;
-let gameEnd = false;
-let lastOnly = false;
-let reverse = false;
-
+//-- Game Modes object --//
 const GAME_MODES = [
     {
         name: "CLASSIC",
@@ -63,27 +36,72 @@ const GAME_MODES = [
         desc: "Repeat the steps in a reverse order to which they are presented."
     }];
 
-let quotePhrase = {
-    text: "Kind words can be short and easy to speak, but their echoes are truly endless.",
-    author: "Mother Teresa"
-};
+//-- Variables --//
+let currentGameMode, quotePhrases;
+let gameSpeed = 600; // current speed the game is running
+let roundArray = []; // current array of button presses for the round
+let playerActive = true; // sets the player to an active state
+let playerChoice = 0; //players current selection in the round
+let score = 0; //players current score
+let bestScore = 0;// best score
+let gameEnd = false; // game ended
+let lastOnly = false; // last only mode
+let reverse = false; // reverse mode
 
-//-------------------------------------------- Show Main Modal ----------//
+//-- GUI/MENU --//
+function fetchQuote() {
+    /*from https://type.fit/api/quotes found
+    *via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
+    * ----------------------------------------------------------*/
+    fetch("https://type.fit/api/quotes")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('No network response');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // add data to quote phrases
+            quotePhrases = data;
+            //Launch the main menu
+            showMainModal()
+
+        })
+        .catch((error) => {
+            //catch any errors
+            console.error('Oops there was a problem...', error);
+        });
+}
+
+//-- Pick a random quote --//
+function pickQuote() {
+    let phrase = quotePhrases[Math.floor(Math.random() * quotePhrases.length)];
+    // Add Unknown author if there is none in the object
+    if (!phrase.author) {
+        phrase.author = "Unknown"
+    }
+    // Adds the quote text to the quote html
+    $(".quote-txt").html(`<p>${phrase.text}</p><br>
+                     <p><em>"${phrase.author}"</em></p>`);
+}
+
+//-- Show Main Modal --//
 function showMainModal() {
-
+    pickQuote();
     if (!gameEnd) {
-        // Display the Main Menu
+        // pick a random quote
+
+        // Display the Main Menu if it is a new game
         mainMenu();
     } else {
-        // Display Game Over
+        //pickQuote();
+        // Display Game Over if game has ended
         gameOverMenu();
         gameEnd = false;
     }
-
-
     //source: https://github.com/kylefox/jquery-modal
-    mainModal.modal({
-        fadeDuration: 200, // Fade In
+    $("#main-modal").modal({
+        fadeDuration: 200, // Fade In/Out
         // Prevent user from closing the modal without a valid selection
         escapeClose: false,
         clickClose: false,
@@ -91,47 +109,48 @@ function showMainModal() {
     });
 }
 
-//--------------------------------------------- GUI/MENU ----------//
+//-- Show Main Menu --//
 function mainMenu() {
     MAIN_MENU.show();
     HELP_MENU.hide();
     SETTINGS_MENU.hide();
     CLOSE_BUTTON.hide();
     GAME_OVER_MENU.hide();
-
 }
 
+//-- Show Help Menu --//
 function helpMenu() {
-    MAIN_MENU.hide();
     HELP_MENU.show();
-    SETTINGS_MENU.hide();
     CLOSE_BUTTON.show();
+    MAIN_MENU.hide();
+    SETTINGS_MENU.hide();
     GAME_OVER_MENU.hide();
 }
 
+//-- Show Settings Menu --//
 function settingsMenu() {
-    MAIN_MENU.hide();
-    HELP_MENU.hide();
     SETTINGS_MENU.show();
     CLOSE_BUTTON.show();
+    MAIN_MENU.hide();
+    HELP_MENU.hide();
     GAME_OVER_MENU.hide();
 }
 
+//-- Show GameOver Menu --//
 function gameOverMenu() {
+    GAME_OVER_MENU.show();
     MAIN_MENU.hide();
     HELP_MENU.hide();
     SETTINGS_MENU.hide();
     CLOSE_BUTTON.hide();
-    GAME_OVER_MENU.show();
 }
 
-//------------- Update the game mode
-function updateGameMode(buttonObj) {
 
+//-- Change the game mode --//
+function updateGameMode(buttonObj) {
     //Prev Button
     if (buttonObj.id === "mode_prev_button") {
         MODE_NEXT_BUTTON.removeClass("gray-out");
-
         //(currentGameMode === 0) ? MODE_PREV_BUTTON.addClass("gray-out"):MODE_PREV_BUTTON.removeClass("gray-out");
         if (currentGameMode === 0) {
             MODE_PREV_BUTTON.addClass("gray-out");
@@ -145,41 +164,30 @@ function updateGameMode(buttonObj) {
         }
     }
     //Change the game mode display text
-    GAME_MODE_TEXT.text(GAME_MODES[currentGameMode].name);
-    GAME_MODE_DESC.text(GAME_MODES[currentGameMode].desc);
+    $("#game-mode-text").text(GAME_MODES[currentGameMode].name);
+    $("#mode_description").text(GAME_MODES[currentGameMode].desc);
 }
 
 //---------- Colour buttons pressed ----------//
-
 function buttonPressed(button) {
-    //adds button pressed class
+    //animates the button being pressed
     $(`#${button}-game-button`).addClass("game-button-pressed");
     setTimeout(function () {
         $(`#${button}-game-button`).removeClass("game-button-pressed");
     }, 200);
-
-    //Pause current audio
-
-
+    //Play the Audio
     let snd = $(`#${button}-classic-audio`)[0];
-    // disableSounds();
     snd.currentTime = 0;
-    snd.play()
-    //play button sound
-    // colorAudio.currentTime = 0;
-    // colorAudio.play();
-
+    snd.play();
 }
 
-
-//---------- Randomly add an element to the round array ----------//
+//-- Randomly generate the next round step --//
 function generateRound() {
     let choices = ["red", "green", "blue", "yellow"];
     roundArray.push(choices[Math.floor(Math.random() * choices.length)]);
-
 }
 
-//        randomize round
+//-- randomize reach round --//
 function randomiseRound() {
     if (roundArray.length < 2) {
         generateRound();
@@ -191,9 +199,9 @@ function randomiseRound() {
             generateRound();
         }
     }
-
 }
 
+//-- Deactivate the player  --//
 function deactivatePlayer() {
     playerActive = false;
     GREEN_GAME_BUTTON.off();
@@ -201,159 +209,150 @@ function deactivatePlayer() {
     BLUE_GAME_BUTTON.off();
     YELLOW_GAME_BUTTON.off();
     CENTER_CIRCLE.removeClass("circle-green").addClass("circle-red");
-    ALL_GAME_BUTTONS.removeClass("active")
+    ALL_GAME_BUTTONS.removeClass("active");
 }
 
+//-- Activate the player --//
 function activatePlayer() {
-    playerActive = true;
     CENTER_CIRCLE.removeClass("circle-red").addClass("circle-green");
-    ALL_GAME_BUTTONS.addClass("active")
+    ALL_GAME_BUTTONS.addClass("active");
 }
 
-
-//---------- Computers Turn ----------//
+//-- Computers turn --//
 function computerPlayRound() {
+    deactivatePlayer();//Deactivates the player
+    playerChoice = 0;//Resets the players current choice;
+    //Checks the Current GameMode  and plays accordingly;
+    switch (currentGameMode) {
+        case 0:
+            //Classic Game Mode
+            reverse = false;
+            lastOnly = false;
+            generateRound();
+            break;
 
-    deactivatePlayer();
+        case 1:
+            //Random Game Mode
+            reverse = false;
+            randomiseRound();
+            lastOnly = false;
+            break;
 
-    //current choice
-    playerChoice = 0;
-    if (currentGameMode === 0) {
-        reverse = false;
-        //Classic Mode
-        generateRound();
-        lastOnly = false;
-    } else if (currentGameMode === 1) {
-        //Random Mode
-        reverse = false;
-        randomiseRound();
-        lastOnly = false;
-    } else if (currentGameMode === 2) {
-        //Last Only Mode
-        reverse = false;
-        generateRound();
-        lastOnly = true;
-    } else if (currentGameMode === 3) {
-        //Reverse
-        lastOnly = false;
-        reverse = true;
-        generateRound();
+        case 2:
+            //Last Only Game Mode
+            reverse = false;
+            generateRound();
+            lastOnly = true;
+            break;
+
+        case 3:
+            //Reverse Game Mode
+            lastOnly = false;
+            reverse = true;
+            generateRound();
+            break;
+
+        default:
+            //Classic Game Mode
+            currentGameMode = 0;
+            reverse = false;
+            lastOnly = false;
+            generateRound();
+            break;
     }
 
     if (lastOnly) {
         setTimeout(function () {
-            buttonPressed(roundArray[roundArray.length - 1]);
-            playerRound();
+            buttonPressed(roundArray[roundArray.length - 1]);//Play only last sound
+            playerRound();//Players Turn
         }, gameSpeed)
-
     } else {
-
+        //animate play each step
+        //https://scottiestech.info/2014/07/01/javascript-fun-looping-with-a-delay/
         let i = 0;
         (function loop() {
             buttonPressed(roundArray[i]);
             if (++i < roundArray.length) {
-                setTimeout(loop, gameSpeed);  // call myself in 3 seconds time if required
+                setTimeout(loop, gameSpeed); // call self again if needed
             } else if (i === roundArray.length) {
                 setTimeout(function () {
                     if (reverse) {
-                        roundArray.reverse();
+                        roundArray.reverse();//reverse the array if in reverse mode
                     }
-                    playerRound();
+                    playerRound();//players turn
                 }, gameSpeed)
             }
         })();
     }
-
-
 }
 
-//---------- Players Turn ----------//
+//-- Players Turn--//
 function playerRound() {
-    activatePlayer();
+    activatePlayer();//activate the player
 
+    //Green Button
     GREEN_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
-        if (playerActive) {
-            buttonPressed(button);
-            checkResult(button);
-        }
-
+        buttonPressed(button);//Play audio and animation
+        checkResult(button);//check the result
     });
+    //Red Button
     RED_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
-        if (playerActive) {
-            buttonPressed(button);
-            checkResult(button);
-        }
-
+        buttonPressed(button);
+        checkResult(button);
     });
+    //Blue button
     BLUE_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
-        if (playerActive) {
-            buttonPressed(button);
-            checkResult(button);
-        }
-
+        buttonPressed(button);
+        checkResult(button);
     });
+    //Yellow button
     YELLOW_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
-        console.log(button);
-        if (playerActive) {
-            buttonPressed(button);
-            checkResult(button);
-        }
-
+        buttonPressed(button);
+        checkResult(button);
     });
-
 }
 
-
-//---------- Check if player wins or loses ----------//
+//-- Check if player wins or loses --//
 function checkResult(button) {
-
     //normal order
     if (button !== roundArray[playerChoice]) {
         //Player Failed!!
-        crackedButton(button);
-        gameOver();
+        crackedButton(button);// show the crack image on the relevant button
+        gameOver();//game is over
     } else {
         if (playerChoice + 1 === roundArray.length) {
-            //Round over
+            //Fires when the round is over
             setTimeout(function () {
                 if (reverse) {
-                    roundArray.reverse();
+                    roundArray.reverse();// puts round back to original order
                 }
-                computerPlayRound();
-                updateScore();
+                computerPlayRound();//Computers turn
+                updateScore();//Update the score
             }, 800)
-
         }
     }
-
-
-    playerChoice++
-
+    playerChoice++ //Increment the players choice index
 }
 
-//---------- Play crack sound and display crack overlay if player loses ----------//
+//-- Play crack sound and display crack overlay if player loses --//
 function crackedButton(button) {
     $(`#${button}-game-button`).addClass("cracked");
-    crackAudio[0].play();
+    $("#crack-audio")[0].play();
 
     setTimeout(function () {
         $(`#${button}-game-button`).removeClass("cracked");
     }, 500)
 }
 
-//---------- Update Score----------//
+//-- Update the Score --//
 function updateScore() {
-
-    score++;
+    score++;//add one to the score
     LEVEL_UP_TEXT.removeClass("scale-up");
-    //Level up if score is multiple of 5
+    //speed up if score is multiple of 5
     if (gameSpeed > 200 && score % 5 === 0) {
         LEVEL_UP_TEXT.addClass("scale-up");
         gameSpeed -= 100;
@@ -361,115 +360,57 @@ function updateScore() {
     if (score > bestScore) {
         bestScore = score - 1;
     }
-
-    $("#game-circle-txt").text(score);
-
+    $("#game-circle-txt").text(score);//change score on center circle
 }
 
-//---------- Game Over ----------//
+//-- Game Over --//
 function gameOver() {
-
     gameEnd = true;
-    $("#current-score").text(score - 1);
-    $("#best-score").text(bestScore);
-    $("#mode-text").text(GAME_MODES[currentGameMode].name);
-    roundArray = [];
-    score = 0;
-    gameSpeed = 600;
-    showMainModal();
-
+    $("#current-score").text(score - 1);//update current score text
+    $("#best-score").text(bestScore);//update best score text
+    $("#mode-text").text(GAME_MODES[currentGameMode].name); //update game mode text
+    roundArray = [];//reset the round
+    score = 0;//reset the score
+    gameSpeed = 600;//reset the game speed
+    showMainModal();//show the modal
 }
 
+
+//---------- Document Ready ----------//
 $(document).ready(function () {
-    /*---------- Fetch a random Quote from Quotes API ---------->
-*from https://type.fit/api/quotes found
-*via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
-* ----------------------------------------------------------*/
-    fetch(QUOTE_URL)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('No network response');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            // Fetch a random quote form the retrieved Json file
-            quotePhrase = data[Math.floor(Math.random() * data.length)];
+    //-- Fetch a quote and display the main modal once the dom is ready
+    fetchQuote();
 
-            // Add Unknown author if there is none in the object
-            if (!quotePhrase.author) {
-                quotePhrase.author = "Unknown"
-            }
-
-            // Adds the quote text to the quote html
-            quoteTXT.html(`<p>${quotePhrase.text}</p><br>
-                     <p><em>"${quotePhrase.author}"</em></p>`);
-
-            //Launch the main menu
-            showMainModal()
-
-        })
-        .catch((error) => {
-            console.error('Oops there was a problem...', error);
-        });
-
-    //--------------------------------------------- MENU Button Presses ----------//
-
-    CLOSE_BUTTON.off().on("click touch", function () {
-        mainMenu();
-    });
-
-    HELP_BUTTON.off().on("click touch", function () {
-        helpMenu();
-    });
-
-    SETTINGS_BUTTON.off().on("click touch", function () {
-        settingsMenu();
-    });
-
+    //-- Add event listeners to the buttons BUTTONS --//
+    $("#main_menu_button > img").off().on("click touch", mainMenu);// Main Menu Button
+    $("#help_button > img").off().on("click touch", helpMenu); // Help Menu Button
+    $("#settings_button > img").off().on("click touch", settingsMenu); // Settings Menu Button
+    CLOSE_BUTTON.off().on("click touch", mainMenu);// Close Menu Button
+    //Next Button
     MODE_NEXT_BUTTON.off().on("click touch", function () {
-
+        //-- go to next game mode --//
         if (currentGameMode < 3) {
             currentGameMode++;
             updateGameMode(this);
         }
     });
-
+    //Previous Button
     MODE_PREV_BUTTON.off().on("click touch", function () {
-
+        //-- go to previous game mode --//
         if (currentGameMode > 0) {
             currentGameMode--;
             updateGameMode(this);
         }
     });
-
-    MENU_BUTTON.off().on("click touch", function () {
-        mainMenu();
-    });
-
-
-    PLAY_BUTTON.off().on("click touch", function () {
+    //-- Start the game when the Play or Replay buttons are pressed --//
+    $(".play").off().on("click touch", function () {
         updateScore();
         //-- Close any open modals --//
         $.modal.close();
-        //-- Computers Turn --//
+        //-- Start the game with the computers turn after 300ms--//
         setTimeout(function () {
             computerPlayRound(gameSpeed);
-        }, 300)
-
+        }, 300);
     });
-
-    REPLAY_BUTTON.off().on("click touch", function () {
-        updateScore();
-        //-- Close any open modals --//
-        $.modal.close();
-        //-- Computers Turn --//
-        setTimeout(function () {
-            computerPlayRound(gameSpeed);
-        }, 300)
-
-    });
-
-
 })
 ;

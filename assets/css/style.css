@@ -37,6 +37,14 @@
     text-align: center;
     font-size: 1em;
     padding: 1em;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    /*border-top: 3px solid #ff0000;*/
+    /*border-right: 3px solid #ff0000;*/
+    border: 1px solid rgba(255, 0, 0, .4);
+    /*border-left: 2px solid #ff0000;*/
+    border-radius: 1em;
 }
 
 .gray-out {
@@ -51,6 +59,7 @@
     font-size: 1em;
     padding: 2em;
     text-align: center;
+    margin: 1em;
 }
 
 .row {
@@ -220,23 +229,36 @@
 .modal-settings img,
 .modal-close img,
 .modal-next img,
-.modal-prev img {
-    -webkit-transition: all .2s;
-    -o-transition: all .2s;
+.modal-prev img,
+.social img,
+.social-fb img {
     transition: all .2s;
+}
+
+.social-space {
+    display: inline-block;
+    width: 50%;
+}
+
+.social {
+    display: inline;
+    width: 50%;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* Button Hover*/
 .modal-play img:hover,
 .modal-help img:hover,
-.modal-settings img:hover,
 .modal-close img:hover,
 .modal-next img:hover,
-.modal-prev img:hover {
+.modal-prev img:hover,
+.social img:hover,
+.social-fb img:hover,
+.modal-settings img:hover {
+
     cursor: -webkit-grab;
     cursor: grab;
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
 
