@@ -38,15 +38,15 @@ describe("Simon Game", function () {
     });
 
 
-    //----------Menu BUTTON---------/ /
+    //----------Menu BUTTON---------//
     describe("Menu Button", function () {
 
         beforeEach(function () {
-            MENU_BUTTON.click();
+            $("#main_menu_button > img").click();
         });
 
-        it("should have a defined constant", function () {
-            expect(MENU_BUTTON).toBeDefined();
+        it("should have been defined", function () {
+            expect($("#main_menu_button > img")).toBeDefined();
         });
 
         it("should trigger the main menu function", function () {
@@ -56,7 +56,7 @@ describe("Simon Game", function () {
         });
     });
 
-    //----------Mode Prev BUTTON---------/ /
+    //----------Mode Prev BUTTON---------//
     describe("Mode Previous Button", function () {
 
         beforeEach(function () {
@@ -74,7 +74,7 @@ describe("Simon Game", function () {
         });
     });
 
-    //----------Mode Next BUTTON---------/ /
+    //----------Mode Next BUTTON---------//
     describe("Mode Next Button", function () {
 
         beforeEach(function () {
@@ -92,15 +92,15 @@ describe("Simon Game", function () {
         });
     })
 
-    //----------Settings BUTTON---------/ /
+    //----------Settings BUTTON---------//
     describe("Settings Button", function () {
 
         beforeEach(function () {
-            SETTINGS_BUTTON.click();
+            $("#settings_button > img").click();
         });
 
-        it("should have a defined constant", function () {
-            expect(SETTINGS_BUTTON).toBeDefined();
+        it("should have been defined", function () {
+            expect($("#settings_button > img")).toBeDefined();
         });
 
         it("should trigger the Settings Menu function", function () {
@@ -110,15 +110,15 @@ describe("Simon Game", function () {
         });
     })
 
-    //----------Help BUTTON---------/ /
+    //----------Help BUTTON---------//
     describe("Help Button", function () {
 
         beforeEach(function () {
-            HELP_BUTTON.click();
+            $("#help_button > img").click();
         });
 
-        it("should have a defined constant", function () {
-            expect(HELP_BUTTON).toBeDefined();
+        it("should have been defined", function () {
+            expect($("#help_button > img")).toBeDefined();
         });
 
         it("should trigger the Help Menu function", function () {
@@ -128,7 +128,7 @@ describe("Simon Game", function () {
         });
     });
 
-    //----------Close BUTTON---------/ /
+    //----------Close BUTTON---------//
     describe("Close Button", function () {
 
         beforeEach(function () {
@@ -144,7 +144,37 @@ describe("Simon Game", function () {
             mainMenu();
             expect(window.mainMenu).toHaveBeenCalled();
         });
-    })
+    });
+
+    describe("Game Over Function", function () {
+
+        it("should have been defined", function () {
+            expect(gameOver).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "gameOver");
+            gameOver();
+            expect(window.gameOver).toHaveBeenCalled();
+        });
+
+        it("should set the game End variable to true", function () {
+            spyOn(window, "gameOver");
+            gameOver();
+            gameEnd = true;
+            expect(gameEnd).toBeTrue();
+        });
+
+        it("should set the current score text", function () {
+            $("#current-score").text("2");
+
+            expect($("p")).toHaveText('hi')
+
+
+        });
+
+
+    });
 
 });
 
