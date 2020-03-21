@@ -1,15 +1,23 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
-
 /* ---------- Global CSS ---------- */
+
 * {
-    background-color: #000000;
     padding: 0;
     margin: 0;
 }
 
+.main {
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+}
+
 /* ---------- Main Modal ---------- */
 
-/* modal styling*/
+.row-grid {
+    display: grid;
+}
+
 .modal {
     background-color: black;
     padding: 5px;
@@ -18,11 +26,9 @@
     max-width: 600px;
 }
 
-/* Title Text */
 .modal-title {
     padding: 5% 5% 0 5%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0);
 }
 
 /* Title Image */
@@ -59,11 +65,10 @@
     font-size: 1em;
     padding: 2em;
     text-align: center;
-    margin: 1em;
 }
 
 .row {
-
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
 }
 
@@ -216,50 +221,35 @@
 
 }
 
-
 .modal-play {
     width: 100%;
-    padding: 1em 1em 1em 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 
 /* Play Button properties*/
-.modal-play img,
-.modal-help img,
-.modal-settings img,
-.modal-close img,
-.modal-next img,
-.modal-prev img,
-.social img,
-.social-fb img {
+.btn {
     transition: all .2s;
+}
+
+/* Button Hover*/
+.btn:hover {
+    cursor: grab;
+    transform: scale(1.1);
 }
 
 .social-space {
     display: inline-block;
-    width: 50%;
+    width: 80%;
 }
 
-.social {
+.social-fb,
+.social-tw {
     display: inline;
     width: 50%;
     padding: 1em;
     background-color: rgba(0, 0, 0, 0);
-}
-
-/* Button Hover*/
-.modal-play img:hover,
-.modal-help img:hover,
-.modal-close img:hover,
-.modal-next img:hover,
-.modal-prev img:hover,
-.social img:hover,
-.social-fb img:hover,
-.modal-settings img:hover {
-
-    cursor: -webkit-grab;
-    cursor: grab;
-    transform: scale(1.1);
 }
 
 
@@ -268,17 +258,7 @@
 /*crack Image https://www.searchpng.com/download-png/?imageid=3548*/
 /* Cracked */
 .cracked {
-    /*https://css-tricks.com/tinted-images-multiple-backgrounds/*/
-    /*background: -webkit-gradient(*/
-    /*        linear,*/
-    /*        left top, left bottom,*/
-    /*        from(rgba(128, 128, 128, 0.1)),*/
-    /*        to(rgba(128, 128, 128, 0.1))*/
-    /*), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;*/
-    /*background: -o-linear-gradient(*/
-    /*        rgba(255, 172, 0, 0.1),*/
-    /*        rgba(255, 50, 50, 0.1)*/
-    /*), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;*/
+
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
             rgba(0, 0, 0, 0.2)
@@ -286,12 +266,6 @@
     background-size: cover;
     bottom: 50%;
     right: 50%;
-    /*background:*/
-    /* top, transparent red, faked with gradient */
-    /*linear-gradient(*/
-    /*  rgba(255, 0, 0, 0),*/
-    /*  rgba(255, 0, 0, 0.0)*/
-    /*);*/
 }
 
 .overlay {
@@ -313,6 +287,14 @@
     -webkit-box-shadow: inset 0 0 20px #000000;
     box-shadow: inset 0 0 20px #000000;
 
+}
+
+.social-tw {
+    text-align: right;
+}
+
+.social-fb {
+    text-align: left;
 }
 
 .active {
@@ -481,10 +463,41 @@
         margin: 0;
     }
 
+    .modal-title img {
+        width: 90%;
+    }
+
     /* resizing the quote text*/
     .quote-txt-box {
-        font-size: 1em;
+        font-size: 0.9em;
         padding: 0.5em;
+    }
+
+    .score {
+        font-size: 1em;
+    }
+
+    .modal-prev,
+    .modal-next {
+        text-align: center;
+    }
+
+    .spacer {
+        margin-bottom: 2em;
+    }
+
+    /* help text */
+    .help-txt-box {
+        font-size: 0.8em;
+    }
+
+
+    .help-txt-box h1 {
+        font-size: 1.5em;
+    }
+
+    .help-txt-box h2 {
+        font-size: 1.2em;
     }
 }
 
@@ -523,10 +536,16 @@
 
     /* resizing game title text */
     .modal-title {
-        height: 90px;
+        height: 60px;
         padding-top: 0;
-        padding-bottom: 1em;
+        margin-bottom: 2em;
     }
+
+    .game-over-txt {
+        padding: 0;
+        margin: 0;
+    }
+
 
     /* resizing the modal */
     .modal {
@@ -537,8 +556,41 @@
 
     /* resizing the quote text*/
     .quote-txt-box {
-        font-size: 1em;
+        font-size: 0.9em;
         padding: 0.5em;
+        margin: 0.5em;
+    }
+
+    .score {
+        font-size: 0.8em;
+    }
+
+    .settings-menu {
+        font-size: 1.5em;
+    }
+
+    .settings-items {
+        padding: 0;
+    }
+
+    .modal-replay,
+    .modal-play {
+        margin: 0;
+
+    }
+
+    /* help text */
+    .help-txt-box {
+        font-size: 0.8em;
+    }
+
+
+    .help-txt-box h1 {
+        font-size: 1.5em;
+    }
+
+    .help-txt-box h2 {
+        font-size: 1.2em;
     }
 
 

@@ -37,7 +37,8 @@ const GAME_MODES = [
     }];
 
 //-- Variables --//
-let currentGameMode, quotePhrases;
+let currentGameMode =0;
+let quotePhrases;
 let gameSpeed = 600; // current speed the game is running
 let roundArray = []; // current array of button presses for the round
 let playerActive = true; // sets the player to an active state

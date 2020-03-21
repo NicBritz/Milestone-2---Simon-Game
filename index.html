@@ -31,13 +31,13 @@
         <div class="quote-txt-box quote-txt" id="main-menu-quote"></div>
         <!--  Menu buttons-->
         <div class="row">
-            <div class="col3 modal-help" id="help_button"><img alt="help button image"
+            <div class="col3 modal-help" id="help_button"><img class="btn" alt="help button image"
                                                                src="assets/images/Help%20btn.png">
             </div>
-            <div class="col3 modal-play" id="play_button"><img class="play" alt="play button image"
+            <div class="col3 modal-play" id="play_button"><img class="btn play " alt="play button image"
                                                                src="assets/images/Play%20btn.png">
             </div>
-            <div class="col3 modal-settings" id="settings_button"><img alt="settings button image"
+            <div class="col3 modal-settings" id="settings_button"><img class="btn" alt="settings button image"
                                                                        src="assets/images/Settings%20btn.png"></div>
         </div>
 
@@ -89,13 +89,13 @@
         </div>
         <div class="row" id="difficulty-settings">
             <!-- Previous Mode -->
-            <div class="col3 modal-prev gray-out" id="mode_prev_button"><img alt="prev button image"
+            <div class="col3 modal-prev gray-out" id="mode_prev_button"><img class="btn" alt="prev button image"
                                                                              src="assets/images/Back%20btn.png">
             </div>
             <!-- Mode Text -->
             <div class="col3 settings-txt"><p id="game-mode-text">CLASSIC</p></div>
             <!-- Next Mode -->
-            <div class="col3 modal-next" id="mode_next_button"><img alt="next button image"
+            <div class="col3 modal-next" id="mode_next_button"><img class="btn" alt="next button image"
                                                                     src="assets/images/Forward%20btn.png">
             </div>
         </div>
@@ -107,7 +107,8 @@
     <!-------------------------------- GameOver Menu ------------------>
     <div id="gameOver-menu">
         <!--  Main title text -->
-        <div class="modal-title" id="game-over-text"><img alt="Game Over text" src="assets/images/GameOver.png"></div>
+        <div class="modal-title game-over-txt" id="game-over-text"><img alt="Game Over text"
+                                                                        src="assets/images/GameOver.png"></div>
         <!--  Score text -->
         <div class="settings-items" id="score">
             <div class="settings-menu"><p>Results</p></div>
@@ -132,70 +133,80 @@
             <div id="mode-text" class="col2 score"><p></p></div>
 
         </div>
-        <!--  Quote Text  -->
-        <div class="quote-txt-box quote-txt" id="game-over-quote"></div>
+
 
         <!--  Menu buttons-->
-        <div class="row">
-
-            <div class="col3 modal-play" id="replay_button"><img class="play" alt="replay button image"
-                                                                 src="assets/images/Replay%20btn.png">
+        <div class="row spacer">
+            <div class="col3 social-tw "><a href="https://www.twitter.com/" target="_blank"><img class="btn"
+                                                                                                 src="assets/images/Twitter.png"
+                                                                                                 alt="Twitter icon image"></a>
             </div>
-            <div class="col3 modal-settings" id="main_menu_button"><img alt="main menu button image"
-                                                                        src="assets/images/Menu%20btn.png"></div>
+
+            <div class="col3 modal-play modal-replay " id="replay_button"><img class="btn play"
+                                                                               alt="replay button image"
+                                                                               src="assets/images/Replay%20btn.png">
+            </div>
+
+            <div class="col3 modal-settings " id="main_menu_button"><img class="btn" alt="main menu button image"
+                                                                         src="assets/images/Menu%20btn.png"></div>
+
+
+            <div class="col3 social-fb "><a href="https://www.facebook.com/" target="_blank"><img class="btn"
+                                                                                                  src="assets/images/Fb.png"
+                                                                                                  alt="FaceBook icon image"></a>
+            </div>
 
         </div>
-        <div class="social-space">
-                <div class=" social"><img src="assets/images/Twitter.png" alt="Twitter icon image"></div>
-                <div class=" social"><img src="assets/images/Fb.png" alt="FaceBook icon image"></div>
-            </div>
+
     </div>
 
     <!--   Close Button -->
-    <div class="modal-close"><img alt="close icon" class="close" id="close_button" src="assets/images/X%20icon.png"/>
+    <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
+                                  src="assets/images/X%20icon.png"/>
     </div>
 
 </div>
 
+<div class="main">
 
-<!-- Main game buttons -->
-<div id="game-buttons">
-    <div
-            class="button-green"
-            data-button="green"
-            id="green-game-button"
-    >
-        <div id="green-button-overlay" class="cracked"></div>
-    </div>
-    <div
-            class="button-red "
-            data-button="red"
-            id="red-game-button">
+    <!-- Main game buttons -->
+    <div id="game-buttons">
+        <div
+                class="button-green"
+                data-button="green"
+                id="green-game-button"
+        >
+            <div id="green-button-overlay" class="cracked"></div>
+        </div>
+        <div
+                class="button-red "
+                data-button="red"
+                id="red-game-button">
 
-        <div id="red-button-overlay" class="cracked"></div>
-    </div>
-    <div
-            class="button-yellow "
-            data-button="yellow"
-            id="yellow-game-button"
-    >
-        <div id="yellow-button-overlay" class="cracked"></div>
-    </div>
-    <div
-            class="button-blue "
-            data-button="blue"
-            id="blue-game-button">
-        <div id="blue-button-overlay" class="cracked"></div>
-    </div>
+            <div id="red-button-overlay" class="cracked"></div>
+        </div>
+        <div
+                class="button-yellow "
+                data-button="yellow"
+                id="yellow-game-button"
+        >
+            <div id="yellow-button-overlay" class="cracked"></div>
+        </div>
+        <div
+                class="button-blue "
+                data-button="blue"
+                id="blue-game-button">
+            <div id="blue-button-overlay" class="cracked"></div>
+        </div>
 
-    <!-- Main game center circle -->
+        <!-- Main game center circle -->
+    </div>
+    <div class="center-circle" id="center-circle">
+    </div>
+    <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
+    <!--Level Up -->
+    <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
 </div>
-<div class="center-circle" id="center-circle">
-</div>
-<div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
-<!--Level Up -->
-<div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
-
 <!-- Imports audio files -->
 <audio id="green-classic-audio" preload="auto">
     <source src="assets/sounds/green-classic-audio.ogg" type="audio/ogg"/>
