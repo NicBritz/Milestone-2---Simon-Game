@@ -5,44 +5,45 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta name="Description"
           content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz ">
-
     <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" rel="stylesheet"/>
-
     <!-- link to my StyleSheet -->
     <link href="assets/css/style.css" rel="stylesheet"/>
-
     <title>Simon Game</title>
 </head>
 
 <body>
 <main id="main_screen">
+
     <!-- Main modal  -->
     <div class="modal" id="main-modal">
+
         <!-------------------------------- Main Menu ------------------>
         <div id="main_menu">
-            <!--  Main title text -->
+            <!--  Main title logo -->
             <div class="Simon-Logo" id="title"><img alt="Simon title text" src="assets/images/Title.png"></div>
-            <!--  Quote Text  -->
+            <!--  Quote Text Box  -->
             <div class="quote-txt-box" id="main-menu-quote"></div>
             <!--  Menu buttons-->
             <div class="row">
+                <!--  Help Button -->
                 <div class="col3 help-button" id="help_button"><img class="btn" alt="help button image"
                                                                     src="assets/images/Help%20btn.png">
                 </div>
+                <!--  Play Button-->
                 <div class="col3 play-button" id="play_button"><img class="btn play " alt="play button image"
                                                                     src="assets/images/Play%20btn.png">
                 </div>
+                <!--  Settings Button -->
                 <div class="col3 modal-settings" id="settings_button"><img class="btn" alt="settings button image"
                                                                            src="assets/images/Settings%20btn.png"></div>
             </div>
-
         </div>
+
         <!-------------------------------- Help Menu ------------------>
         <div id="help_menu">
-            <!--  https://www.ultraboardgames.com/simon/game-rules.php -->
+            <!-- some help from:  https://www.ultraboardgames.com/simon/game-rules.php -->
             <div class="help-txt-box" id="help-txt">
-
                 <h1>Instructions</h1>
                 <h2>Object of the Game</h2>
                 <br>
@@ -55,17 +56,14 @@
                                      src="assets/images/Play%20btn.png"></span> and Simon will give the first signal.
                 </p>
 
-
                 <h2>Classic Game Mode</h2>
                 <br>
                 <p> Repeat the steps in the order they are presented, each round will increase in length.</p>
-
 
                 <h2>Random Game Mode</h2>
                 <br>
                 <p> Repeat the steps in the order they are presented, each round will be random and increase in
                     length.</p>
-
 
                 <h2>Last-Only Game Mode</h2>
                 <br>
@@ -74,21 +72,19 @@
                     to present the entire sequence, each round
                     will increase in length. </p>
 
-
                 <h2>Reverse Game Mode</h2>
                 <br>
                 <p> Repeat the steps in a reverse order to which they are presented, each round
                     will increase in length. </p>
                 <br>
 
-
                 <p> Continue playing
                     as long as you can, repeat each sequence of signals correctly. After every 5th signal in a sequence,
                     Simon automatically speeds up. If you fail to repeat a sequence exactly then it's <strong>GAME
                         OVER</strong>.
                 </p></div>
-
         </div>
+
         <!-------------------------------- Settings Menu ------------------>
         <div id="settings_menu">
             <!-- Game Modes -->
@@ -110,8 +106,8 @@
 
             <div id="mode_description" class="mode-desc-text"><p>Repeat the steps in the order they are presented, each
                 round will increase in length.</p></div>
-
         </div>
+
         <!-------------------------------- GameOver Menu ------------------>
         <div id="gameOver-menu">
             <!--  Main title text -->
@@ -120,103 +116,99 @@
             <!--  Score text -->
             <div class="settings-items" id="score">
                 <div class="settings-menu"><p>Results</p></div>
-
             </div>
             <div class="row">
-                <!--            current round score-->
+                <!--  current round score-->
                 <div class="col2 score"><p>Score:</p></div>
                 <div id="current-score" class="col2 score"><p>20</p></div>
 
             </div>
             <div class="row">
-                <!--            best score -->
+                <!--   best score -->
                 <div class="col2 score"><p>Best:</p></div>
                 <div id="best-score" class="col2 score"><p>50</p></div>
-
             </div>
-
             <div class="row">
-                <!--            Game Mode -->
+                <!-- Current Game Mode -->
                 <div class="col2 score"><p>Mode:</p></div>
                 <div id="mode-text" class="col2 score"><p></p></div>
-
             </div>
 
-
-            <!--  Menu buttons-->
+            <!--  Menu Buttons -->
             <div class="row spacer">
+                <!--  Twitter Button-->
                 <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"><img class="btn"
                                                                                                            src="assets/images/Twitter.png"
                                                                                                            alt="Twitter icon image"></a>
                 </div>
-
+                <!--  Replay Button -->
                 <div class="col3 play-button modal-replay " id="replay_button"><img class="btn play"
                                                                                     alt="replay button image"
                                                                                     src="assets/images/Replay%20btn.png">
                 </div>
-
+                <!--  Main Menu Button -->
                 <div class="col3 modal-settings " id="main_menu_button"><img class="btn" alt="main menu button image"
                                                                              src="assets/images/Menu%20btn.png"></div>
 
-
+                <!--  Facebook Button -->
                 <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"><img class="btn"
                                                                                                              src="assets/images/Fb.png"
                                                                                                              alt="FaceBook icon image"></a>
                 </div>
-
             </div>
-
         </div>
 
         <!--   Close Button -->
         <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
                                       src="assets/images/X%20icon.png"/>
         </div>
-
     </div>
 
-    <div class="main">
-
-        <!-- Main game buttons -->
-        <div id="game-buttons">
-            <div
-                    class="button-green"
-                    data-button="green"
-                    id="green-game-button"
-            >
-                <div id="green-button-overlay" class="cracked"></div>
-            </div>
-            <div
-                    class="button-red "
-                    data-button="red"
-                    id="red-game-button">
-
-                <div id="red-button-overlay" class="cracked"></div>
-            </div>
-            <div
-                    class="button-yellow "
-                    data-button="yellow"
-                    id="yellow-game-button"
-            >
-                <div id="yellow-button-overlay" class="cracked"></div>
-            </div>
-            <div
-                    class="button-blue "
-                    data-button="blue"
-                    id="blue-game-button">
-                <div id="blue-button-overlay" class="cracked"></div>
-            </div>
-
-            <!-- Main game center circle -->
+    <!-------------------------------- Main Game Play Buttons ------------------>
+    <div id="game-buttons">
+        <!--  Green Button -->
+        <div
+                class="button-green"
+                data-button="green"
+                id="green-game-button"
+        >
+            <div id="green-button-overlay" class="cracked"></div>
         </div>
-        <div class="center-circle" id="center-circle">
+        <!--   Red Button -->
+        <div
+                class="button-red "
+                data-button="red"
+                id="red-game-button">
+
+            <div id="red-button-overlay" class="cracked"></div>
         </div>
-        <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
-        <!--Level Up -->
-        <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
+        <!--   Yellow Button -->
+        <div
+                class="button-yellow "
+                data-button="yellow"
+                id="yellow-game-button"
+        >
+            <div id="yellow-button-overlay" class="cracked"></div>
+        </div>
+        <!--   Blue Button -->
+        <div
+                class="button-blue "
+                data-button="blue"
+                id="blue-game-button">
+            <div id="blue-button-overlay" class="cracked"></div>
+        </div>
     </div>
+    <!-- Main game center circle -->
+    <div class="center-circle" id="center-circle">
+    </div>
+    <!-- Center Score text -->
+    <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
+    <!--Level Up -->
+    <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
+
 </main>
-<!-- Imports audio files -->
+
+<!-------------------------------- Audio Imports ------------------>
 <audio id="green-classic-audio" preload="auto">
     <source src="assets/sounds/green-classic-audio.ogg" type="audio/ogg"/>
     <source src="assets/sounds/green-classic-audio.mp3" type="audio/mpeg"/>
@@ -233,29 +225,26 @@
     <source src="assets/sounds/blue-classic-audio.ogg" type="audio/ogg"/>
     <source src="assets/sounds/blue-classic-audio.mp3" type="audio/mpeg"/>
 </audio>
-<!--click sound -->
+<!-- click sound -->
 <audio id="click-audio" preload="auto">
     <source src="assets/sounds/click2.ogg" type="audio/ogg"/>
     <source src="assets/sounds/click2.mp3" type="audio/mpeg"/>
 </audio>
-
 <!--crack sound -->
 <audio id="crack-audio" preload="auto">
     <source src="assets/sounds/Crack.ogg" type="audio/ogg"/>
     <source src="assets/sounds/Crack.mp3" type="audio/mpeg"/>
 </audio>
-<!-- All Scripts -->
-<!-- link to jQuery -->
+<!-------------------------------- Scripts ------------------>
+<!-- Jquery -->
 <script
         crossorigin="anonymous"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         src="https://code.jquery.com/jquery-3.4.1.min.js"
 ></script>
-
 <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-<!-- links to my main JavaScript file -->
+<!-- main Game Script -->
 <script src="assets/js/game.js" type="text/javascript"></script>
 
 </body>

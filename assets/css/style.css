@@ -14,7 +14,7 @@ body {
     padding: 0;
 }
 
-.main {
+main {
     width: 100vw;
     height: 100vh;
     background-color: #000000;
@@ -72,6 +72,7 @@ body {
     width: 100%;
     margin-top: 1em;
 }
+
 /*Help Button*/
 .help-button {
     position: absolute;
@@ -516,6 +517,12 @@ body {
     .social-tw {
         padding: 2em 0;
     }
+
+    .level-up {
+        left: -35%;
+    }
+
+
 }
 
 /* ---------- Mobile S-M-L => Landscape ---------- */
@@ -550,6 +557,7 @@ body {
         line-height: 110px;
         font-size: 4em;
     }
+
 
     /* resizing game title text */
     .Simon-Logo,
@@ -611,5 +619,8 @@ body {
         font-size: 1.2em;
     }
 
+    .level-up {
+        left: 0;
+    }
 
 }
