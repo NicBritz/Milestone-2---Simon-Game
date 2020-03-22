@@ -13,6 +13,7 @@ const GAME_OVER_MENU = $("#gameOver-menu"); // Game Over Menu Area
 const CLOSE_BUTTON = $("#close_button");// Close Button
 const MODE_PREV_BUTTON = $("#mode_prev_button"); // Previous Button
 const MODE_NEXT_BUTTON = $("#mode_next_button"); // Next Button
+const CLICK_AUDIO = $("#click-audio");
 /* Fix Audio Lag in safari browsers:
 * https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari*/
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -37,7 +38,8 @@ const GAME_MODES = [
     }];
 
 //-- Variables --//
-let currentGameMode, quotePhrases;
+let currentGameMode = 0;
+let quotePhrases;
 let gameSpeed = 600; // current speed the game is running
 let roundArray = []; // current array of button presses for the round
 let playerActive = true; // sets the player to an active state
@@ -81,7 +83,7 @@ function pickQuote() {
         phrase.author = "Unknown"
     }
     // Adds the quote text to the quote html
-    $(".quote-txt").html(`<p>${phrase.text}</p><br>
+    $(".quote-txt-box").html(`<p>${phrase.text}</p><br>
                      <p><em>"${phrase.author}"</em></p>`);
 }
 
@@ -111,6 +113,7 @@ function showMainModal() {
 
 //-- Show Main Menu --//
 function mainMenu() {
+    CLICK_AUDIO[0].play();
     MAIN_MENU.show();
     HELP_MENU.hide();
     SETTINGS_MENU.hide();
@@ -120,6 +123,7 @@ function mainMenu() {
 
 //-- Show Help Menu --//
 function helpMenu() {
+    CLICK_AUDIO[0].play();
     HELP_MENU.show();
     CLOSE_BUTTON.show();
     MAIN_MENU.hide();
@@ -129,6 +133,7 @@ function helpMenu() {
 
 //-- Show Settings Menu --//
 function settingsMenu() {
+    CLICK_AUDIO[0].play();
     SETTINGS_MENU.show();
     CLOSE_BUTTON.show();
     MAIN_MENU.hide();
@@ -388,6 +393,7 @@ $(document).ready(function () {
     CLOSE_BUTTON.off().on("click touch", mainMenu);// Close Menu Button
     //Next Button
     MODE_NEXT_BUTTON.off().on("click touch", function () {
+        CLICK_AUDIO[0].play();
         //-- go to next game mode --//
         if (currentGameMode < 3) {
             currentGameMode++;
@@ -396,6 +402,7 @@ $(document).ready(function () {
     });
     //Previous Button
     MODE_PREV_BUTTON.off().on("click touch", function () {
+        CLICK_AUDIO[0].play();
         //-- go to previous game mode --//
         if (currentGameMode > 0) {
             currentGameMode--;
@@ -404,6 +411,7 @@ $(document).ready(function () {
     });
     //-- Start the game when the Play or Replay buttons are pressed --//
     $(".play").off().on("click touch", function () {
+        CLICK_AUDIO[0].play();
         updateScore();
         //-- Close any open modals --//
         $.modal.close();
@@ -412,5 +420,10 @@ $(document).ready(function () {
             computerPlayRound(gameSpeed);
         }, 300);
     });
+
+    //-- Social Buttons --//
+    $(".social").off().on("click touch", function () {
+        CLICK_AUDIO[0].play();
+    })
 })
 ;
