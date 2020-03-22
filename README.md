@@ -46,18 +46,18 @@ There is also a random inspirational quote shown at the beginning of each game t
 
 The goal of this project was to recreate the classic 1978 
 
-###The user
+### The user
 As a user I want a way to improve my memory and coordination in a fun but challenging way. I would like an application that I can use on my computer but also one that is available on my mobile devices.The application should have both visual and auditory cues and have various game modes to keep it fresh. 
 
-###The design process
+### The design process
 
-####Scope
+#### Scope
 The goal of this project was to recreate the classic 1978 electronic game called Simon. I made this a more modern version and focused on delivering a clean user interface. I kept the effects subtle but still notable, without overwhelming the user with too much information at once. 
 
-####Audio
+#### Audio
 Audio plays a big part in the experience of the game and because of this, I decided to make some of it myself. I was also very particular in choosing the best sounds for the job. 
 
-####Visual
+#### Visual
 I wanted the experience to feel like a modern game to achieve this I made use of some assets that I purchased. When it came time to create the main game buttons I used very saturated colours and added some visual effects to indicate that the button had been activated. 
 ```
 
