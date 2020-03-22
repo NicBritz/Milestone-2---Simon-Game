@@ -145,7 +145,7 @@ describe("Simon Game", function () {
             expect(window.mainMenu).toHaveBeenCalled();
         });
     });
-
+    //----------Game Over Function ---------//
     describe("Game Over Function", function () {
 
         it("should have been defined", function () {
@@ -158,23 +158,249 @@ describe("Simon Game", function () {
             expect(window.gameOver).toHaveBeenCalled();
         });
 
-        it("should set the game End variable to true", function () {
-            spyOn(window, "gameOver");
-            gameOver();
-            gameEnd = true;
-            expect(gameEnd).toBeTrue();
-        });
-
-        it("should set the current score text", function () {
-            $("#current-score").text("2");
-
-            expect($("p")).toHaveText('hi')
-
-
-        });
-
-
     });
+    //----------Update Score Function ---------//
+    describe("Update Score Function", function () {
+
+        it("should have been defined", function () {
+            expect(updateScore).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "updateScore");
+            updateScore();
+            expect(window.updateScore).toHaveBeenCalled();
+        });
+    });
+
+    //----------Crack Button Function ---------//
+    describe("crackButton Function", function () {
+
+        it("should have been defined", function () {
+            expect(crackedButton).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "crackedButton");
+            crackedButton();
+            expect(window.crackedButton).toHaveBeenCalled();
+        });
+    });
+
+    //----------Check Result Function ---------//
+    describe("checkResult Function", function () {
+
+        it("should have been defined", function () {
+            expect(checkResult).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "checkResult");
+            checkResult();
+            expect(window.checkResult).toHaveBeenCalled();
+        });
+    });
+
+    //----------Player Round Function ---------//
+    describe("playerRound Function", function () {
+
+        it("should have been defined", function () {
+            expect(playerRound).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "playerRound");
+            playerRound();
+            expect(window.playerRound).toHaveBeenCalled();
+        });
+    });
+    //----------Computer Play Round Function ---------//
+    describe("computerPlayRound Function", function () {
+
+        it("should have been defined", function () {
+            expect(computerPlayRound).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "computerPlayRound");
+            computerPlayRound();
+            expect(window.computerPlayRound).toHaveBeenCalled();
+        });
+    });
+    //----------Deactivate Player Function ---------//
+    describe("deactivatePlayer Function", function () {
+
+        it("should have been defined", function () {
+            expect(deactivatePlayer).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "deactivatePlayer");
+            deactivatePlayer();
+            expect(window.deactivatePlayer).toHaveBeenCalled();
+        });
+    });
+    //----------Activate Player Function ---------//
+    describe("activatePlayer Function", function () {
+
+        it("should have been defined", function () {
+            expect(activatePlayer).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "activatePlayer");
+            activatePlayer();
+            expect(window.activatePlayer).toHaveBeenCalled();
+        });
+    });
+    //----------Randomise Round Function ---------//
+    describe("randomiseRound Function", function () {
+
+        it("should have been defined", function () {
+            expect(randomiseRound).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "randomiseRound");
+            randomiseRound();
+            expect(window.randomiseRound).toHaveBeenCalled();
+        });
+    });
+    //----------Generate Round Function ---------//
+    describe("generateRound Function", function () {
+
+        it("should have been defined", function () {
+            expect(generateRound).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "generateRound");
+            generateRound();
+            expect(window.generateRound).toHaveBeenCalled();
+        });
+    });
+    //----------Button Pressed Function ---------//
+    describe("buttonPressed Function", function () {
+
+        it("should have been defined", function () {
+            expect(buttonPressed).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "buttonPressed");
+            buttonPressed();
+            expect(window.buttonPressed).toHaveBeenCalled();
+        });
+    });
+//----------Update Game Mode Function ---------//
+    describe("updateGameMode Function", function () {
+
+        it("should have been defined", function () {
+            expect(updateGameMode).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "updateGameMode");
+            updateGameMode();
+            expect(window.updateGameMode).toHaveBeenCalled();
+        });
+    });
+    //----------GameOver Menu Function ---------//
+    describe("gameOverMenu Function", function () {
+
+        it("should have been defined", function () {
+            expect(gameOverMenu).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "gameOverMenu");
+            gameOverMenu();
+            expect(window.gameOverMenu).toHaveBeenCalled();
+        });
+    });
+    //----------Settings Menu Function ---------//
+    describe("settingsMenu Function", function () {
+
+        it("should have been defined", function () {
+            expect(settingsMenu).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "settingsMenu");
+            settingsMenu();
+            expect(window.settingsMenu).toHaveBeenCalled();
+        });
+    });
+
+    //----------Help Menu Function ---------//
+    describe("helpMenu Function", function () {
+
+        it("should have been defined", function () {
+            expect(helpMenu).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "helpMenu");
+            helpMenu();
+            expect(window.helpMenu).toHaveBeenCalled();
+        });
+    });
+
+    //----------Main Menu Function ---------//
+    describe("mainMenu Function", function () {
+
+        it("should have been defined", function () {
+            expect(mainMenu).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "mainMenu");
+            mainMenu();
+            expect(window.mainMenu).toHaveBeenCalled();
+        });
+    });
+
+    //----------MShow Main Modal Function ---------//
+    describe("showMainModal Function", function () {
+
+        it("should have been defined", function () {
+            expect(showMainModal).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "showMainModal");
+            showMainModal();
+            expect(window.showMainModal).toHaveBeenCalled();
+        });
+    });
+//----------Pick Quote Function ---------//
+    describe("pickQuote Function", function () {
+
+        it("should have been defined", function () {
+            expect(pickQuote).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "pickQuote");
+            pickQuote();
+            expect(window.pickQuote).toHaveBeenCalled();
+        });
+    });
+
+    //----------Fetch Quote Function ---------//
+    describe("fetchQuote Function", function () {
+
+        it("should have been defined", function () {
+            expect(fetchQuote).toBeDefined();
+        });
+
+        it("Should have been called", function () {
+            spyOn(window, "fetchQuote");
+            fetchQuote();
+            expect(window.fetchQuote).toHaveBeenCalled();
+        });
+    });
+
 
 });
 
