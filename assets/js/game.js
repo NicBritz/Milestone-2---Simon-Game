@@ -83,7 +83,7 @@ function pickQuote() {
         phrase.author = "Unknown"
     }
     // Adds the quote text to the quote html
-    $(".quote-txt").html(`<p>${phrase.text}</p><br>
+    $(".quote-txt-box").html(`<p>${phrase.text}</p><br>
                      <p><em>"${phrase.author}"</em></p>`);
 }
 

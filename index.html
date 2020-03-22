@@ -6,11 +6,6 @@
     <meta name="Description"
           content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz ">
 
-    <!--  Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
     <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" rel="stylesheet"/>
 
@@ -21,192 +16,206 @@
 </head>
 
 <body>
-<!-- Main modal  -->
-<div class="modal" id="main-modal">
-    <!-------------------------------- Main Menu ------------------>
-    <div id="main_menu">
-        <!--  Main title text -->
-        <div class="modal-title" id="title"><img alt="Simon title text" src="assets/images/Title.png"></div>
-        <!--  Quote Text  -->
-        <div class="quote-txt-box quote-txt" id="main-menu-quote"></div>
-        <!--  Menu buttons-->
-        <div class="row">
-            <div class="col3 modal-help" id="help_button"><img class="btn" alt="help button image"
-                                                               src="assets/images/Help%20btn.png">
-            </div>
-            <div class="col3 modal-play" id="play_button"><img class="btn play " alt="play button image"
-                                                               src="assets/images/Play%20btn.png">
-            </div>
-            <div class="col3 modal-settings" id="settings_button"><img class="btn" alt="settings button image"
-                                                                       src="assets/images/Settings%20btn.png"></div>
-        </div>
-
-    </div>
-    <!-------------------------------- Help Menu ------------------>
-    <div id="help_menu">
-        <!--  https://www.ultraboardgames.com/simon/game-rules.php -->
-        <div class="help-txt-box" id="help-txt">
-
-            <h1>Instructions</h1>
-            <h2>Object of the Game</h2>
-            <br>
-            <p>
-                The object of the game is to correctly repeat the sequence. Depending on the game mode selected this
-                will
-                vary in complexity.
-            </p>
-            <br>
-            <p> Press <span><img alt="play button image" class="play-small"
-                                 src="assets/images/Play%20btn.png"></span> and Simon will give the first signal. Repeat
-                the
-                signal by pressing the same color button.</p>
-            <br>
-
-
-            <h2>Classic Game Mode</h2>
-            <br>
-            <p>
-                Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color
-                buttons, in order.</p>
-            <br>
-            <p>
-                Simon will then duplicate these first two signals and add one.</p><br>
-            <p>
-                Continue playing as long as you can repeat each sequence of signals correctly. After the 5th, 10th and
-                15th
-                signals in a sequence, Simon automatically speeds up.</p><br>
-            <p>
-                If you fail to repeat a sequence exactly then it's <strong>GAME
-                OVER</strong>.
-            </p></div>
-
-    </div>
-    <!-------------------------------- Settings Menu ------------------>
-    <div id="settings_menu">
-        <!-- Game Modes -->
-        <div class="settings-items" id="game-mode">
-            <div class="settings-menu"><p>Game Mode</p></div>
-        </div>
-        <div class="row" id="difficulty-settings">
-            <!-- Previous Mode -->
-            <div class="col3 modal-prev gray-out" id="mode_prev_button"><img class="btn" alt="prev button image"
-                                                                             src="assets/images/Back%20btn.png">
-            </div>
-            <!-- Mode Text -->
-            <div class="col3 settings-txt"><p id="game-mode-text">CLASSIC</p></div>
-            <!-- Next Mode -->
-            <div class="col3 modal-next" id="mode_next_button"><img class="btn" alt="next button image"
-                                                                    src="assets/images/Forward%20btn.png">
-            </div>
-        </div>
-
-        <div id="mode_description" class="mode-desc-text"><p>Repeat the steps in the order they are presented, each
-            round will increase in length.</p></div>
-
-    </div>
-    <!-------------------------------- GameOver Menu ------------------>
-    <div id="gameOver-menu">
-        <!--  Main title text -->
-        <div class="modal-title game-over-txt" id="game-over-text"><img alt="Game Over text"
-                                                                        src="assets/images/GameOver.png"></div>
-        <!--  Score text -->
-        <div class="settings-items" id="score">
-            <div class="settings-menu"><p>Results</p></div>
-
-        </div>
-        <div class="row">
-            <!--            current round score-->
-            <div class="col2 score"><p>Score:</p></div>
-            <div id="current-score" class="col2 score"><p>20</p></div>
-
-        </div>
-        <div class="row">
-            <!--            best score -->
-            <div class="col2 score"><p>Best:</p></div>
-            <div id="best-score" class="col2 score"><p>50</p></div>
-
-        </div>
-
-        <div class="row">
-            <!--            Game Mode -->
-            <div class="col2 score"><p>Mode:</p></div>
-            <div id="mode-text" class="col2 score"><p></p></div>
-
-        </div>
-
-
-        <!--  Menu buttons-->
-        <div class="row spacer">
-            <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"><img class="btn"
-                                                                                                 src="assets/images/Twitter.png"
-                                                                                                 alt="Twitter icon image"></a>
-            </div>
-
-            <div class="col3 modal-play modal-replay " id="replay_button"><img class="btn play"
-                                                                               alt="replay button image"
-                                                                               src="assets/images/Replay%20btn.png">
-            </div>
-
-            <div class="col3 modal-settings " id="main_menu_button"><img class="btn" alt="main menu button image"
-                                                                         src="assets/images/Menu%20btn.png"></div>
-
-
-            <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"><img class="btn"
-                                                                                                  src="assets/images/Fb.png"
-                                                                                                  alt="FaceBook icon image"></a>
+<main id="main_screen">
+    <!-- Main modal  -->
+    <div class="modal" id="main-modal">
+        <!-------------------------------- Main Menu ------------------>
+        <div id="main_menu">
+            <!--  Main title text -->
+            <div class="Simon-Logo" id="title"><img alt="Simon title text" src="assets/images/Title.png"></div>
+            <!--  Quote Text  -->
+            <div class="quote-txt-box" id="main-menu-quote"></div>
+            <!--  Menu buttons-->
+            <div class="row">
+                <div class="col3 help-button" id="help_button"><img class="btn" alt="help button image"
+                                                                    src="assets/images/Help%20btn.png">
+                </div>
+                <div class="col3 play-button" id="play_button"><img class="btn play " alt="play button image"
+                                                                    src="assets/images/Play%20btn.png">
+                </div>
+                <div class="col3 modal-settings" id="settings_button"><img class="btn" alt="settings button image"
+                                                                           src="assets/images/Settings%20btn.png"></div>
             </div>
 
         </div>
+        <!-------------------------------- Help Menu ------------------>
+        <div id="help_menu">
+            <!--  https://www.ultraboardgames.com/simon/game-rules.php -->
+            <div class="help-txt-box" id="help-txt">
+
+                <h1>Instructions</h1>
+                <h2>Object of the Game</h2>
+                <br>
+                <p>
+                    The object of the game is to correctly repeat the sequence. Depending on the game mode selected this
+                    will vary in complexity.
+                </p>
+                <br>
+                <p> Press <span><img alt="play button image" class="play-small"
+                                     src="assets/images/Play%20btn.png"></span> and Simon will give the first signal.
+                </p>
+
+
+                <h2>Classic Game Mode</h2>
+                <br>
+                <p> Repeat the steps in the order they are presented, each round will increase in length.</p>
+
+
+                <h2>Random Game Mode</h2>
+                <br>
+                <p> Repeat the steps in the order they are presented, each round will be random and increase in
+                    length.</p>
+
+
+                <h2>Last-Only Game Mode</h2>
+                <br>
+                <p> Repeat the steps in the order they were presented, only the final step will play back but you will
+                    need
+                    to present the entire sequence, each round
+                    will increase in length. </p>
+
+
+                <h2>Reverse Game Mode</h2>
+                <br>
+                <p> Repeat the steps in a reverse order to which they are presented, each round
+                    will increase in length. </p>
+                <br>
+
+
+                <p> Continue playing
+                    as long as you can, repeat each sequence of signals correctly. After every 5th signal in a sequence,
+                    Simon automatically speeds up. If you fail to repeat a sequence exactly then it's <strong>GAME
+                        OVER</strong>.
+                </p></div>
+
+        </div>
+        <!-------------------------------- Settings Menu ------------------>
+        <div id="settings_menu">
+            <!-- Game Modes -->
+            <div class="settings-items" id="game-mode">
+                <div class="settings-menu"><p>Game Mode</p></div>
+            </div>
+            <div class="row" id="difficulty-settings">
+                <!-- Previous Mode -->
+                <div class="col3 modal-prev gray-out" id="mode_prev_button"><img class="btn" alt="prev button image"
+                                                                                 src="assets/images/Back%20btn.png">
+                </div>
+                <!-- Mode Text -->
+                <div class="col3 settings-txt"><p id="game-mode-text">CLASSIC</p></div>
+                <!-- Next Mode -->
+                <div class="col3 modal-next" id="mode_next_button"><img class="btn" alt="next button image"
+                                                                        src="assets/images/Forward%20btn.png">
+                </div>
+            </div>
+
+            <div id="mode_description" class="mode-desc-text"><p>Repeat the steps in the order they are presented, each
+                round will increase in length.</p></div>
+
+        </div>
+        <!-------------------------------- GameOver Menu ------------------>
+        <div id="gameOver-menu">
+            <!--  Main title text -->
+            <div class="game-over-logo" id="game-over-text"><img alt="Game Over Logo"
+                                                                 src="assets/images/GameOver.png"></div>
+            <!--  Score text -->
+            <div class="settings-items" id="score">
+                <div class="settings-menu"><p>Results</p></div>
+
+            </div>
+            <div class="row">
+                <!--            current round score-->
+                <div class="col2 score"><p>Score:</p></div>
+                <div id="current-score" class="col2 score"><p>20</p></div>
+
+            </div>
+            <div class="row">
+                <!--            best score -->
+                <div class="col2 score"><p>Best:</p></div>
+                <div id="best-score" class="col2 score"><p>50</p></div>
+
+            </div>
+
+            <div class="row">
+                <!--            Game Mode -->
+                <div class="col2 score"><p>Mode:</p></div>
+                <div id="mode-text" class="col2 score"><p></p></div>
+
+            </div>
+
+
+            <!--  Menu buttons-->
+            <div class="row spacer">
+                <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"><img class="btn"
+                                                                                                           src="assets/images/Twitter.png"
+                                                                                                           alt="Twitter icon image"></a>
+                </div>
+
+                <div class="col3 play-button modal-replay " id="replay_button"><img class="btn play"
+                                                                                    alt="replay button image"
+                                                                                    src="assets/images/Replay%20btn.png">
+                </div>
+
+                <div class="col3 modal-settings " id="main_menu_button"><img class="btn" alt="main menu button image"
+                                                                             src="assets/images/Menu%20btn.png"></div>
+
+
+                <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"><img class="btn"
+                                                                                                             src="assets/images/Fb.png"
+                                                                                                             alt="FaceBook icon image"></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--   Close Button -->
+        <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
+                                      src="assets/images/X%20icon.png"/>
+        </div>
 
     </div>
 
-    <!--   Close Button -->
-    <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
-                                  src="assets/images/X%20icon.png"/>
+    <div class="main">
+
+        <!-- Main game buttons -->
+        <div id="game-buttons">
+            <div
+                    class="button-green"
+                    data-button="green"
+                    id="green-game-button"
+            >
+                <div id="green-button-overlay" class="cracked"></div>
+            </div>
+            <div
+                    class="button-red "
+                    data-button="red"
+                    id="red-game-button">
+
+                <div id="red-button-overlay" class="cracked"></div>
+            </div>
+            <div
+                    class="button-yellow "
+                    data-button="yellow"
+                    id="yellow-game-button"
+            >
+                <div id="yellow-button-overlay" class="cracked"></div>
+            </div>
+            <div
+                    class="button-blue "
+                    data-button="blue"
+                    id="blue-game-button">
+                <div id="blue-button-overlay" class="cracked"></div>
+            </div>
+
+            <!-- Main game center circle -->
+        </div>
+        <div class="center-circle" id="center-circle">
+        </div>
+        <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
+        <!--Level Up -->
+        <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
     </div>
-
-</div>
-
-<div class="main">
-
-    <!-- Main game buttons -->
-    <div id="game-buttons">
-        <div
-                class="button-green"
-                data-button="green"
-                id="green-game-button"
-        >
-            <div id="green-button-overlay" class="cracked"></div>
-        </div>
-        <div
-                class="button-red "
-                data-button="red"
-                id="red-game-button">
-
-            <div id="red-button-overlay" class="cracked"></div>
-        </div>
-        <div
-                class="button-yellow "
-                data-button="yellow"
-                id="yellow-game-button"
-        >
-            <div id="yellow-button-overlay" class="cracked"></div>
-        </div>
-        <div
-                class="button-blue "
-                data-button="blue"
-                id="blue-game-button">
-            <div id="blue-button-overlay" class="cracked"></div>
-        </div>
-
-        <!-- Main game center circle -->
-    </div>
-    <div class="center-circle" id="center-circle">
-    </div>
-    <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
-    <!--Level Up -->
-    <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
-</div>
+</main>
 <!-- Imports audio files -->
 <audio id="green-classic-audio" preload="auto">
     <source src="assets/sounds/green-classic-audio.ogg" type="audio/ogg"/>
