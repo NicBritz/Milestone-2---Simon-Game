@@ -171,7 +171,8 @@ main {
     right: 0;
     text-align: right;
     padding: 0.5em;
-    width: 20%;
+    padding-right: 1.5em;
+    width: 10%;
 }
 
 /* Help text */
@@ -212,6 +213,16 @@ main {
     margin: 0;
 }
 
+.score-title {
+    text-align: right;
+    padding-right: 5%;
+}
+
+.score-item {
+    text-align: left;
+    padding-left: 5%;
+}
+
 .settings-menu p {
     padding: 0;
     margin: 0;
@@ -227,32 +238,6 @@ main {
     width: 30px;
     height: 30px;
 }
-
-/*Level up text*/
-.level-up {
-    position: absolute;
-    top: 35%;
-    left: 35%;
-    transform: scale(0);
-}
-
-/*Level up animation*/
-.scale-up {
-    animation: scale-animation 0.3s ease-in;
-}
-
-/*Level up keyframes*/
-@keyframes scale-animation {
-    0% {
-        opacity: 1.0;
-        transform: scale(0);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(2);
-    }
-}
-
 
 /* ---------- Game Colour Buttons setup ---------- */
 
@@ -483,11 +468,6 @@ main {
         font-size: 1.2em;
     }
 
-    /* level up text */
-    .level-up {
-        left: -35%;
-    }
-
     /* replay button */
     .replay-button {
         margin: 1em 0 4em 0;
@@ -530,15 +510,20 @@ main {
 
 
     /* resizing game title text */
-    .Simon-Logo,
-    .game-over-logo {
+    .Simon-Logo {
         height: 60px;
         padding-top: 0;
         margin-bottom: 2em;
     }
 
     .game-over-logo {
-        padding-top: 1em;
+        height: 50px;
+        padding-top: 0;
+        margin-bottom: 2em;
+    }
+
+    .game-over-logo {
+        padding-top: 0.3em;
         margin-bottom: 0;
     }
 
@@ -557,25 +542,27 @@ main {
         margin: 0.5em;
     }
 
-    .score {
-        font-size: 0.8em;
-    }
-
     .settings-menu {
         font-size: 1.5em;
     }
 
+    .score {
+        margin-top: 0.5em;
+        font-size: 0.9em;
+    }
+
     .game-mode-heading {
         padding: 0;
+        font-size: 2em;
+        margin-bottom: 1em;
+        margin-top: 1em;
     }
 
     .play-button {
-        margin: 0;
+        margin: 0.2em;
     }
 
-    #main_menu_button{
-        width: 10%;
-    }
+
     /* help text */
     .help-txt {
         font-size: 0.8em;
@@ -590,8 +577,17 @@ main {
         font-size: 1.2em;
     }
 
-    .level-up {
-        left: 0;
+    #main_menu_button {
+        padding-right: 0.5em;
+    }
+
+    .game-over {
+        margin: 0;
+    }
+
+    .result-text{
+        padding-top: 0.2em;
+        font-size: 1em;
     }
 
 }

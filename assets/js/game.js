@@ -5,7 +5,6 @@ const GREEN_GAME_BUTTON = $("#green-game-button"); // Green Button
 const RED_GAME_BUTTON = $("#red-game-button"); // Red Button
 const YELLOW_GAME_BUTTON = $("#yellow-game-button"); // Yellow Button
 const BLUE_GAME_BUTTON = $("#blue-game-button"); // Blue Button
-const LEVEL_UP_TEXT = $("#level-up-text"); // Level Up Text
 const MAIN_MENU = $("#main_menu"); // Main Menu Area
 const HELP_MENU = $("#help_menu"); // Help Menu Area
 const SETTINGS_MENU = $("#settings_menu"); // Settings Menu Area
@@ -356,10 +355,9 @@ function crackedButton(button) {
 //-- Update the Score --//
 function updateScore() {
     score++;//add one to the score
-    LEVEL_UP_TEXT.removeClass("scale-up");
-    //speed up if score is multiple of 5
+
+    //speed up if score is multiple of 5 speed up
     if (gameSpeed > 200 && score % 5 === 0) {
-        LEVEL_UP_TEXT.addClass("scale-up");
         gameSpeed -= 100;
     }
     if (score > bestScore) {
