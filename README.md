@@ -1,7 +1,6 @@
-<div align="center">
-<!-- Main Screen PC -->
-<img src="/assets/images/Title.png" alt="Main Screen screen for pc">
-</div>
+
+<img align="center" src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png" alt="Main Screen screen for pc">
+
 <!-- contents -->
 
 ## Contents
@@ -25,11 +24,8 @@
 <!-- overview -->
 
 ## Overview
-Simon is not only a fun and challenging game but also a tool to help improve memory. 
-
-This particular iteration of the 1978 classic game has four game modes. Each mode brings on a new set of challenges that add a modern twist to the game. 
-
-There is also a random inspirational quote shown at the beginning of each game to help mentally prepare you for the challenge. 
+Simon is not only a fun and challenging game but also a tool to help improve memory. This particular iteration of the 1978 classic game has four game modes. 
+Each mode brings on a new set of challenges that add a modern twist to the game. There is also a random inspirational quote shown at the beginning of each game to help mentally prepare you for the challenge. 
 
 <!-- Top -->
 
@@ -43,42 +39,36 @@ There is also a random inspirational quote shown at the beginning of each game t
 
 ## UX
 
-The goal of this project was to recreate the classic 1978 
+The goal of this project was to recreate Simon, the classic 1978 electronic game in a more modern software form. 
 
 ### The user
-As a user I want a way to improve my memory and coordination in a fun but challenging way. I would like an application that I can use on my computer but also one that is available on my mobile devices.The application should have both visual and auditory cues and have various game modes to keep it fresh. 
+As a user ...
+- I want a way to improve my memory and coordination in a fun but challenging way. 
+- I would like an application that I can use on my computer but also one that is available on my mobile devices.
+- I would like the application to have both visual and auditory cues.
+- I would like to be able to read instruction for the game without leaving the game.
+- I would like various game modes to challenge myself in fun and interesting ways.
+- I would like the game to show me when I hit the wrong button.
+- I would like an endless game experience that will increase in speed incrementally.
+- I would like to see my score after each game as well as my best score.
 
 ### The design process
 
 #### Scope
-The goal of this project was to recreate the classic 1978 electronic game called Simon. I made this a more modern version and focused on delivering a clean user interface. I kept the effects subtle but still notable, without overwhelming the user with too much information at once. 
+The goal of this project was to recreate the classic 1978 electronic game called Simon. This is a more modern aproach and is focused on delivering a clean and responsive user interface. keeping any effects subtle but still notable, without overwhelming the user with too much information at once makes for a simple but fun game. 
 
 #### Audio
-Audio plays a big part in the experience of the game and because of this, I decided to make some of it myself. I was also very particular in choosing the best sounds for the job. 
+Audio plays a big part in the experience of the game and because of this, most of the audio assets used are original. All the audio files are both in mp3 and Ogg format to ensure compatibility on a wide range of devices.
 
 #### Visual
 I wanted the experience to feel like a modern game to achieve this I made use of some assets that I purchased. When it came time to create the main game buttons I used very saturated colours and added some visual effects to indicate that the button had been activated. 
-```
+<div align="center">
 
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ADD SCREENSHOTS HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. 
-That you created as part of the design process. 
-These files should themselves either be included as a pdf file in the project itself.
-(in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
-
-```
-
-<!-- Top -->
-<!-- wireframes -->
+---
 
 ### Wireframes
-
-These are my wireframes I created during the design process, they were great as a guide to get started. Here you can also find the original [Balsamiq Mockup](/Wireframes/) file.
+Before starting the project I used [Balsamiq](https://balsamiq.com/) to create the following wireframes. The licence for the software was provided by Code Institute.
+Here You can find my [Balsamiq project files](/Wireframes/) as well as higher resolution wireframes.
 
 <div align="center">
 
@@ -89,16 +79,16 @@ These are my wireframes I created during the design process, they were great as 
 <br>
 
 <!-- Main Screen PC -->
-<img src="/Wireframes/Images/Main Screen - WEB.png" alt="Main Screen screen for pc" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Main_Screen_-_WEB_bzhhgh.png" alt="Main Screen screen for pc">
 
 <!-- Game Screen PC -->
-<img src="/Wireframes/Images/Game Screen - WEB.png" alt="Game screen for pc" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Screen_-_WEB_dyqizn.png" alt="Game screen for pc">
 
 <!-- Settings Screen PC -->
-<img src="/Wireframes/Images/Settings - WEB.png" alt="Game settings screen for pc" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Settings_-_WEB_byhb2b.png" alt="Game settings screen for pc">
 
 <!-- Game Over Screen PC -->
-<img src="/Wireframes/Images/Game Over - WEB.png" alt="Game Over screen for pc" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982756/Simon/wireframes/Game_Over_-_WEB_q5ldla.png" alt="Game Over screen for pc">
 
 <!-- Top -->
 ---
@@ -112,16 +102,16 @@ These are my wireframes I created during the design process, they were great as 
 <br>
 
 <!-- Main Screen iPad -->
-<img src="/Wireframes/Images/Main Screen - iPad.png" alt="Main Screen screen for iPad" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Main_Screen_-_iPad_ylhkfb.png" alt="Main Screen screen for iPad">
 
 <!-- Game Screen iPad -->
-<img src="/Wireframes/Images/Game Screen - iPad.png" alt="Game screen for iPad" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Screen_-_iPad_zg6bim.png" alt="Game screen for iPad">
 
 <!-- Settings Screen iPad -->
-<img src="/Wireframes/Images/Settings - iPad.png" alt="Game settings screen for iPad" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Settings_-_iPad_eanauv.png" alt="Game settings screen for iPad">
 
 <!-- Game Over Screen iPad -->
-<img src="/Wireframes/Images/Game Over - iPad.png" alt="Game Over screen for iPad" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Over_-_iPad_gxu4vw.png" alt="Game Over screen for iPad">
 
 <!-- Top -->
 
@@ -134,20 +124,44 @@ These are my wireframes I created during the design process, they were great as 
 <br>
 
 <!-- Main Screen iPhone -->
-<img src="/Wireframes/Images/Main Screen - iPhone.png" alt="Main Screen screen for iPhone" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Main_Screen_-_iPhone_xwveb9.png" alt="Main Screen screen for iPhone">
 
 <!-- Game Screen iPhone -->
-<img src="/Wireframes/Images/Game Screen - iPhone.png" alt="Game screen for iPhone" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Screen_-_iPhone_i0rhfi.png" alt="Game screen for iPhone">
 
 <!-- Settings Screen iPhone -->
-<img src="/Wireframes/Images/Settings - iPhone.png" alt="Game settings screen for iPhone" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Settings_-_iPhone_tqtut6.png" alt="Game settings screen for iPhone">
 
 <!-- Game Over Screen iPhone -->
-<img src="/Wireframes/Images/Game Over - iPhone.png" alt="Game Over screen for iPhone" width="600" height="350">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Over_-_iPhone_ttmzvn.png" alt="Game Over screen for iPhone">
 
 <!-- Top -->
 
 [Top](#Contents)
+
+---
+#### ScreenShots
+
+<br>
+<!-- Main Screen PC -->
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Main_PC_qnx3nf.png" alt="Main Screen game screen for pc">
+<br>
+<!-- Game Screen PC -->
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Game_PC_klrnko.png" alt="Game screen for pc">
+<br>
+<!-- Game Over Screen PC -->
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Game_Over_PC_ekicut.png" alt="Game Over screen for pc">
+<br>
+<!-- Main Screen Mobile -->
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Main_Mobile_hwla7w.png" alt="Main Screen game screen for mobile">
+<br>
+<!-- Game Screen Mobile -->
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Game_Mobile_nqyzon.png" alt="Game screen for mobile">
+<br>
+<!-- Game Over Screen Mobile -->
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,h_600/v1584981568/Simon/Screenshots/Game_Over_Mobile_jna9xp.png" alt="Game Over screen for mobile">
+<!-- Top -->
+<!-- wireframes -->
 
 </div>
 
@@ -156,21 +170,66 @@ These are my wireframes I created during the design process, they were great as 
 <!-- features -->
 
 ## Features
-This project has some great features form different game modes to themes. All of these features combined make for a great overall experience.
 
-###Game Modes
+### Quotes API
+At the start of the game you will be presented with an inspirational quote. 
+These quotes are fetched for [this API](https://type.fit/api/quotes) found via this [article](https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373). 
+Once the all the data from the API is retrieved a random quote is selected and displayed on the main game screen. After every round a new random quote will be selected and displayed. 
+There are some instances where quotes would not have a author, in these cases the author is displayed as *'unknown'*.
 
-**Classic**
-When playing the game in this mode you will be presented with a set of four coloured buttons. The buttons will light up in a sequence, each step in the sequence is randomly generated. The entire sequence remains the same throughout the round but it gets progressively longer. After every 5th step, the sequence gets faster. If the player hits the incorrect coloured button the button plays a cracking sound and shows a cracked image overlay. 
+### Game Modes
+This project has four unique game modes, each one brings new challenges, this helps to keep the game both fun and challenging for a variety of users. 
+The game modes are as detailed as follows:
 
-**Random** 
-This mode behaves similarly to the Classic mode with the added twist of randomizing the sequence every round. This makes it more challenging as the player is unable to memorize the sequence as a whole and is forced to rely on short bursts of memory. 
+**Classic:** 
+   - When playing the game in this mode you will be presented with a set of four coloured buttons. 
+   - The buttons will highlight in a sequence as well as play an auditory cue. 
+   - Each step in the sequence is randomly generated. 
+   - The sequence in its entirety remains the same throughout the round but gets progressively longer. 
+   - After every 5th step, the sequence gets faster.
+   - The player must repeat all the steps in the sequence in the original order.
+   - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
+   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   
+**Random:**  
+   - When playing the game in this mode you will be presented with a set of four coloured buttons. 
+   - The buttons will highlight in a sequence as well as play an auditory cue. 
+   - Each step in the sequence is randomly generated.
+   - Each round sequence is then randomised before the player's turn. 
+   - This random sequence gets progressively longer after each round. 
+   - After every 5th step, the sequence gets faster.
+   - The player must repeat all the steps in the sequence in the original order. 
+   - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
+   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   
+**Single:**
+   - When playing the game in this mode you will be presented with a set of four coloured buttons. 
+   - Only the newest colour added to the sequence will highlight in a sequence as well as play an auditory cue.  
+   - Each step in the sequence is randomly generated. 
+   - The sequence in its entirety remains the same throughout the round but gets progressively longer. 
+   - After every 5th step, the sequence gets faster.
+   - The player must repeat all the steps in the sequence in the original order. 
+   - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
+   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   
+**Reverse:**
+   - When playing the game in this mode you will be presented with a set of four coloured buttons. 
+   - The buttons will highlight in a sequence as well as play an auditory cue. 
+   - Each step in the sequence is randomly generated. 
+   - The sequence in its entirety remains the same throughout the round but gets progressively longer. 
+   - After every 5th step, the sequence gets faster.
+   - The player must repeat the steps in the sequence in the reverse order. 
+   - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
+   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
 
-**Last-Only**
-With this mode you are getting the same type of sequence you would get with the Classic mode with the added challenge of only seeing the last step in the sequence. The player must then replicate the entire sequence relying heavily on their memory of the sequence.
+### GUI Elements
+With the use of graphically designed GUI elements that were both purchased and are free to use the Graphical User Interface looks neat and feels like a game. 
 
-**Reverse**
-The sequence is created and presented in the same way as the Classic mode. This time, however, the player must play back the sequence in reverse. This makes for some interesting gameplay.
+**Game Buttons**
+All the menu buttons and icons are from a mobile gui pack that was sourced form [Graphic Burger](https://graphicburger.com/mobile-game-gui/). In conjunction with [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop) I 
+was able to extract the elements I wanted from the source file.
+
+**Logo and Game Over text**
 
 ```
  In this section, you should go over the different parts of your project, and describe each in a sentence or so.

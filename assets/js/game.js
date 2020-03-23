@@ -28,7 +28,7 @@ const GAME_MODES = [
         desc: "Repeat the steps in the order they are presented, each round will be random and increase in length."
     },
     {
-        name: "LAST-ONLY",
+        name: "SINGLE",
         desc: "Repeat the steps in the order they were presented, only the final step will play back."
     },
     {
@@ -46,7 +46,7 @@ let playerChoice = 0; //players current selection in the round
 let score = 0; //players current score
 let bestScore = 0;// best score
 let gameEnd = false; // game ended
-let lastOnly = false; // last only mode
+let single = false; // single mode
 let reverse = false; // reverse mode
 
 //-- GUI/MENU --//
@@ -231,7 +231,7 @@ function computerPlayRound() {
         case 0:
             //Classic Game Mode
             reverse = false;
-            lastOnly = false;
+            single = false;
             generateRound();
             break;
 
@@ -239,19 +239,19 @@ function computerPlayRound() {
             //Random Game Mode
             reverse = false;
             randomiseRound();
-            lastOnly = false;
+            single = false;
             break;
 
         case 2:
-            //Last Only Game Mode
+            //Single Game Mode
             reverse = false;
             generateRound();
-            lastOnly = true;
+            single = true;
             break;
 
         case 3:
             //Reverse Game Mode
-            lastOnly = false;
+            single = false;
             reverse = true;
             generateRound();
             break;
@@ -260,12 +260,12 @@ function computerPlayRound() {
             //Classic Game Mode
             currentGameMode = 0;
             reverse = false;
-            lastOnly = false;
+            single = false;
             generateRound();
             break;
     }
 
-    if (lastOnly) {
+    if (single) {
         setTimeout(function () {
             buttonPressed(roundArray[roundArray.length - 1]);//Play only last sound
             playerRound();//Players Turn
