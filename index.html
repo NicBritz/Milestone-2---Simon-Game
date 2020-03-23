@@ -9,6 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" rel="stylesheet"/>
     <!-- link to my StyleSheet -->
     <link href="assets/css/style.css" rel="stylesheet"/>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
     <title>Simon Game</title>
 </head>
 
@@ -21,22 +23,25 @@
         <!-------------------------------- Main Menu ------------------>
         <div id="main_menu">
             <!--  Main title logo -->
-            <div class="Simon-Logo" id="title"><img alt="Simon title text" src="assets/images/Title.png"></div>
+            <div class="Simon-Logo" id="title"><img alt="Simon title text"
+                                                    src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png">
+            </div>
             <!--  Quote Text Box  -->
             <div class="quote-txt-box" id="main-menu-quote"></div>
             <!--  Menu buttons-->
             <div class="row">
                 <!--  Help Button -->
                 <div class="col3 help-button" id="help_button"><img class="btn" alt="help button image"
-                                                                    src="assets/images/Help%20btn.png">
+                                                                    src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Help_btn_yopxqk.png">
                 </div>
                 <!--  Play Button-->
                 <div class="col3 play-button" id="play_button"><img class="btn play " alt="play button image"
-                                                                    src="assets/images/Play%20btn.png">
+                                                                    src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png">
                 </div>
                 <!--  Settings Button -->
                 <div class="col3" id="settings_button"><img class="btn" alt="settings button image"
-                                                            src="assets/images/Settings%20btn.png"></div>
+                                                            src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png">
+                </div>
             </div>
         </div>
 
@@ -53,7 +58,8 @@
                 </p>
                 <br>
                 <p> Press <span><img alt="play button image" class="play-small"
-                                     src="assets/images/Play%20btn.png"></span> and Simon will give the first signal.
+                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png"></span>
+                    and Simon will give the first signal.
                 </p>
 
                 <h2>Classic Game Mode</h2>
@@ -92,13 +98,13 @@
             <div class="row">
                 <!-- Previous Mode -->
                 <div class="col3 prev-button gray-out" id="mode_prev_button"><img class="btn" alt="prev button image"
-                                                                                  src="assets/images/Back%20btn.png">
+                                                                                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
                 </div>
                 <!-- Mode Text -->
                 <div class="col3 game-mode-box"><p id="game-mode-text">CLASSIC</p></div>
                 <!-- Next Mode -->
                 <div class="col3 next-button" id="mode_next_button"><img class="btn" alt="next button image"
-                                                                         src="assets/images/Forward%20btn.png">
+                                                                         src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
                 </div>
             </div>
 
@@ -110,56 +116,58 @@
         <div id="gameOver-menu">
             <!--  Main title text -->
             <div class="game-over-logo" id="game-over-text"><img alt="Game Over Logo"
-                                                                 src="assets/images/GameOver.png"></div>
+                                                                 src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/GameOver_g9f8oo.png">
+            </div>
             <!--  Score text -->
-            <div class="game-mode-heading" id="score">
-                <div class="settings-menu"><p>Results</p></div>
+            <div class="game-mode-heading game-over" id="score">
+                <div class="settings-menu result-text"><p>Results</p></div>
             </div>
             <div class="row">
                 <!--  current round score-->
-                <div class="col2 score"><p>Score:</p></div>
-                <div id="current-score" class="col2 score"><p>20</p></div>
+                <div class="col2 score score-title"><p>Score:</p></div>
+                <div id="current-score" class="col2 score score-item"><p>20</p></div>
 
             </div>
             <div class="row">
                 <!--   best score -->
-                <div class="col2 score"><p>Best:</p></div>
-                <div id="best-score" class="col2 score"><p>50</p></div>
+                <div class="col2 score score-title"><p>Best:</p></div>
+                <div id="best-score" class="col2 score score-item"><p>50</p></div>
             </div>
             <div class="row">
                 <!-- Current Game Mode -->
-                <div class="col2 score"><p>Mode:</p></div>
-                <div id="mode-text" class="col2 score"><p></p></div>
+                <div class="col2 score score-title"><p>Mode:</p></div>
+                <div id="mode-text" class="col2 score score-item"><p></p></div>
             </div>
 
             <!--  Menu Buttons -->
             <div class="row">
                 <!--  Twitter Button-->
                 <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"><img class="btn"
-                                                                                                           src="assets/images/Twitter.png"
+                                                                                                           src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
                                                                                                            alt="Twitter icon image"></a>
                 </div>
                 <!--  Replay Button -->
                 <div class="col3 play-button replay-button " id="replay_button"><img class="btn play"
                                                                                      alt="replay button image"
-                                                                                     src="assets/images/Replay%20btn.png">
+                                                                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Replay_btn_ikvrht.png">
                 </div>
 
                 <!--  Facebook Button -->
                 <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"><img class="btn"
-                                                                                                             src="assets/images/Fb.png"
+                                                                                                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Fb_mnoxdn.png"
                                                                                                              alt="FaceBook icon image"></a>
                 </div>
                 <!-- Main Menu Button -->
-                <div class="col3 settings-modal " id="main_menu_button"><img class="btn" alt="main menu button image"
-                                                                             src="assets/images/Menu%20btn.png"></div>
+                <div class="col3" id="main_menu_button"><img class="btn" alt="main menu button image"
+                                                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png">
+                </div>
 
             </div>
         </div>
 
         <!--   Close Button -->
         <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
-                                      src="assets/images/X%20icon.png"/>
+                                      src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/X_icon_mfi8xa.png"/>
         </div>
     </div>
 
@@ -202,37 +210,47 @@
     </div>
     <!-- Center Score text -->
     <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
-    <!--Level Up -->
-    <div class="level-up" id="level-up-text"><img alt="Level Up text" src="assets/images/levelUp.png"></div>
 
 </main>
 
 <!-------------------------------- Audio Imports ------------------>
 <audio id="green-classic-audio" preload="auto">
-    <source src="assets/sounds/green-classic-audio.ogg" type="audio/ogg"/>
-    <source src="assets/sounds/green-classic-audio.mp3" type="audio/mpeg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_u6owdw.ogg"
+            type="audio/ogg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_nxviwf.mp3"
+            type="audio/mpeg"/>
 </audio>
 <audio id="red-classic-audio" preload="auto">
-    <source src="assets/sounds/red-classic-audio.ogg" type="audio/ogg"/>
-    <source src="assets/sounds/red-classic-audio.mp3" type="audio/mpeg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/red-classic-audio_whpfqx.ogg"
+            type="audio/ogg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/red-classic-audio_rpybox.mp3"
+            type="audio/mpeg"/>
 </audio>
 <audio id="yellow-classic-audio" preload="auto">
-    <source src="assets/sounds/yellow-classic-audio.ogg" type="audio/ogg"/>
-    <source src="assets/sounds/yellow-classic-audio.mp3" type="audio/mpeg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/yellow-classic-audio_awj9ly.ogg"
+            type="audio/ogg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/yellow-classic-audio_hm2ycn.mp3"
+            type="audio/mpeg"/>
 </audio>
 <audio id="blue-classic-audio" preload="auto">
-    <source src="assets/sounds/blue-classic-audio.ogg" type="audio/ogg"/>
-    <source src="assets/sounds/blue-classic-audio.mp3" type="audio/mpeg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/blue-classic-audio_fcol2z.ogg"
+            type="audio/ogg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/blue-classic-audio_pr9epq.mp3"
+            type="audio/mpeg"/>
 </audio>
 <!-- click sound -->
 <audio id="click-audio" preload="auto">
-    <source src="assets/sounds/click2.ogg" type="audio/ogg"/>
-    <source src="assets/sounds/click2.mp3" type="audio/mpeg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_itafjp.ogg"
+            type="audio/ogg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_edu6rx.mp3"
+            type="audio/mpeg"/>
 </audio>
 <!--crack sound -->
 <audio id="crack-audio" preload="auto">
-    <source src="assets/sounds/Crack.ogg" type="audio/ogg"/>
-    <source src="assets/sounds/Crack.mp3" type="audio/mpeg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_oqiblc.ogg"
+            type="audio/ogg"/>
+    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_zjj3qz.mp3"
+            type="audio/mpeg"/>
 </audio>
 <!-------------------------------- Scripts ------------------>
 <!-- Jquery -->

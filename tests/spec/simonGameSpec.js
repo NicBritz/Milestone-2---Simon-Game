@@ -90,7 +90,7 @@ describe("Simon Game", function () {
             updateGameMode(this);
             expect(window.updateGameMode).toHaveBeenCalled();
         });
-    })
+    });
 
     //----------Settings BUTTON---------//
     describe("Settings Button", function () {
@@ -108,7 +108,7 @@ describe("Simon Game", function () {
             settingsMenu();
             expect(window.settingsMenu).toHaveBeenCalled();
         });
-    })
+    });
 
     //----------Help BUTTON---------//
     describe("Help Button", function () {

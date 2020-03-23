@@ -11,7 +11,6 @@
 - [UX](#ux)
   - [Wireframes](#wireframes)
     - [PC Mockups](#pc-mockups)
-- [<!-- Top -->](#)
     - [Tablet Mockups](#tablet-mockups)
     - [Smartphone Mockups](#smartphone-mockups)
 - [Features](#features)
