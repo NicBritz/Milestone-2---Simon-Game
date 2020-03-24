@@ -1,6 +1,6 @@
-
-<img align="center" src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png" alt="Main Screen screen for pc">
-
+<div align="center">
+    <img  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png" alt="Main Screen screen for pc">
+</div>
 <!-- contents -->
 
 ## Contents
@@ -62,7 +62,7 @@ Audio plays a big part in the experience of the game and because of this, most o
 
 #### Visual
 I wanted the experience to feel like a modern game to achieve this I made use of some assets that I purchased. When it came time to create the main game buttons I used very saturated colours and added some visual effects to indicate that the button had been activated. 
-<div align="center">
+
 
 ---
 
@@ -223,13 +223,20 @@ The game modes are as detailed as follows:
    - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
 
 ### GUI Elements
-With the use of graphically designed GUI elements that were both purchased and are free to use the Graphical User Interface looks neat and feels like a game. 
+With the use of graphically designed GUI elements that were both purchased and are free to use the Graphical User Interface looks neat and feels like a game.
+
+**Favicon**
+I have used [this article](https://www.w3.org/2005/10/howto-favicon) to add a favicon to my website, this just add a bit of a finishing touch to the application. The png file itself <span><img src="/assets/images/favicon" alt="Favicon Icon"></span> is an original that I created using [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop).
 
 **Game Buttons**
 All the menu buttons and icons are from a mobile gui pack that was sourced form [Graphic Burger](https://graphicburger.com/mobile-game-gui/). In conjunction with [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop) I 
-was able to extract the elements I wanted from the source file.
+was able to extract the elements I wanted from the source file. All images are served by the content delivery system [Cloudinary](https://cloudinary.com/) to maximize the performance of the application. 
 
 **Logo and Game Over text**
+The content pack for this is something io purchased some time back, originally created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan) and provided in .ai format. 
+With the aid of [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?gclid=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE:G:s&s_kwcid=AL!3085!3!340693010824!e!!g!!adobe%20illistrator) I was able to create both the game title text and the game over text. 
+As with the button images these are also served by the content delivery system [Cloudinary](https://cloudinary.com/). 
+
 
 ```
  In this section, you should go over the different parts of your project, and describe each in a sentence or so.
