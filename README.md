@@ -142,22 +142,16 @@ Here You can find my [Balsamiq project files](/Wireframes/) as well as higher re
 ---
 #### ScreenShots
 
-<br>
 <!-- Main Screen PC -->
 <img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Main_PC_qnx3nf.png" alt="Main Screen game screen for pc">
-<br>
 <!-- Game Screen PC -->
 <img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_PC_klrnko.png" alt="Game screen for pc">
-<br>
 <!-- Game Over Screen PC -->
 <img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_Over_PC_ekicut.png" alt="Game Over screen for pc">
-<br>
 <!-- Main Screen Mobile -->
 <img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Main_Mobile_hwla7w.png" alt="Main Screen game screen for mobile">
-<br>
 <!-- Game Screen Mobile -->
 <img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_Mobile_nqyzon.png" alt="Game screen for mobile">
-<br>
 <!-- Game Over Screen Mobile -->
 <img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,h_300/v1584981568/Simon/Screenshots/Game_Over_Mobile_jna9xp.png" alt="Game Over screen for mobile">
 <!-- Top -->
@@ -335,6 +329,8 @@ I used the following technologies to create this website:
     - Used this to check my HTML for errors and typos.
 - [W3C CSS](https://jigsaw.w3.org/css-validator/) 
     - Used this to check the validity of my CSS.
+- [jshint](https://jshint.com/)
+    - Used to validate JavaScript.
 - [Autoprefixer](https://autoprefixer.github.io/) 
     - I used this tool to make sure I did not miss any prefixing in my code.
 - [Bosca Ceoil](https://boscaceoil.net/) 
@@ -354,6 +350,46 @@ I used the following technologies to create this website:
 
 ## Testing
 
+Extensive testing and error checking was undertaken throughout the development process. With the aid of the following tools I was able to catch and fix errors and bugs in my code.
+
+**[W3C Markup](https://validator.w3.org/)**
+Checking my [index.html](/index.html) file with the validator helped me find some small errors in my code including forgetting a ```</div>``` and a ```>``` too many as well as missing out ```lang="en"``` in my html element. 
+After fixing these and some other minor errors in the HTML file I got the following message in the editor ``Document checking completed. No errors or warnings to show.``
+
+**[W3C CSS](https://jigsaw.w3.org/css-validator/)**
+Using the [style.css](/assets/css/style.css) file in the CSS validator resulted in no errors, I was constantly checking these files and fixing any errors that occurred as they were spotted. The
+results of this test were displayed as ``Congratulations! No Error Found.`` 
+
+**[Autoprefixer](https://autoprefixer.github.io/)**
+After finishing up my css and before validation of CSS i used this tool to make sure i had not left out any prefixing in my code. 
+
+**[jshint](https://jshint.com/)**
+After using this on [game.js](/assets/js/game.js) I picked up some lines of code where I had left out the ``;`` as well as some unused variables. After fixing these errors and running again the following was found:
+```
+Metrics
+There are 38 functions in this file.
+Function with the largest signature take 1 arguments, while the median is 0.
+Largest function has 9 statements in it, while the median is 4.
+The most complex function has a cyclomatic complexity value of 6 while the median is 1.
+```
+**[Pycharm](https://www.jetbrains.com/pycharm/)**
+Pycharm professional comes with a set of tools to check code quality as well as spelling errors. 
+These were used regular to keep the code syntactically correct and well as catch spelling errors. This is also what i used to format the code and help with refactoring when needed.
+
+**Devices and Browsers**
+- Chrome:
+    - tested responsiveness using chrome development tools.
+    - tested lag on slower networks using the network tools in developer tools, this helped me fix an audio lag bug.
+    - Running an audit with the developer tools  
+     
+
+**User testing**
+I had some friends and family test the site and the feedback was invaluable. This helped me pick up compatibility issues with different devices. 
+There was feedback that the game had a level-up text that was very distracting so this was removed, 
+they also picked up some small grammar issues I had missed.
+
+### Jasmin
+Using Jasmin
 ```
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 

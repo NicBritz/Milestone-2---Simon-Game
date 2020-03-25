@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 /* ################### Fonts ###################  */
 
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
@@ -33,6 +35,8 @@ main {
 
 /*Setup Rows and Cols*/
 .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -74,13 +78,18 @@ main {
 
 /* global Button properties*/
 .btn {
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
 /* Button Hover*/
 .btn:hover {
+    cursor: -webkit-grab;
     cursor: grab;
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 /*Play Button*/
@@ -138,7 +147,8 @@ main {
 }
 
 .gray-out {
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
 }
 
 /* Game Mode Heading */
@@ -244,6 +254,16 @@ main {
 /*crack Image https://www.searchpng.com/download-png/?imageid=3548*/
 /* Cracked */
 .cracked {
+    background: -webkit-gradient(
+            linear,
+            left top, left bottom,
+            from(rgba(0, 0, 0, 0.2)),
+            to(rgba(0, 0, 0, 0.2))
+    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+    background: -o-linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
             rgba(0, 0, 0, 0.2)
@@ -271,6 +291,7 @@ main {
 
 /* player active */
 .active {
+    cursor: -webkit-grab;
     cursor: grab;
 }
 
