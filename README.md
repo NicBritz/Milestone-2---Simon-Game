@@ -79,16 +79,16 @@ Here You can find my [Balsamiq project files](/Wireframes/) as well as higher re
 <br>
 
 <!-- Main Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Main_Screen_-_WEB_bzhhgh.png" alt="Main Screen screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Main_Screen_-_WEB_bzhhgh.png" alt="Main Screen screen for pc">
 
 <!-- Game Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Screen_-_WEB_dyqizn.png" alt="Game screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Game_Screen_-_WEB_dyqizn.png" alt="Game screen for pc">
 
 <!-- Settings Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Settings_-_WEB_byhb2b.png" alt="Game settings screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Settings_-_WEB_byhb2b.png" alt="Game settings screen for pc">
 
 <!-- Game Over Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982756/Simon/wireframes/Game_Over_-_WEB_q5ldla.png" alt="Game Over screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982756/Simon/wireframes/Game_Over_-_WEB_q5ldla.png" alt="Game Over screen for pc">
 
 <!-- Top -->
 ---
@@ -102,16 +102,16 @@ Here You can find my [Balsamiq project files](/Wireframes/) as well as higher re
 <br>
 
 <!-- Main Screen iPad -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Main_Screen_-_iPad_ylhkfb.png" alt="Main Screen screen for iPad">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Main_Screen_-_iPad_ylhkfb.png" alt="Main Screen screen for iPad">
 
 <!-- Game Screen iPad -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Screen_-_iPad_zg6bim.png" alt="Game screen for iPad">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Game_Screen_-_iPad_zg6bim.png" alt="Game screen for iPad">
 
 <!-- Settings Screen iPad -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Settings_-_iPad_eanauv.png" alt="Game settings screen for iPad">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Settings_-_iPad_eanauv.png" alt="Game settings screen for iPad">
 
 <!-- Game Over Screen iPad -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Over_-_iPad_gxu4vw.png" alt="Game Over screen for iPad">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Game_Over_-_iPad_gxu4vw.png" alt="Game Over screen for iPad">
 
 <!-- Top -->
 
@@ -124,16 +124,16 @@ Here You can find my [Balsamiq project files](/Wireframes/) as well as higher re
 <br>
 
 <!-- Main Screen iPhone -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Main_Screen_-_iPhone_xwveb9.png" alt="Main Screen screen for iPhone">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Main_Screen_-_iPhone_xwveb9.png" alt="Main Screen screen for iPhone">
 
 <!-- Game Screen iPhone -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Screen_-_iPhone_i0rhfi.png" alt="Game screen for iPhone">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Game_Screen_-_iPhone_i0rhfi.png" alt="Game screen for iPhone">
 
 <!-- Settings Screen iPhone -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Settings_-_iPhone_tqtut6.png" alt="Game settings screen for iPhone">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Settings_-_iPhone_tqtut6.png" alt="Game settings screen for iPhone">
 
 <!-- Game Over Screen iPhone -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584982757/Simon/wireframes/Game_Over_-_iPhone_ttmzvn.png" alt="Game Over screen for iPhone">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584982757/Simon/wireframes/Game_Over_-_iPhone_ttmzvn.png" alt="Game Over screen for iPhone">
 
 <!-- Top -->
 
@@ -144,22 +144,22 @@ Here You can find my [Balsamiq project files](/Wireframes/) as well as higher re
 
 <br>
 <!-- Main Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Main_PC_qnx3nf.png" alt="Main Screen game screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Main_PC_qnx3nf.png" alt="Main Screen game screen for pc">
 <br>
 <!-- Game Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Game_PC_klrnko.png" alt="Game screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_PC_klrnko.png" alt="Game screen for pc">
 <br>
 <!-- Game Over Screen PC -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Game_Over_PC_ekicut.png" alt="Game Over screen for pc">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_Over_PC_ekicut.png" alt="Game Over screen for pc">
 <br>
 <!-- Main Screen Mobile -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Main_Mobile_hwla7w.png" alt="Main Screen game screen for mobile">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Main_Mobile_hwla7w.png" alt="Main Screen game screen for mobile">
 <br>
 <!-- Game Screen Mobile -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_600/v1584981568/Simon/Screenshots/Game_Mobile_nqyzon.png" alt="Game screen for mobile">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_Mobile_nqyzon.png" alt="Game screen for mobile">
 <br>
 <!-- Game Over Screen Mobile -->
-<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,h_600/v1584981568/Simon/Screenshots/Game_Over_Mobile_jna9xp.png" alt="Game Over screen for mobile">
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,h_300/v1584981568/Simon/Screenshots/Game_Over_Mobile_jna9xp.png" alt="Game Over screen for mobile">
 <!-- Top -->
 <!-- wireframes -->
 
@@ -223,35 +223,67 @@ The game modes are as detailed as follows:
    - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
 
 ### GUI Elements
-With the use of graphically designed GUI elements that were both purchased and are free to use the Graphical User Interface looks neat and feels like a game.
+With the use of well designed GUI elements, that were either purchased, free or custom created for the Graphical User Interface the game looks neat and feels like a native application.
 
 **Favicon**
-I have used [this article](https://www.w3.org/2005/10/howto-favicon) to add a favicon to my website, this just add a bit of a finishing touch to the application. The png file itself <span><img src="/assets/images/favicon.png" alt="Favicon Icon"></span> is an original that I created using [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop).
+With the use of  [this article](https://www.w3.org/2005/10/howto-favicon) a favicon was added to the browser tab, this helped to make it feel like a more professional web game. The <span><img src="/assets/images/favicon.png" alt="Favicon Icon"></span> png file, is an original that was created using [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop),
+it was designed to look like a tiny version of the game screen.
+
+**Modal**
+All the game menu elements are contained in a modal. The window in the modal has a white border that is used to add to the overall look of the menu. 
+The modal is made using and external jQuery library called [jQuery Modal](https://jquerymodal.com/), you can find the GitHub repository for the library [here](https://github.com/kylefox/jquery-modal). 
+There is also a slight fade animation on teh modal to make it have a smooth transition between the modal and the game screen.
 
 **Game Buttons**
 All the menu buttons and icons are from a mobile gui pack that was sourced form [Graphic Burger](https://graphicburger.com/mobile-game-gui/). In conjunction with [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop) I 
 was able to extract the elements I wanted from the source file. All images are served by the content delivery system [Cloudinary](https://cloudinary.com/) to maximize the performance of the application. 
+When a user selects any of the buttons there will be an audio cue to indicate the button was pressed. Hovering over the button will change the cursor the grab symbol and the button will increase slightly in size.   
 
 **Logo and Game Over text**
 The content pack for this is something io purchased some time back, originally created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan) and provided in .ai format. 
 With the aid of [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?gclid=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE:G:s&s_kwcid=AL!3085!3!340693010824!e!!g!!adobe%20illistrator) I was able to create both the game title text and the game over text. 
 As with the button images these are also served by the content delivery system [Cloudinary](https://cloudinary.com/). 
 
+**Help Menu**
+The help menu describes the overall object of the game, the instructions are arranged in such a way as to describe the overall game rules as well as the individual game play options.
+With the use or headings and red underlines the content is organised in an eay to follow way. 
 
-```
- In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+**Settings Menu**
+In this menu you can find the options available to the player. Each choice in the game mode section can be selected by using the left and right arrows. 
+If you are at the end of the list the arrow will be greyed out indicating there are no further options in that direction. 
+Underneath the selection there is a brief description of what to expect from that option.
 
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+**Game Over Menu**
+When the player loses the round they will be presented with the game over screen. On this screen there is a summery of the results of the game.
+- Score: This will be the score from the round just played, the score is the amount of rounds the player has completed in the previous session. 
+- Best: This indicated the Top Score the player as achieved since the start of playing the game.
+- Mode: This indicated the Game Mode teh player had selected when playing the round.
+<br>
+At the bottom of the game over screen there social media links so that the player can share there experience with the game, these currently got to the homepage of the selected social link.
+The player can now either restart the game using the replay button or access the maim menu using the menu button on the bottom left. The score will be persistent until the player either closes the browser tab ore refreshes the page.
+If the player chooses to go bac to the main menu they will be presented with a new random quote for inspiration.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+### Game Screen
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+The main game screen has the following elements:
+**Buttons**
+The four coloured game buttons will be the main game buttons when playing. Whenever the button is pressed by either the computer of the player, 
+it will scale down and play a relative audio sound. It the player get the sequence correct the computer will start the next round if not then the button will display a cracked overlay and
+play a crack sound. This will then trigger the Game Over modal. The buttons have rounded edges and an inset shadow to make them look and feel smooth. 
 
-### Features Left to Implement
-- Another feature idea
-```
+**Circle**
+In the center of the screen there is a circle that is used to indicate the current round the player is on. The circle also has an inset colour ring that indicates the following:
+- RED - Computers turn, player controls are disabled.
+- GREEN - Players turn, player controls are enabled. 
+
+#### General
+The page is responsive and with the use of media queries it caters for a wide range of screen sizes. 
+
+#### Features Left to Implement
+- Themes, different visual themes to add some great looks to the game
+- Permanent score storage
+- Timer between rounds
+- Strict mode and standard mode
 
 <!-- Top -->
 
@@ -264,37 +296,51 @@ In addition, you may also use this section to discuss plans for additional featu
 <!-- technologies used -->
 
 ## Technologies Used
-```
 I used the following technologies to create this website:
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to *construct this project. For each, provide its name, a link to its *official site and a short sentence of why it was used.
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) 
+    - Used as the basis of the website.
+- [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3) 
+    - Used for the overall look of the site and its elements.
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    - Used in various places to aid site functionality.
+- [Google fonts](https://fonts.google.com/) 
+    - Used to get fonts for my site.
+- [JQuery](https://jquery.com) 
+    - Used to simplify DOM manipulation.
+- [Git](https://git-scm.com/)
+    - Used for version control. 
+- [Jasmine](https://jasmine.github.io/)
+    - Used for automated testing.
+- [jQuery Modal](https://jquerymodal.com/)
+    - Used to simplify modal presentation. 
 
- [JQuery](https://jquery.com)
-   - The project uses **JQuery** to simplify DOM manipulation.
+### Other tools used
 
-
-1. HTML
-2. CSS
-3. [Bootstrap (4.4.0)](https://getbootstrap.com/)
-4. [Google fonts](https://fonts.google.com/)
-5. [Font Awesome (5.11.2)](https://fontawesome.com/)
-6. [Git](https://git-scm.com/)
-7. [Hover.css](https://ianlunn.github.io/Hover/)
-
-### Tools for the job
-
-Below is a list of tools I used to create this website.
-
-- [Pycharm](https://www.jetbrains.com/pycharm/) - This is the IDE I used to start building the website.
-- [Gimp](https://www.gimp.org/) - A free image editor I used to create and edit come of the site content.
+- [Pycharm](https://www.jetbrains.com/pycharm/) 
+    - This is the main IDE I used to build the website.
+- [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop)
+    - Used to manipulate and create content for the website.
+- [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?gclid=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE:G:s&s_kwcid=AL!3085!3!340693010824!e!!g!!adobe%20illistrator)
+    - Used to create logos and titles for the website.
 - [Balsamq](https://balsamiq.com/) - All my wireframes were created in the desktop version of Balsamiq.
+    - Used to create wireframes for the website.
 - [VS Code](https://code.visualstudio.com/) - Used this editor for building parts of the website.
+    - Used for some coding due to its wide range of add-ins.
 - [Git Hub](https://github.com/) - Used this site to manage my projects storage as well as host the website.
-- [Grammarly](https://www.grammarly.com/) Used to double-check all my spelling and grammar.
-- [W3C Markup](https://validator.w3.org/) - used this to check my HTML for errors and typos.
-- [W3C CSS](https://jigsaw.w3.org/css-validator/) - used this to check my CSS for errors.
-- [Autoprefixer](https://autoprefixer.github.io/) - I used this tool to make sure I did not miss any prefixing in my code.
-```
+    - Used to store my project files as well as host my site via GitHub pages. 
+- [Grammarly](https://www.grammarly.com/) 
+    - Used to double-check all my spelling and grammar.
+- [W3C Markup](https://validator.w3.org/) 
+    - Used this to check my HTML for errors and typos.
+- [W3C CSS](https://jigsaw.w3.org/css-validator/) 
+    - Used this to check the validity of my CSS.
+- [Autoprefixer](https://autoprefixer.github.io/) 
+    - I used this tool to make sure I did not miss any prefixing in my code.
+- [Bosca Ceoil](https://boscaceoil.net/) 
+    - Used to create some of the game sounds.
+- [BFXR](https://www.bfxr.net/)
+    - Used to create some of the game sounds.
 
   <!-- Top -->
 
