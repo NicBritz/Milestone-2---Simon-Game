@@ -46,7 +46,7 @@ As a user ...
 - I want a way to improve my memory and coordination in a fun but challenging way. 
 - I would like an application that I can use on my computer but also one that is available on my mobile devices.
 - I would like the application to have both visual and auditory cues.
-- I would like to be able to read instruction for the game without leaving the game.
+- I would like to be able to read the instructions for the game without leaving the game.
 - I would like various game modes to challenge myself in fun and interesting ways.
 - I would like the game to show me when I hit the wrong button.
 - I would like an endless game experience that will increase in speed incrementally.
@@ -55,7 +55,7 @@ As a user ...
 ### The design process
 
 #### Scope
-The goal of this project was to recreate the classic 1978 electronic game called Simon. This is a more modern aproach and is focused on delivering a clean and responsive user interface. keeping any effects subtle but still notable, without overwhelming the user with too much information at once makes for a simple but fun game. 
+The goal of this project was to recreate the classic 1978 electronic game called Simon. This is a more modern approach and is focused on delivering a clean and responsive user interface. keeping any effects subtle but still notable, without overwhelming the user with too much information at once makes for a simple but fun game. 
 
 #### Audio
 Audio plays a big part in the experience of the game and because of this, most of the audio assets used are original. All the audio files are both in mp3 and Ogg format to ensure compatibility on a wide range of devices.
@@ -166,10 +166,10 @@ Here You can find my [Balsamiq project files](/Wireframes/) as well as higher re
 ## Features
 
 ### Quotes API
-At the start of the game you will be presented with an inspirational quote. 
+At the start of the game, you will be presented with an inspirational quote. 
 These quotes are fetched for [this API](https://type.fit/api/quotes) found via this [article](https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373). 
-Once the all the data from the API is retrieved a random quote is selected and displayed on the main game screen. After every round a new random quote will be selected and displayed. 
-There are some instances where quotes would not have a author, in these cases the author is displayed as *'unknown'*.
+Once all the data from the API is retrieved a random quote is selected and displayed on the main game screen. After every round, a new random quote will be selected and displayed. 
+There are some instances where quotes would not have an author, in these cases the author is displayed as *'unknown'*.
 
 ### Game Modes
 This project has four unique game modes, each one brings new challenges, this helps to keep the game both fun and challenging for a variety of users. 
@@ -183,7 +183,7 @@ The game modes are as detailed as follows:
    - After every 5th step, the sequence gets faster.
    - The player must repeat all the steps in the sequence in the original order.
    - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
-   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   - The object to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
    
 **Random:**  
    - When playing the game in this mode you will be presented with a set of four coloured buttons. 
@@ -194,7 +194,7 @@ The game modes are as detailed as follows:
    - After every 5th step, the sequence gets faster.
    - The player must repeat all the steps in the sequence in the original order. 
    - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
-   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   - The object to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
    
 **Single:**
    - When playing the game in this mode you will be presented with a set of four coloured buttons. 
@@ -204,7 +204,7 @@ The game modes are as detailed as follows:
    - After every 5th step, the sequence gets faster.
    - The player must repeat all the steps in the sequence in the original order. 
    - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
-   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   - The object to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
    
 **Reverse:**
    - When playing the game in this mode you will be presented with a set of four coloured buttons. 
@@ -214,7 +214,7 @@ The game modes are as detailed as follows:
    - After every 5th step, the sequence gets faster.
    - The player must repeat the steps in the sequence in the reverse order. 
    - If the player hits the incorrect coloured button a cracking sound is triggered and a cracked image overlay is displayed on the button.
-   - The object to to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
+   - The object to get as long a sequence as possible, you will be presented with your best score as well as the last rounds score once the game is over.
 
 ### GUI Elements
 With the use of well designed GUI elements, that were either purchased, free or custom created for the Graphical User Interface the game looks neat and feels like a native application.
@@ -225,37 +225,37 @@ it was designed to look like a tiny version of the game screen.
 
 **Modal**
 All the game menu elements are contained in a modal. The window in the modal has a white border that is used to add to the overall look of the menu. 
-The modal is made using and external jQuery library called [jQuery Modal](https://jquerymodal.com/), you can find the GitHub repository for the library [here](https://github.com/kylefox/jquery-modal). 
-There is also a slight fade animation on teh modal to make it have a smooth transition between the modal and the game screen.
+The modal is made using and an external jQuery library called [jQuery Modal](https://jquerymodal.com/), you can find the GitHub repository for the library [here](https://github.com/kylefox/jquery-modal). 
+There is also a slight fade animation on the modal to make it have a smooth transition between the modal and the game screen.
 
 **Game Buttons**
-All the menu buttons and icons are from a mobile gui pack that was sourced form [Graphic Burger](https://graphicburger.com/mobile-game-gui/). In conjunction with [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop) I 
+All the menu buttons and icons are from a mobile GUI pack that was sourced from [Graphic Burger](https://graphicburger.com/mobile-game-gui/). In conjunction with [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop) I 
 was able to extract the elements I wanted from the source file. All images are served by the content delivery system [Cloudinary](https://cloudinary.com/) to maximize the performance of the application. 
 When a user selects any of the buttons there will be an audio cue to indicate the button was pressed. Hovering over the button will change the cursor the grab symbol and the button will increase slightly in size.   
 
 **Logo and Game Over text**
-The content pack for this is something io purchased some time back, originally created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan) and provided in .ai format. 
+The content pack for this is something io purchased some time back, created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan) and provided in .ai format. 
 With the aid of [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?gclid=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE:G:s&s_kwcid=AL!3085!3!340693010824!e!!g!!adobe%20illistrator) I was able to create both the game title text and the game over text. 
-As with the button images these are also served by the content delivery system [Cloudinary](https://cloudinary.com/). 
+As with the button images, these are also served by the content delivery system [Cloudinary](https://cloudinary.com/). 
 
 **Help Menu**
-The help menu describes the overall object of the game, the instructions are arranged in such a way as to describe the overall game rules as well as the individual game play options.
-With the use or headings and red underlines the content is organised in an eay to follow way. 
+The help menu describes the overall object of the game, the instructions are arranged in such a way as to describe the overall game rules as well as the individual gameplay options.
+With the use or headings and red underlines, the content is organised in an easy to follow way. 
 
 **Settings Menu**
-In this menu you can find the options available to the player. Each choice in the game mode section can be selected by using the left and right arrows. 
+In this menu, you can find the options available to the player. Each choice in the game mode section can be selected by using the left and right arrows. 
 If you are at the end of the list the arrow will be greyed out indicating there are no further options in that direction. 
-Underneath the selection there is a brief description of what to expect from that option.
+Underneath the selection, there is a brief description of what to expect from that option.
 
 **Game Over Menu**
-When the player loses the round they will be presented with the game over screen. On this screen there is a summery of the results of the game.
-- Score: This will be the score from the round just played, the score is the amount of rounds the player has completed in the previous session. 
+When the player loses the round they will be presented with the game over screen. On this screen, there is a summary of the results of the game.
+- Score: This will be the score from the round just played, the score is the number of rounds the player has completed in the previous session. 
 - Best: This indicated the Top Score the player as achieved since the start of playing the game.
-- Mode: This indicated the Game Mode teh player had selected when playing the round.
+- Mode: This indicated the Game Mode the player had selected when playing the round.
 <br>
 At the bottom of the game over screen there social media links so that the player can share there experience with the game, these currently got to the homepage of the selected social link.
-The player can now either restart the game using the replay button or access the maim menu using the menu button on the bottom left. The score will be persistent until the player either closes the browser tab ore refreshes the page.
-If the player chooses to go bac to the main menu they will be presented with a new random quote for inspiration.
+The player can now either restart the game using the replay button or access the main menu using the menu button on the bottom left. The score will be persistent until the player either close the browser tab ore refreshes the page.
+If the player chooses to go back to the main menu they will be presented with a new random quote for inspiration.
 
 ### Game Screen
 
@@ -266,12 +266,12 @@ it will scale down and play a relative audio sound. It the player get the sequen
 play a crack sound. This will then trigger the Game Over modal. The buttons have rounded edges and an inset shadow to make them look and feel smooth. 
 
 **Circle**
-In the center of the screen there is a circle that is used to indicate the current round the player is on. The circle also has an inset colour ring that indicates the following:
+In the centre of the screen, there is a circle that is used to indicate the current round the player is on. The circle also has an inset colour ring that indicates the following:
 - RED - Computers turn, player controls are disabled.
 - GREEN - Players turn, player controls are enabled. 
 
 #### General
-The page is responsive and with the use of media queries it caters for a wide range of screen sizes. 
+The page is responsive and with the use of media queries, it caters for a wide range of screen sizes. 
 
 #### Features Left to Implement
 - Themes, different visual themes to add some great looks to the game
@@ -307,13 +307,13 @@ I used the following technologies to create this website:
 - [Jasmine](https://jasmine.github.io/)
     - Used for automated testing.
 - [jQuery Modal](https://jquerymodal.com/)
-    - Used to simplify modal presentation. 
+    - Used to simplify the modal presentation. 
 
 ### Other tools used
 
 - [Pycharm](https://www.jetbrains.com/pycharm/) 
     - This is the main IDE I used to build the website.
-- [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop)
+- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop)
     - Used to manipulate and create content for the website.
 - [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?gclid=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE:G:s&s_kwcid=AL!3085!3!340693010824!e!!g!!adobe%20illistrator)
     - Used to create logos and titles for the website.
@@ -350,10 +350,10 @@ I used the following technologies to create this website:
 
 ## Testing
 
-Extensive testing and error checking was undertaken throughout the development process. With the aid of the following tools I was able to catch and fix errors and bugs in my code.
+Extensive testing and error checking was undertaken throughout the development process. With the aid of the following tools, I was able to catch and fix errors and bugs in my code.
 
 **[W3C Markup](https://validator.w3.org/)**
-Checking my [index.html](/index.html) file with the validator helped me find some small errors in my code including forgetting a ```</div>``` and a ```>``` too many as well as missing out ```lang="en"``` in my html element. 
+Checking my [index.html](/index.html) file with the validator helped me find some small errors in my code including forgetting a ```</div>``` and a ```>``` too many as well as missing out ```lang="en"``` in my HTML element. 
 After fixing these and some other minor errors in the HTML file I got the following message in the editor ``Document checking completed. No errors or warnings to show.``
 
 **[W3C CSS](https://jigsaw.w3.org/css-validator/)**
@@ -361,55 +361,53 @@ Using the [style.css](/assets/css/style.css) file in the CSS validator resulted 
 results of this test were displayed as ``Congratulations! No Error Found.`` 
 
 **[Autoprefixer](https://autoprefixer.github.io/)**
-After finishing up my css and before validation of CSS i used this tool to make sure i had not left out any prefixing in my code. 
+After finishing up my CSS and before the validation of CSS I used this tool to make sure I had not left out any prefixing in my code. 
 
 **[jshint](https://jshint.com/)**
 After using this on [game.js](/assets/js/game.js) I picked up some lines of code where I had left out the ``;`` as well as some unused variables. After fixing these errors and running again the following was found:
 ```
 Metrics
 There are 38 functions in this file.
-Function with the largest signature take 1 arguments, while the median is 0.
-Largest function has 9 statements in it, while the median is 4.
+Function with the largest signature takes 1 argument, while the median is 0.
+The largest function has 9 statements in it, while the median is 4.
 The most complex function has a cyclomatic complexity value of 6 while the median is 1.
 ```
 **[Pycharm](https://www.jetbrains.com/pycharm/)**
 Pycharm professional comes with a set of tools to check code quality as well as spelling errors. 
-These were used regular to keep the code syntactically correct and well as catch spelling errors. This is also what i used to format the code and help with refactoring when needed.
+These were used regularly to keep the code syntactically correct and well as catch spelling errors. This is also what I used to format the code and help with refactoring when needed.
 
 **Devices and Browsers**
 - Chrome:
+    - Version 80.0.3987.149 (Official Build) (64-bit)
     - tested responsiveness using chrome development tools.
     - tested lag on slower networks using the network tools in developer tools, this helped me fix an audio lag bug.
-    - Running an audit with the developer tools  
+    - Running an audit with the developer tools helped me solves a bug where I was triggering the audio before a player was interacting. Final results as follows:
+<img src="tests/images/google audit.png" alt="Goggle Audit image"> 
      
+- Safari:
+    - Version 13.0
+    - Tested on an iMac and iPhone and iPad.
+    - Issues with audio lag and audio not playing were eventually resolved using this [article](https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari)
+    - Issues with touch not being sensitive enough fixed by using ``touchstart`` instead of ``touch`` in my event listeners.
 
+- Other:
+    - Used various models of android phones and tablets to test and adjust for mobile devices. 
+    - Tested with:
+        - FireFox - Version 74.0 (64-bit)
+        - Edge - Version 80.0.361.69 (Official build) (64-bit)
+        - Opera Version 7.0 
+        - Samsung galaxy s9 and A10
+        - Samsung galaxy tablet
+  
 **User testing**
-I had some friends and family test the site and the feedback was invaluable. This helped me pick up compatibility issues with different devices. 
-There was feedback that the game had a level-up text that was very distracting so this was removed, 
-they also picked up some small grammar issues I had missed.
+I had some friends and family test the site and the feedback was invaluable. This helped me pick up compatibility issues with different devices, I made some changes based on the feedback I received. 
+There was feedback from multiple players that the game had a level-up text that was very distracting when it flashed on the screen so this was removed, they also picked up some small grammar issues I had missed. 
+There was some feedback that the app was a bit unresponsive to touch sometimes, I changed the code slightly to accommodate for this. 
 
 ### Jasmin
-Using Jasmin
-```
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+Using Jasmin I was able to test if the code was working as expected. the test files can be found [here](tests).
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-```
 
  <!-- Top -->
 
@@ -423,18 +421,55 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-```
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This project is hosted on  [GitHub](https://github.com/) and used GitHub pages to serve the site to the world. If you would like to contribute to this project or run it locally
+ you would need to first have some sort of code editor installed like [VS Code](https://code.visualstudio.com/) and some version control software like [Git](https://git-scm.com/), you will also need a GitHub account.
+ 
+ Once you have these tools installed and everything is working you can follow the steps below:
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+ - Cloning
+  - You are now ready to clone a copy of this project to your local machine for editing.
+  - At the top of the repository click on the ``Clone or download button``
+  - Copy the path to the repo ``https://github.com/Frozenaught/Milestone-2---Simon-Game.git``
+  - In your command-line, navigate to the folder where you would like to make a copy of this repository -``c:\MyRepos> `` .
+  - Type the following to clone the repo ``c:\MyRepos> git clone https://github.com/Frozenaught/Milestone-2---Simon-Game.git``
+  - You should see a similar output to the following: 
+  ```
+    Cloning into 'Milestone-2---Simon-Game'...
+     remote: Enumerating objects: 252, done.
+     remote: Counting objects: 100% (252/252), done.
+     remote: Compressing objects: 100% (140/140), done.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
-
-```
-
+     Receiving objects: 100% (535/535), 1.37 MiB | 3.00 MiB/s, done.
+     Resolving deltas: 100% (162/162), done.
+  ```
+  - now you can navigate to the newly created directory ``c:\MyRepos\Milestone-2---Simon-Game>``
+  - To run the project locally, simple launch the index.html file from your Machine.
+  - You can now edit any of the code using your code editor of choice. 
+  
+ - Deploying 
+    - To deploy this to your Github account, navigate to Github and create a new repository.
+    - Give the repository a name and click the ``Create repository`` button.
+    - push the cloned repository to your Github account with the following commands in the command-line 
+    ``` 
+        git remote add origin https://github.com/Frozenaught/<repo name>.git 
+        git push -u origin master
+   ```
+   - Once you have uploaded your repo you can make use of Github pages to host the website.
+   - Go to Settings using the settings button at the top of the repository page, navigate down to Github pages and choose the master branch.
+   - This project will now be published and you will get a link like https://frozenaught.github.io/Milestone-2---Simon-Game/ to share.
+   
+ - Development
+  - If you chose to make changes to the website I would recommend using separate branches so that you can go back to the original master branch if the changes don't work as expected.
+  - Use ``git checkout -b <brancname>`` to create a new branch and edit the files accordingly.
+  - If you are happy with the changes to use ``git commit -m "my commit message of changes I have made"`` to commit the changes.
+  - Use ``git push `` to push the changes to the repository.
+  - As these changes are on a different branch they will not be available on the deployed site until you merge them to the master branch.
+  - To merge the new branch to the master branch switch to the new branch on Github using the branch selector dropdown menu. 
+  - create a new pull request and state what changes were made in the comment section. 
+  - submit the pull request and switch back to the master branch.
+  - now you will have the option to merge the pull request and you will be done.
+  - sometimes there is a slight delay in getting the update being live on the GitHub pages site. 
+  
  <!-- Top -->
 
 <div align="center">
@@ -448,23 +483,48 @@ In addition, if it is not obvious, you should also describe how to run your code
 ## Credits
 
 ### Content
-
-```
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-```
+-  [Rules](https://www.ultraboardgames.com/simon/game-rules.php)
+    - used to help with understanding the rules of the game as well as some working for the instructions.
+- [Wiki](https://en.wikipedia.org/wiki/Simon_(game\))
+    - used to understand the object of the game and the rules of the game.
+ 
 
 ### Media
-
-```
-- The photos used in this site were obtained from ...
-```
+- [GUI buttons](https://graphicburger.com/mobile-game-gui/)
+    - used this content for the graphical user interface buttons.
+- [Crack Image](https://www.searchpng.com/download-png/?imageid=3548)
+    - used to get the png image for the crack overlay.
+- [Logo and Game Over text](http://www.dafont.com/flying-leatherneck.font)
+    - purchased as part of a game assets bundle and created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan)
+- [Crack Sound](https://freesound.org/people/JustInvoke/sounds/446118/)
+    - the sound used to complement the crack image overlay.
+ - [Quotes API](https://type.fit/api/quotes)
+    - API used for the inspirational messages with help from [this Article](https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
 ### Acknowledgements
 
-```
-- I received inspiration for this project from X
-```
+[Tim Nelson](https://github.com/TravelTimN/simon-game)
+    - Tim's project was used for inspiration as he is a mentor I figured his work would be a great help. 
+    - I used his work to help me with my approach to jasmine testing.
+    - I also used his code to help understand different ways to approach a problem.
+    - I also drew some inspiration from his readme file as I think he did an excellent job.
 
+[Simon Says](https://play.google.com/store/apps/details?id=hackman.trevor.copycat&hl=en_GB)
+    - This game helped with inspiration for the overall design of the game as well as some of the different game modes.
+    - some wording was also used for inspiration.
+
+#### Other
+
+ I  used these sites for reference along the development process.
+- [CSS Tricks](https://css-tricks.com/) 
+    - For CSS documentation and help when needed.
+- [Can I Use](https://caniuse.com/) 
+    - For CSS decision making.
+- [Stack Overflow](https://stackoverflow.com/) 
+    - For those times when I could not figure out why I was not getting the result, I expected to like this [article](https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari)
+- [MDN](https://developer.mozilla.org/en-US/)
+    - For code referencing, while trying to get my code to do what I wanted it to do rather than what I told it to do.
+    
  <!-- Top -->
 
 <div align="center">
