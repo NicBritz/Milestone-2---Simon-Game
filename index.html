@@ -17,35 +17,35 @@
 <body>
 <main id="main_screen">
 
-    <!-- Main modal  -->
+    <!-- Main modal -->
     <div class="modal" id="main-modal">
 
-        <!-------------------------------- Main Menu ------------------>
+        <!-- Main Menu -->
         <div id="main_menu">
-            <!--  Main title logo -->
+            <!-- Main title logo -->
             <div class="Simon-Logo" id="title"><img alt="Simon title text"
                                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png">
             </div>
-            <!--  Quote Text Box  -->
+            <!-- Quote Text Box  -->
             <div class="quote-txt-box" id="main-menu-quote"></div>
-            <!--  Menu buttons-->
+            <!-- Menu buttons-->
             <div class="row">
-                <!--  Help Button -->
+                <!-- Help Button -->
                 <div class="col3 help-button" id="help_button"><img class="btn" alt="help button image"
                                                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Help_btn_yopxqk.png">
                 </div>
-                <!--  Play Button-->
+                <!-- Play Button-->
                 <div class="col3 play-button" id="play_button"><img class="btn play " alt="play button image"
                                                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png">
                 </div>
-                <!--  Settings Button -->
+                <!-- Settings Button -->
                 <div class="col3" id="settings_button"><img class="btn" alt="settings button image"
                                                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png">
                 </div>
             </div>
         </div>
 
-        <!-------------------------------- Help Menu ------------------>
+        <!-- Help Menu -->
         <div id="help_menu">
             <!-- some help from:  https://www.ultraboardgames.com/simon/game-rules.php -->
             <div class="help-txt" id="help_txt">
@@ -91,7 +91,7 @@
                 </p></div>
         </div>
 
-        <!-------------------------------- Settings Menu ------------------>
+        <!-- Settings Menu -->
         <div id="settings_menu">
             <!-- Game Modes -->
             <div class="game-mode-heading"><p>Game Mode</p></div>
@@ -112,7 +112,7 @@
                 round will increase in length.</p></div>
         </div>
 
-        <!-------------------------------- GameOver Menu ------------------>
+        <!-- GameOver Menu -->
         <div id="gameOver-menu">
             <!--  Main title text -->
             <div class="game-over-logo" id="game-over-text"><img alt="Game Over Logo"
@@ -142,7 +142,7 @@
             <!--  Menu Buttons -->
             <div class="row">
                 <!--  Twitter Button-->
-                <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"><img class="btn"
+                <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank" rel="noopener"><img class="btn"
                                                                                                            src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
                                                                                                            alt="Twitter icon image"></a>
                 </div>
@@ -153,7 +153,7 @@
                 </div>
 
                 <!--  Facebook Button -->
-                <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"><img class="btn"
+                <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank" rel="noopener"><img class="btn"
                                                                                                              src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Fb_mnoxdn.png"
                                                                                                              alt="FaceBook icon image"></a>
                 </div>
@@ -165,15 +165,15 @@
             </div>
         </div>
 
-        <!--   Close Button -->
+        <!-- Close Button -->
         <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
                                       src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/X_icon_mfi8xa.png"/>
         </div>
     </div>
 
-    <!-------------------------------- Main Game Play Buttons ------------------>
+    <!-- Main Game Play Buttons -->
     <div id="game-buttons">
-        <!--  Green Button -->
+        <!-- Green Button -->
         <div
                 class="button-green"
                 data-button="green"
@@ -181,7 +181,7 @@
         >
             <div id="green-button-overlay" class="cracked"></div>
         </div>
-        <!--   Red Button -->
+        <!-- Red Button -->
         <div
                 class="button-red "
                 data-button="red"
@@ -189,7 +189,7 @@
 
             <div id="red-button-overlay" class="cracked"></div>
         </div>
-        <!--   Yellow Button -->
+        <!-- Yellow Button -->
         <div
                 class="button-yellow "
                 data-button="yellow"
@@ -197,7 +197,7 @@
         >
             <div id="yellow-button-overlay" class="cracked"></div>
         </div>
-        <!--   Blue Button -->
+        <!-- Blue Button -->
         <div
                 class="button-blue "
                 data-button="blue"
@@ -213,7 +213,7 @@
 
 </main>
 
-<!-------------------------------- Audio Imports ------------------>
+<!-- Audio Imports -->
 <audio id="green-classic-audio" preload="auto">
     <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_u6owdw.ogg"
             type="audio/ogg"/>
@@ -252,7 +252,9 @@
     <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_zjj3qz.mp3"
             type="audio/mpeg"/>
 </audio>
-<!-------------------------------- Scripts ------------------>
+
+<!-- Scripts -->
+
 <!-- Jquery -->
 <script
         crossorigin="anonymous"
@@ -261,8 +263,9 @@
 ></script>
 <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
 <!-- main Game Script -->
-<script src="assets/js/game.js" type="text/javascript"></script>
+<script src="assets/js/game.js"></script>
 
 </body>
 </html>

@@ -12,7 +12,7 @@ const GAME_OVER_MENU = $("#gameOver-menu"); // Game Over Menu Area
 const CLOSE_BUTTON = $("#close_button");// Close Button
 const MODE_PREV_BUTTON = $("#mode_prev_button"); // Previous Button
 const MODE_NEXT_BUTTON = $("#mode_next_button"); // Next Button
-const CLICK_AUDIO = $("#click-audio");
+
 /* Fix Audio Lag in safari browsers:
 * https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari*/
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -65,12 +65,13 @@ function fetchQuote() {
             // add data to quote phrases
             quotePhrases = data;
             //Launch the main menu
-            showMainModal()
+            showMainModal();
 
         })
         .catch((error) => {
+
             //catch any errors
-            console.error('Oops there was a problem...', error);
+            quotePhrases[0] = (`Oops there was a problem retrieving the quote...Error:${error}`);
         });
 }
 
@@ -79,11 +80,18 @@ function pickQuote() {
     let phrase = quotePhrases[Math.floor(Math.random() * quotePhrases.length)];
     // Add Unknown author if there is none in the object
     if (!phrase.author) {
-        phrase.author = "Unknown"
+        phrase.author = "Unknown";
     }
     // Adds the quote text to the quote html
     $(".quote-txt-box").html(`<p>${phrase.text}</p><br>
                      <p><em>"${phrase.author}"</em></p>`);
+}
+
+//-- Click Audio --//
+function playClick() {
+    snd = $("#click-audio")[0];
+    snd.currentTime = 0;
+    snd.play();
 }
 
 //-- Show Main Modal --//
@@ -112,7 +120,6 @@ function showMainModal() {
 
 //-- Show Main Menu --//
 function mainMenu() {
-    CLICK_AUDIO[0].play();
     MAIN_MENU.show();
     HELP_MENU.hide();
     SETTINGS_MENU.hide();
@@ -122,7 +129,7 @@ function mainMenu() {
 
 //-- Show Help Menu --//
 function helpMenu() {
-    CLICK_AUDIO[0].play();
+    playClick();
     HELP_MENU.show();
     CLOSE_BUTTON.show();
     MAIN_MENU.hide();
@@ -132,7 +139,7 @@ function helpMenu() {
 
 //-- Show Settings Menu --//
 function settingsMenu() {
-    CLICK_AUDIO[0].play();
+    playClick();
     SETTINGS_MENU.show();
     CLOSE_BUTTON.show();
     MAIN_MENU.hide();
@@ -269,7 +276,7 @@ function computerPlayRound() {
         setTimeout(function () {
             buttonPressed(roundArray[roundArray.length - 1]);//Play only last sound
             playerRound();//Players Turn
-        }, gameSpeed)
+        }, gameSpeed);
     } else {
         //animate play each step
         //https://scottiestech.info/2014/07/01/javascript-fun-looping-with-a-delay/
@@ -284,7 +291,7 @@ function computerPlayRound() {
                         roundArray.reverse();//reverse the array if in reverse mode
                     }
                     playerRound();//players turn
-                }, gameSpeed)
+                }, gameSpeed);
             }
         })();
     }
@@ -336,10 +343,10 @@ function checkResult(button) {
                 }
                 computerPlayRound();//Computers turn
                 updateScore();//Update the score
-            }, 800)
+            }, 800);
         }
     }
-    playerChoice++ //Increment the players choice index
+    playerChoice++; //Increment the players choice index
 }
 
 //-- Play crack sound and display crack overlay if player loses --//
@@ -349,7 +356,7 @@ function crackedButton(button) {
 
     setTimeout(function () {
         $(`#${button}-game-button`).removeClass("cracked");
-    }, 500)
+    }, 500);
 }
 
 //-- Update the Score --//
@@ -381,17 +388,26 @@ function gameOver() {
 
 //---------- Document Ready ----------//
 $(document).ready(function () {
+
     //-- Fetch a quote and display the main modal once the dom is ready
     fetchQuote();
 
     //-- Add event listeners to the buttons BUTTONS --//
-    $("#main_menu_button > img").off().on("click touch", mainMenu);// Main Menu Button
+    // Main Menu Button
+    $("#main_menu_button > img").off().on("click touch", function () {
+        playClick();
+        mainMenu();
+    });
+
     $("#help_button > img").off().on("click touch", helpMenu); // Help Menu Button
     $("#settings_button > img").off().on("click touch", settingsMenu); // Settings Menu Button
-    CLOSE_BUTTON.off().on("click touch", mainMenu);// Close Menu Button
+    CLOSE_BUTTON.off().on("click touch", function () {
+        playClick();
+        mainMenu();
+    });// Close Menu Button
     //Next Button
     MODE_NEXT_BUTTON.off().on("click touch", function () {
-        CLICK_AUDIO[0].play();
+        playClick();
         //-- go to next game mode --//
         if (currentGameMode < 3) {
             currentGameMode++;
@@ -400,7 +416,7 @@ $(document).ready(function () {
     });
     //Previous Button
     MODE_PREV_BUTTON.off().on("click touch", function () {
-        CLICK_AUDIO[0].play();
+        playClick();
         //-- go to previous game mode --//
         if (currentGameMode > 0) {
             currentGameMode--;
@@ -409,7 +425,7 @@ $(document).ready(function () {
     });
     //-- Start the game when the Play or Replay buttons are pressed --//
     $(".play").off().on("click touch", function () {
-        CLICK_AUDIO[0].play();
+        playClick();
         updateScore();
         //-- Close any open modals --//
         $.modal.close();
@@ -421,7 +437,6 @@ $(document).ready(function () {
 
     //-- Social Buttons --//
     $(".social").off().on("click touch", function () {
-        CLICK_AUDIO[0].play();
-    })
-})
-;
+        playClick();
+    });
+});
