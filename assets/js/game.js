@@ -188,6 +188,7 @@ function buttonPressed(button) {
     }, 200);
     //Play the Audio
     let snd = $(`#${button}-classic-audio`)[0];
+    // https://github.com/TravelTimN/simon-game - inspiration for the.
     snd.currentTime = 0;
     snd.play();
 }
@@ -302,25 +303,25 @@ function playerRound() {
     activatePlayer();//activate the player
 
     //Green Button
-    GREEN_GAME_BUTTON.off().on("click touch", function () {
+    GREEN_GAME_BUTTON.off().on("click touchstart", function () {
         let button = this.dataset.button;
         buttonPressed(button);//Play audio and animation
         checkResult(button);//check the result
     });
     //Red Button
-    RED_GAME_BUTTON.off().on("click touch", function () {
+    RED_GAME_BUTTON.off().on("click touchstart", function () {
         let button = this.dataset.button;
         buttonPressed(button);
         checkResult(button);
     });
     //Blue button
-    BLUE_GAME_BUTTON.off().on("click touch", function () {
+    BLUE_GAME_BUTTON.off().on("click touchstart", function () {
         let button = this.dataset.button;
         buttonPressed(button);
         checkResult(button);
     });
     //Yellow button
-    YELLOW_GAME_BUTTON.off().on("click touch", function () {
+    YELLOW_GAME_BUTTON.off().on("click touchstart", function () {
         let button = this.dataset.button;
         buttonPressed(button);
         checkResult(button);
@@ -352,7 +353,7 @@ function checkResult(button) {
 //-- Play crack sound and display crack overlay if player loses --//
 function crackedButton(button) {
     $(`#${button}-game-button`).addClass("cracked");
-    $("#crack-audio")[0].play();
+    $("#crack-audio")[0].play(); //https://freesound.org/people/JustInvoke/sounds/446118/
 
     setTimeout(function () {
         $(`#${button}-game-button`).removeClass("cracked");
@@ -394,19 +395,19 @@ $(document).ready(function () {
 
     //-- Add event listeners to the buttons BUTTONS --//
     // Main Menu Button
-    $("#main_menu_button > img").off().on("click touch", function () {
+    $("#main_menu_button > img").off().on("click touchstart", function () {
         playClick();
         mainMenu();
     });
 
-    $("#help_button > img").off().on("click touch", helpMenu); // Help Menu Button
-    $("#settings_button > img").off().on("click touch", settingsMenu); // Settings Menu Button
-    CLOSE_BUTTON.off().on("click touch", function () {
+    $("#help_button > img").off().on("click touchstart", helpMenu); // Help Menu Button
+    $("#settings_button > img").off().on("click touchstart", settingsMenu); // Settings Menu Button
+    CLOSE_BUTTON.off().on("click touchstart", function () {
         playClick();
         mainMenu();
     });// Close Menu Button
     //Next Button
-    MODE_NEXT_BUTTON.off().on("click touch", function () {
+    MODE_NEXT_BUTTON.off().on("click touchstart", function () {
         playClick();
         //-- go to next game mode --//
         if (currentGameMode < 3) {
@@ -415,7 +416,7 @@ $(document).ready(function () {
         }
     });
     //Previous Button
-    MODE_PREV_BUTTON.off().on("click touch", function () {
+    MODE_PREV_BUTTON.off().on("click touchstart", function () {
         playClick();
         //-- go to previous game mode --//
         if (currentGameMode > 0) {
@@ -424,7 +425,7 @@ $(document).ready(function () {
         }
     });
     //-- Start the game when the Play or Replay buttons are pressed --//
-    $(".play").off().on("click touch", function () {
+    $(".play").off().on("click touchstart", function () {
         playClick();
         updateScore();
         //-- Close any open modals --//
@@ -436,7 +437,7 @@ $(document).ready(function () {
     });
 
     //-- Social Buttons --//
-    $(".social").off().on("click touch", function () {
+    $(".social").off().on("click touchstart", function () {
         playClick();
     });
 });
