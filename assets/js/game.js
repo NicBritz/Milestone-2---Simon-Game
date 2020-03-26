@@ -179,7 +179,7 @@ function updateGameMode(buttonObj) {
     $("#mode_description").text(GAME_MODES[currentGameMode].desc);
 }
 
-//---------- Colour buttons pressed ----------//
+//-- Colour buttons pressed --//
 function buttonPressed(button) {
     //animates the button being pressed
     $(`#${button}-game-button`).addClass("game-button-pressed");
@@ -188,7 +188,7 @@ function buttonPressed(button) {
     }, 200);
     //Play the Audio
     let snd = $(`#${button}-classic-audio`)[0];
-    // https://github.com/TravelTimN/simon-game - inspiration for the.
+    // https://github.com/TravelTimN/simon-game - inspiration for this sound control.
     snd.currentTime = 0;
     snd.play();
 }
@@ -335,17 +335,16 @@ function checkResult(button) {
         //Player Failed!!
         crackedButton(button);// show the crack image on the relevant button
         gameOver();//game is over
-    } else {
-        if (playerChoice + 1 === roundArray.length) {
-            //Fires when the round is over
-            setTimeout(function () {
-                if (reverse) {
-                    roundArray.reverse();// puts round back to original order
-                }
-                computerPlayRound();//Computers turn
-                updateScore();//Update the score
-            }, 800);
-        }
+    } else if (playerChoice + 1 === roundArray.length) {
+        //Fires when the round is over with a slight delay
+        setTimeout(function () {
+            if (reverse) {
+                roundArray.reverse();// puts round back to original order
+            }
+            computerPlayRound();//Computers turn
+            updateScore();//Update the score
+        }, 800);
+
     }
     playerChoice++; //Increment the players choice index
 }
@@ -353,8 +352,8 @@ function checkResult(button) {
 //-- Play crack sound and display crack overlay if player loses --//
 function crackedButton(button) {
     $(`#${button}-game-button`).addClass("cracked");
-    $("#crack-audio")[0].play(); //https://freesound.org/people/JustInvoke/sounds/446118/
-
+    //https://freesound.org/people/JustInvoke/sounds/446118/
+    $("#crack-audio")[0].play();
     setTimeout(function () {
         $(`#${button}-game-button`).removeClass("cracked");
     }, 500);
@@ -362,8 +361,8 @@ function crackedButton(button) {
 
 //-- Update the Score --//
 function updateScore() {
-    score++;//add one to the score
-
+    //add one to the score
+    score++;
     //speed up if score is multiple of 5 speed up
     if (gameSpeed > 200 && score % 5 === 0) {
         gameSpeed -= 100;
@@ -371,7 +370,8 @@ function updateScore() {
     if (score > bestScore) {
         bestScore = score - 1;
     }
-    $("#game-circle-txt").text(score);//change score on center circle
+    //change score on center circle
+    $("#game-circle-txt").text(score);
 }
 
 //-- Game Over --//
@@ -386,7 +386,6 @@ function gameOver() {
     showMainModal();//show the modal
 }
 
-
 //---------- Document Ready ----------//
 $(document).ready(function () {
 
@@ -400,12 +399,18 @@ $(document).ready(function () {
         mainMenu();
     });
 
-    $("#help_button > img").off().on("click touchstart", helpMenu); // Help Menu Button
-    $("#settings_button > img").off().on("click touchstart", settingsMenu); // Settings Menu Button
+    // Help Menu Button
+    $("#help_button > img").off().on("click touchstart", helpMenu);
+
+    // Settings Menu Button
+    $("#settings_button > img").off().on("click touchstart", settingsMenu);
+
+    // Close Menu Button
     CLOSE_BUTTON.off().on("click touchstart", function () {
         playClick();
         mainMenu();
-    });// Close Menu Button
+    });
+
     //Next Button
     MODE_NEXT_BUTTON.off().on("click touchstart", function () {
         playClick();
@@ -415,6 +420,7 @@ $(document).ready(function () {
             updateGameMode(this);
         }
     });
+
     //Previous Button
     MODE_PREV_BUTTON.off().on("click touchstart", function () {
         playClick();
@@ -424,6 +430,7 @@ $(document).ready(function () {
             updateGameMode(this);
         }
     });
+
     //-- Start the game when the Play or Replay buttons are pressed --//
     $(".play").off().on("click touchstart", function () {
         playClick();

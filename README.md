@@ -512,6 +512,10 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
 [Simon Says](https://play.google.com/store/apps/details?id=hackman.trevor.copycat&hl=en_GB)
     - This game helped with inspiration for the overall design of the game as well as some of the different game modes.
     - some wording was also used for inspiration.
+    
+#### Code
+- [setTimout test](https://makandracards.com/makandra/32477-testing-settimeout-and-setinterval-with-jasmine)
+
 
 #### Other
 
@@ -524,6 +528,7 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
     - For those times when I could not figure out why I was not getting the result, I expected to like this [article](https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari)
 - [MDN](https://developer.mozilla.org/en-US/)
     - For code referencing, while trying to get my code to do what I wanted it to do rather than what I told it to do.
+- [Timed array loops](https://scottiestech.info/2014/07/01/javascript-fun-looping-with-a-delay/) - This was helpful in figuring a way to play back each element in an array with a delay between each step.
     
  <!-- Top -->
 
