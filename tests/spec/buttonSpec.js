@@ -35,8 +35,7 @@ describe("Simon Game button tests",function () {
             jasmine.clock().tick(300); // wait 300ms
             expect(window.computerPlayRound).toHaveBeenCalled(); // after timer id done
             jasmine.clock().uninstall(); // remove clock
-        })
-
+        });
     });
 
     //-- Social Buttons --//

@@ -27,7 +27,7 @@ describe("Simon Game Function tests", function () {
                 <!--  best score -->
                 <div id="best-score" class="col2 score score-item"><p>50</p></div>
                 <!-- Current Game Mode -->
-                <div id="mode-text" class="col2 score score-item"><p></p></div>`)
+                <div id="mode-text" class="col2 score score-item"><p></p></div>`);
         });
 
         //is defined
@@ -92,7 +92,7 @@ describe("Simon Game Function tests", function () {
             spyOn(window, "showMainModal");
             showMainModal();
             expect(showMainModal).toHaveBeenCalled();
-        })
+        });
 
     });
 
@@ -132,7 +132,7 @@ describe("Simon Game Function tests", function () {
             if (score > bestScore) {
                 bestScore = score - 1;
             }
-            expect(bestScore).toEqual(20)
+            expect(bestScore).toEqual(20);
         });
         //update score text
         it("should update the score text", function () {
@@ -159,7 +159,7 @@ describe("Simon Game Function tests", function () {
             <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_zjj3qz.mp3"
                 type="audio/mpeg"/>
             </audio>
-        `)
+        `);
 
         });
 
@@ -200,7 +200,7 @@ describe("Simon Game Function tests", function () {
             expect(greenBtn).toHaveClass("cracked"); // before timer is done
             jasmine.clock().tick(500); // wait 500ms
             expect(greenBtn).not.toHaveClass("cracked"); // after timer id done
-        })
+        });
 
     });
 
@@ -277,9 +277,7 @@ describe("Simon Game Function tests", function () {
                 jasmine.clock().tick(800); // wait 500ms
                 expect(window.updateScore).toHaveBeenCalled(); // after timer id done
             });
-        })
-
-
+        });
     });
 
     //-- Player Round Function --//
@@ -323,8 +321,8 @@ describe("Simon Game Function tests", function () {
                     checkResult();
                     expect(window.checkResult).toHaveBeenCalled();
                 });
-            })
-        })
+            });
+        });
     });
 
     //-- Computer Play Round Function --//
@@ -363,9 +361,9 @@ describe("Simon Game Function tests", function () {
                     result = "reverse";
                     break;
                 default:
-                    result = "classic"
+                    result = "classic";
             }
-            expect(result).toBe("single")
+            expect(result).toBe("single");
         });
         //trigger generate round
         it("Should trigger generate round function", function () {
@@ -524,7 +522,7 @@ describe("Simon Game Function tests", function () {
             let choices = ["red", "red"];//made the same to pass test
             arr.push(choices[Math.floor(Math.random() * choices.length)]);
             expect(arr).toContain("red");
-        })
+        });
     });
 
     //-- Button Pressed Function --//
@@ -591,6 +589,20 @@ describe("Simon Game Function tests", function () {
         });
     });
 
+    //-- Update Game Theme Function --//
+    describe("updateGameTheme Function", function () {
+        // is defined
+        it("should have been defined", function () {
+            expect(updateGameTheme).toBeDefined();
+        });
+        // is callable
+        it("Should have been called", function () {
+            spyOn(window, "updateGameTheme");
+            updateGameTheme();
+            expect(window.updateGameTheme).toHaveBeenCalled();
+        });
+    });
+
     //-- MShow Main Modal Function --//
     describe("showMainModal Function", function () {
         //is defined
@@ -638,7 +650,7 @@ describe("Simon Game Function tests", function () {
             `);
             quotePhrases = {
                 quote: "this is an inspirational quote", author: "nic"
-            }
+            };
         });
         // is defined
         it("should have been defined", function () {
@@ -679,7 +691,7 @@ describe("Simon Game Function tests", function () {
                 <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_edu6rx.mp3"
                     type="audio/mpeg"/>
             </audio>
-             `)
+             `);
         });
         //is defined
         it("should have been defined", function () {
@@ -713,8 +725,5 @@ describe("Simon Game Function tests", function () {
             expect(window.fetchQuote).toHaveBeenCalled();
         });
     });
-
-
-})
-;
+});
 
