@@ -98,12 +98,9 @@ function playClick() {
 function showMainModal() {
     pickQuote();
     if (!gameEnd) {
-        // pick a random quote
-
         // Display the Main Menu if it is a new game
         mainMenu();
     } else {
-        //pickQuote();
         // Display Game Over if game has ended
         gameOverMenu();
         gameEnd = false;
@@ -155,7 +152,6 @@ function gameOverMenu() {
     SETTINGS_MENU.hide();
     CLOSE_BUTTON.hide();
 }
-
 
 //-- Change the game mode --//
 function updateGameMode(buttonObj) {
@@ -213,7 +209,7 @@ function randomiseRound() {
     }
 }
 
-//-- Deactivate the player  --//
+//-- Deactivate the player --//
 function deactivatePlayer() {
     playerActive = false;
     GREEN_GAME_BUTTON.off();
@@ -298,7 +294,7 @@ function computerPlayRound() {
     }
 }
 
-//-- Players Turn--//
+//-- Players Turn --//
 function playerRound() {
     activatePlayer();//activate the player
 
@@ -386,7 +382,7 @@ function gameOver() {
     showMainModal();//show the modal
 }
 
-//---------- Document Ready ----------//
+//-- Document Ready --//
 $(document).ready(function () {
 
     //-- Fetch a quote and display the main modal once the dom is ready

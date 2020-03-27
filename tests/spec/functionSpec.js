@@ -568,7 +568,7 @@ describe("Simon Game Function tests", function () {
         });
 
         //play audio
-        it("Should play green the audio file",function () {
+        it("Should play green the audio file", function () {
             let colSnd = $("#green-classic-audio")[0];
             spyOn(colSnd, "play");
             colSnd.play();
@@ -590,74 +590,131 @@ describe("Simon Game Function tests", function () {
             expect(window.updateGameMode).toHaveBeenCalled();
         });
     });
-    //----------GameOver Menu Function ---------//
-    describe("gameOverMenu Function", function () {
 
-        it("should have been defined", function () {
-            expect(gameOverMenu).toBeDefined();
+    //-- Menus --//
+    describe("Game Menus", function () {
+        beforeEach(function () {
+            setFixtures(`
+            <div id="gameOver-menu"></div>
+            <div id="#main_menu"></div>
+            <div id="#help_menu"></div>
+            <div id="#settings_menu"></div>
+            `)
         });
 
-        it("Should have been called", function () {
-            spyOn(window, "gameOverMenu");
-            gameOverMenu();
-            expect(window.gameOverMenu).toHaveBeenCalled();
+        //-- GameOver Menu Function --//
+        describe("gameOverMenu Function", function () {
+            // is defined
+            it("should have been defined", function () {
+                expect(gameOverMenu).toBeDefined();
+            });
+            // is callable
+            it("Should have been called", function () {
+                spyOn(window, "gameOverMenu");
+                gameOverMenu();
+                expect(window.gameOverMenu).toHaveBeenCalled();
+            });
+            // Show game over menu
+            it("Should show the Game Over menu", function () {
+                let GameOverMenu = $("#gameOver-menu");
+                GameOverMenu.show();
+                expect(GameOverMenu).toBeVisible();
+            });
+            //hide other menus
+            it("Should hide the other menu", function () {
+                let MainMenu = $("#main_menu");
+                let HelpMenu = $("#help_menu");
+                let SettingsMenu = $("#settings_menu");
+                MainMenu.hide();
+                HelpMenu.hide();
+                SettingsMenu.hide();
+                expect(MainMenu).not.toBeVisible();
+                expect(HelpMenu).not.toBeVisible();
+                expect(SettingsMenu).not.toBeVisible();
+            });
+        });
+
+        //-- Settings Menu Function --//
+        describe("settingsMenu Function", function () {
+            // is defined
+            it("Should have been defined", function () {
+                expect(settingsMenu).toBeDefined();
+            });
+            // is callable
+            it("Should have been called", function () {
+                spyOn(window, "settingsMenu");
+                settingsMenu();
+                expect(window.settingsMenu).toHaveBeenCalled();
+            });
+        });
+        //-- Help Menu Function --//
+        describe("helpMenu Function", function () {
+            //is defined
+            it("should have been defined", function () {
+                expect(helpMenu).toBeDefined();
+            });
+            //is callable
+            it("Should have been called", function () {
+                spyOn(window, "helpMenu");
+                helpMenu();
+                expect(window.helpMenu).toHaveBeenCalled();
+            });
+        });
+
+        //-- Main Menu Function --//
+        describe("mainMenu Function", function () {
+            //is defined
+            it("should have been defined", function () {
+                expect(mainMenu).toBeDefined();
+            });
+            // is callable
+            it("Should have been called", function () {
+                spyOn(window, "mainMenu");
+                mainMenu();
+                expect(window.mainMenu).toHaveBeenCalled();
+            });
         });
     });
-    //----------Settings Menu Function ---------//
-    describe("settingsMenu Function", function () {
 
-        it("should have been defined", function () {
-            expect(settingsMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "settingsMenu");
-            settingsMenu();
-            expect(window.settingsMenu).toHaveBeenCalled();
-        });
-    });
-
-    //----------Help Menu Function ---------//
-    describe("helpMenu Function", function () {
-
-        it("should have been defined", function () {
-            expect(helpMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "helpMenu");
-            helpMenu();
-            expect(window.helpMenu).toHaveBeenCalled();
-        });
-    });
-
-    //----------Main Menu Function ---------//
-    describe("mainMenu Function", function () {
-
-        it("should have been defined", function () {
-            expect(mainMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "mainMenu");
-            mainMenu();
-            expect(window.mainMenu).toHaveBeenCalled();
-        });
-    });
-
-    //----------MShow Main Modal Function ---------//
+    //-- MShow Main Modal Function --//
     describe("showMainModal Function", function () {
-
+        //is defined
         it("should have been defined", function () {
             expect(showMainModal).toBeDefined();
         });
-
+        //is callable
         it("Should have been called", function () {
             spyOn(window, "showMainModal");
             showMainModal();
             expect(window.showMainModal).toHaveBeenCalled();
         });
+        //trigger pickQuote
+        it("Should trigger the pickQuote function", function () {
+            spyOn(window, "pickQuote");
+            pickQuote();
+            expect(window.pickQuote).toHaveBeenCalled();
+        });
+        //trigger mainMenu
+        it("Should trigger mainMenu function if its not game over", function () {
+            gameEnd = false;
+            spyOn(window, "mainMenu");
+            if (!gameEnd) {
+                mainMenu();
+            }
+            expect(window.mainMenu).toHaveBeenCalled();
+        });
+        //trigger gameOverMenu
+        it("Should trigger gameOverMenu function if it is game over", function () {
+            gameEnd = true;
+            spyOn(window, "gameOverMenu");
+            if (gameEnd) {
+                gameOverMenu();
+            }
+            expect(window.gameOverMenu).toHaveBeenCalled();
+        });
+
     });
+
 //----------Pick Quote Function ---------//
     describe("pickQuote Function", function () {
 
