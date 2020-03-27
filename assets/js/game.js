@@ -346,25 +346,25 @@ function playerRound() {
     activatePlayer();//activate the player
 
     //Green Button
-    GREEN_GAME_BUTTON.off().on("click touchstart", function () {
+    GREEN_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
         buttonPressed(button);//Play audio and animation
         checkResult(button);//check the result
     });
     //Red Button
-    RED_GAME_BUTTON.off().on("click touchstart", function () {
+    RED_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
         buttonPressed(button);
         checkResult(button);
     });
     //Blue button
-    BLUE_GAME_BUTTON.off().on("click touchstart", function () {
+    BLUE_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
         buttonPressed(button);
         checkResult(button);
     });
     //Yellow button
-    YELLOW_GAME_BUTTON.off().on("click touchstart", function () {
+    YELLOW_GAME_BUTTON.off().on("click touch", function () {
         let button = this.dataset.button;
         buttonPressed(button);
         checkResult(button);
@@ -439,25 +439,25 @@ $(document).ready(function () {
 
     //-- Add event listeners to the buttons BUTTONS --//
     // Main Menu Button
-    $("#main_menu_button > img").off().on("click touchstart", function () {
+    $("#main_menu_button > img").off().on("click touch", function () {
         playClick();
         mainMenu();
     });
 
     // Help Menu Button
-    $("#help_button > img").off().on("click touchstart", helpMenu);
+    $("#help_button > img").off().on("click touch", helpMenu);
 
     // Settings Menu Button
-    $("#settings_button > img").off().on("click touchstart", settingsMenu);
+    $("#settings_button > img").off().on("click touch", settingsMenu);
 
     // Close Menu Button
-    CLOSE_BUTTON.off().on("click touchstart", function () {
+    CLOSE_BUTTON.off().on("click touch", function () {
         playClick();
         mainMenu();
     });
 
     //Next mode Button
-    MODE_NEXT_BUTTON.off().on("click touchstart", function () {
+    MODE_NEXT_BUTTON.off().on("click touch", function () {
         playClick();
         //-- go to next game mode --//
         if (currentGameMode < 3) {
@@ -467,7 +467,7 @@ $(document).ready(function () {
     });
 
     //Next theme Button
-    THEME_NEXT_BUTTON.off().on("click touchstart", function () {
+    THEME_NEXT_BUTTON.off().on("click touch", function () {
         playClick();
         //-- go to next game theme --//
         if (currentTheme < 3) {
@@ -477,7 +477,7 @@ $(document).ready(function () {
     });
 
     //Previous mode Button
-    MODE_PREV_BUTTON.off().on("click touchstart", function () {
+    MODE_PREV_BUTTON.off().on("click touch", function () {
         playClick();
         //-- go to previous game mode --//
         if (currentGameMode > 0) {
@@ -487,7 +487,7 @@ $(document).ready(function () {
     });
 
     //Previous theme Button
-    THEME_PREV_BUTTON.off().on("click touchstart", function () {
+    THEME_PREV_BUTTON.off().on("click touch", function () {
         playClick();
         //-- go to previous game mode --//
         if (currentTheme > 0) {
@@ -497,7 +497,7 @@ $(document).ready(function () {
     });
 
     //-- Start the game when the Play or Replay buttons are pressed --//
-    $(".play").off().on("click touchstart", function () {
+    $(".play").off().on("click touch", function () {
         playClick();
         updateScore();
         //-- Close any open modals --//
@@ -509,7 +509,7 @@ $(document).ready(function () {
     });
 
     //-- Social Buttons --//
-    $(".social").off().on("click touchstart", function () {
+    $(".social").off().on("click touch", function () {
         playClick();
     });
 });
