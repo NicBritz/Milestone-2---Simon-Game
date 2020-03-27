@@ -9,7 +9,7 @@ describe("Simon Game Menu Tests", function () {
             <div id="settings_menu"></div>
             <div id="close_button"></div>
             </div>
-            `)
+            `);
     });
 
     // Hide menus function

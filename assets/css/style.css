@@ -88,8 +88,8 @@ main {
     cursor: -webkit-grab;
     cursor: grab;
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /*Play Button*/
@@ -148,7 +148,7 @@ main {
 
 .gray-out {
     -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 /* Game Mode Heading */
@@ -168,7 +168,7 @@ main {
 }
 
 /* Mode Description */
-#mode_description {
+#mode_description, #theme_description {
     font-size: 1em;
     padding: 1em;
     text-align: center;
@@ -180,8 +180,7 @@ main {
     bottom: 0;
     right: 0;
     text-align: right;
-    padding: 0.5em;
-    padding-right: 1.5em;
+    padding: 0.5em 1.5em 0.5em 0.5em;
     width: 10%;
 }
 
@@ -250,28 +249,64 @@ main {
 }
 
 /* ---------- Game Colour Buttons setup ---------- */
-
-/*crack Image https://www.searchpng.com/download-png/?imageid=3548*/
-/* Cracked */
-.cracked {
-    background: -webkit-gradient(
-            linear,
-            left top, left bottom,
-            from(rgba(0, 0, 0, 0.2)),
-            to(rgba(0, 0, 0, 0.2))
-    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
-    background: -o-linear-gradient(
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-    ), url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+/* Bricks */
+.brick {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585325560/Simon/Wall_zdsceq.png) no-repeat;
     background-size: cover;
     bottom: 50%;
     right: 50%;
 }
+
+.brick-cracked {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585325560/Simon/Wall_zdsceq.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
+
+/* Lego */
+.lego {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585332641/Simon/lego-texture_zczprg.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
+
+.lego-cracked {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585332641/Simon/lego-texture_zczprg.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
+
+/* metal plate */
+.metal {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585334760/Simon/DiamandPlate2_ojh9l2.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
+
+.metal-cracked {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585334760/Simon/DiamandPlate2_ojh9l2.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
+
+.classic {
+    background: none;
+}
+
+/*crack Image https://www.searchpng.com/download-png/?imageid=3548*/
+/* Cracked */
+.classic-cracked {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
+    background-size: cover;
+    bottom: 50%;
+    right: 50%;
+}
+
 
 /* common settings for the colour buttons*/
 .button-green,
@@ -606,7 +641,7 @@ main {
         margin: 0;
     }
 
-    .result-text{
+    .result-text {
         padding-top: 0.2em;
         font-size: 1em;
     }

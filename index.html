@@ -94,7 +94,7 @@
         <!-- Settings Menu -->
         <div id="settings_menu">
             <!-- Game Modes -->
-            <div class="game-mode-heading"><p>Game Mode</p></div>
+            <div class="game-mode-heading"><p>Mode</p></div>
             <div class="row">
                 <!-- Previous Mode -->
                 <div class="col3 prev-button gray-out" id="mode_prev_button"><img class="btn" alt="prev button image"
@@ -110,6 +110,24 @@
 
             <div id="mode_description"><p>Repeat the steps in the order they are presented, each
                 round will increase in length.</p></div>
+
+            <!-- Game Theme -->
+            <div class="game-mode-heading"><p>Theme</p></div>
+            <div class="row">
+                <!-- Previous Mode -->
+                <div class="col3 prev-button gray-out" id="theme_prev_button"><img class="btn" alt="prev button image"
+                                                                                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
+                </div>
+                <!-- Mode Text -->
+                <div class="col3 game-mode-box"><p id="game-theme-text">CLASSIC</p></div>
+                <!-- Next Mode -->
+                <div class="col3 next-button" id="theme_next_button"><img class="btn" alt="next button image"
+                                                                         src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
+                </div>
+            </div>
+
+            <div id="theme_description"><p>Smooth and plain buttons.</p></div>
+
         </div>
 
         <!-- GameOver Menu -->
@@ -142,9 +160,10 @@
             <!--  Menu Buttons -->
             <div class="row">
                 <!--  Twitter Button-->
-                <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank" rel="noopener"><img class="btn"
-                                                                                                           src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
-                                                                                                           alt="Twitter icon image"></a>
+                <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"
+                                                      rel="noopener"><img class="btn"
+                                                                          src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
+                                                                          alt="Twitter icon image"></a>
                 </div>
                 <!--  Replay Button -->
                 <div class="col3 play-button replay-button " id="replay_button"><img class="btn play"
@@ -153,9 +172,10 @@
                 </div>
 
                 <!--  Facebook Button -->
-                <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank" rel="noopener"><img class="btn"
-                                                                                                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Fb_mnoxdn.png"
-                                                                                                             alt="FaceBook icon image"></a>
+                <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"
+                                                       rel="noopener"><img class="btn"
+                                                                           src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Fb_mnoxdn.png"
+                                                                           alt="FaceBook icon image"></a>
                 </div>
                 <!-- Main Menu Button -->
                 <div class="col3" id="main_menu_button"><img class="btn" alt="main menu button image"
@@ -180,10 +200,11 @@
                 id="green-game-button"
         >
             <div id="green-button-overlay" class="cracked"></div>
+
         </div>
         <!-- Red Button -->
         <div
-                class="button-red "
+                class="button-red"
                 data-button="red"
                 id="red-game-button">
 
@@ -191,7 +212,7 @@
         </div>
         <!-- Yellow Button -->
         <div
-                class="button-yellow "
+                class="button-yellow"
                 data-button="yellow"
                 id="yellow-game-button"
         >
@@ -199,7 +220,7 @@
         </div>
         <!-- Blue Button -->
         <div
-                class="button-blue "
+                class="button-blue"
                 data-button="blue"
                 id="blue-game-button">
             <div id="blue-button-overlay" class="cracked"></div>

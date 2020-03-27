@@ -409,7 +409,7 @@ There was some feedback that the app was a bit unresponsive to touch sometimes, 
 Using Jasmin I was able to test if the code was working as expected. The test files can be found [here](tests). 
 I have broken the spec's into 3 seperate files to make it a bit easier to navigate the tests. I have used some ideas for testing from [Tim Nelson](https://github.com/TravelTimN/simon-game).
 ani i made use of [jasmine jQuery](https://www.npmjs.com/package/jasmine-jquery) to help with unit testing. You can run the automated test simply by running the [test.html](/tests/tests.html).
-<br>
+
 <img src="/tests/images/jasmine_test.png" alt="Jasmine test results">
 
 
@@ -498,6 +498,12 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
     - used this content for the graphical user interface buttons.
 - [Crack Image](https://www.searchpng.com/download-png/?imageid=3548)
     - used to get the png image for the crack overlay.
+- [Brick Image](https://www.jing.fm/iclipt/u2q8w7q8y3o0t4o0/)
+    - used for a theme image, some editing was done th make it more transparent.
+- [Lego Image](https://www.publicdomainpictures.net/en/view-image.php?image=36176&picture=yellow-lego-texture)
+    - used for a theme image, some editing was done th make it more transparent.
+- [Metal Image](https://ya-webdesign.com/imgdownload.html)
+    - used for a theme image, some editing was done th make it more transparent.
 - [Logo and Game Over text](http://www.dafont.com/flying-leatherneck.font)
     - purchased as part of a game assets bundle and created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan)
 - [Crack Sound](https://freesound.org/people/JustInvoke/sounds/446118/)
