@@ -307,8 +307,9 @@ I used the following technologies to create this website:
 - [Jasmine](https://jasmine.github.io/)
     - Used for automated testing.
 - [jQuery Modal](https://jquerymodal.com/)
-    - Used to simplify the modal presentation. 
-
+    - Used to simplify the modal presentation.
+- [jasmine jQuery](https://www.npmjs.com/package/jasmine-jquery)
+    - Used to extend the testing capabilities of the jasmine library.
 ### Other tools used
 
 - [Pycharm](https://www.jetbrains.com/pycharm/) 
@@ -405,8 +406,11 @@ There was feedback from multiple players that the game had a level-up text that 
 There was some feedback that the app was a bit unresponsive to touch sometimes, I changed the code slightly to accommodate for this. 
 
 ### Jasmin
-Using Jasmin I was able to test if the code was working as expected. the test files can be found [here](tests).
-
+Using Jasmin I was able to test if the code was working as expected. The test files can be found [here](tests). 
+I have broken the spec's into 3 seperate files to make it a bit easier to navigate the tests. I have used some ideas for testing from [Tim Nelson](https://github.com/TravelTimN/simon-game).
+ani i made use of [jasmine jQuery](https://www.npmjs.com/package/jasmine-jquery) to help with unit testing. You can run the automated test simply by running the [test.html](/tests/tests.html).
+<br>
+<img src="/tests/images/jasmine_test.png" alt="Jasmine test results">
 
 
  <!-- Top -->
