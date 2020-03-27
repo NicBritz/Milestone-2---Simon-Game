@@ -568,7 +568,7 @@ describe("Simon Game Function tests", function () {
         });
 
         //play audio
-        it("Should play green the audio file",function () {
+        it("Should play green the audio file", function () {
             let colSnd = $("#green-classic-audio")[0];
             spyOn(colSnd, "play");
             colSnd.play();
@@ -590,95 +590,123 @@ describe("Simon Game Function tests", function () {
             expect(window.updateGameMode).toHaveBeenCalled();
         });
     });
-    //----------GameOver Menu Function ---------//
-    describe("gameOverMenu Function", function () {
 
-        it("should have been defined", function () {
-            expect(gameOverMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "gameOverMenu");
-            gameOverMenu();
-            expect(window.gameOverMenu).toHaveBeenCalled();
-        });
-    });
-    //----------Settings Menu Function ---------//
-    describe("settingsMenu Function", function () {
-
-        it("should have been defined", function () {
-            expect(settingsMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "settingsMenu");
-            settingsMenu();
-            expect(window.settingsMenu).toHaveBeenCalled();
-        });
-    });
-
-    //----------Help Menu Function ---------//
-    describe("helpMenu Function", function () {
-
-        it("should have been defined", function () {
-            expect(helpMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "helpMenu");
-            helpMenu();
-            expect(window.helpMenu).toHaveBeenCalled();
-        });
-    });
-
-    //----------Main Menu Function ---------//
-    describe("mainMenu Function", function () {
-
-        it("should have been defined", function () {
-            expect(mainMenu).toBeDefined();
-        });
-
-        it("Should have been called", function () {
-            spyOn(window, "mainMenu");
-            mainMenu();
-            expect(window.mainMenu).toHaveBeenCalled();
-        });
-    });
-
-    //----------MShow Main Modal Function ---------//
+    //-- MShow Main Modal Function --//
     describe("showMainModal Function", function () {
-
+        //is defined
         it("should have been defined", function () {
             expect(showMainModal).toBeDefined();
         });
-
+        //is callable
         it("Should have been called", function () {
             spyOn(window, "showMainModal");
             showMainModal();
             expect(window.showMainModal).toHaveBeenCalled();
         });
-    });
-//----------Pick Quote Function ---------//
-    describe("pickQuote Function", function () {
+        //trigger pickQuote
+        it("Should trigger the pickQuote function", function () {
+            spyOn(window, "pickQuote");
+            pickQuote();
+            expect(window.pickQuote).toHaveBeenCalled();
+        });
+        //trigger mainMenu
+        it("Should trigger mainMenu function if its not game over", function () {
+            gameEnd = false;
+            spyOn(window, "mainMenu");
+            if (!gameEnd) {
+                mainMenu();
+            }
+            expect(window.mainMenu).toHaveBeenCalled();
+        });
+        //trigger gameOverMenu
+        it("Should trigger gameOverMenu function if it is game over", function () {
+            gameEnd = true;
+            spyOn(window, "gameOverMenu");
+            if (gameEnd) {
+                gameOverMenu();
+            }
+            expect(window.gameOverMenu).toHaveBeenCalled();
+        });
 
+    });
+
+    //-- Pick Quote Function --//
+    describe("pickQuote Function", function () {
+        beforeEach(function () {
+            setFixtures(`
+                <div class="quote-txt-box"></div>
+            `);
+            quotePhrases = {
+                quote: "this is an inspirational quote", author: "nic"
+            }
+        });
+        // is defined
         it("should have been defined", function () {
             expect(pickQuote).toBeDefined();
         });
-
+        // is callable
         it("Should have been called", function () {
             spyOn(window, "pickQuote");
             pickQuote();
             expect(window.pickQuote).toHaveBeenCalled();
         });
+        //author unknown
+        it("Should change the author to Unknown if there is none", function () {
+            quotePhrases.author = "";
+            if (!quotePhrases.author) {
+                quotePhrases.author = "Unknown";
+            }
+            expect(quotePhrases.author).toBe("Unknown");
+        });
+        //add quote to textbox
+        it("Should add the quote to the quote text box", function () {
+            let txtBox = $(".quote-txt-box");
+            txtBox.html(`<p>${quotePhrases.quote}</p><br>
+                     <p><em>"${quotePhrases.author}"</em></p>`);
+            expect(txtBox).toContainHtml("this is an inspirational quote");
+            expect(txtBox).toContainHtml("nic");
+        });
+
     });
 
-    //----------Fetch Quote Function ---------//
-    describe("fetchQuote Function", function () {
+    //-- Click Audio --//
+    describe("playClick Function", function () {
+        beforeEach(function () {
+            setFixtures(`  
+            <audio id="click-audio" preload="auto">
+                <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_itafjp.ogg"
+                    type="audio/ogg"/>
+                <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_edu6rx.mp3"
+                    type="audio/mpeg"/>
+            </audio>
+             `)
+        });
+        //is defined
+        it("should have been defined", function () {
+            expect(playClick).toBeDefined();
+        });
+        //is callable
+        it("Should have been called", function () {
+            spyOn(window, "playClick");
+            playClick();
+            expect(window.playClick).toHaveBeenCalled();
+        });
+        //play audio
+        it("Should play the click audio file", function () {
+            let snd = $("#click-audio")[0];
+            spyOn(snd, "play");
+            snd.play();
+            expect(snd.play).toHaveBeenCalled();
+        });
+    });
 
+    //-- Fetch Quote Function --//
+    describe("fetchQuote Function", function () {
+        //is defined
         it("should have been defined", function () {
             expect(fetchQuote).toBeDefined();
         });
-
+        //is callable
         it("Should have been called", function () {
             spyOn(window, "fetchQuote");
             fetchQuote();
@@ -687,5 +715,6 @@ describe("Simon Game Function tests", function () {
     });
 
 
-});
+})
+;
 
