@@ -17,8 +17,8 @@ const THEME_NEXT_BUTTON = $("#theme_next_button"); // mode Next Button
 
 /* Fix Audio Lag in safari browsers:
 * https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari*/
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioCtx = new AudioContext();
+let AudioContext;
+let audioCtx;
 //-- Game Modes object --//
 const GAME_MODES = [
     {
@@ -37,6 +37,7 @@ const GAME_MODES = [
         name: "REVERSE",
         desc: "Repeat the steps in a reverse order to which they are presented."
     }];
+
 //-- Game Theme object --//
 const GAME_THEME = [
     {
@@ -74,6 +75,7 @@ let reverse = false; // reverse mode
 function fetchQuote() {
     /*from https://type.fit/api/quotes found
     *via: https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373
+    * https://javascript.info/fetch
     * ----------------------------------------------------------*/
     fetch("https://type.fit/api/quotes")
         .then((response) => {
@@ -98,6 +100,7 @@ function fetchQuote() {
 function pickQuote() {
     let phrase = quotePhrases[Math.floor(Math.random() * quotePhrases.length)];
     // Add Unknown author if there is none in the object
+    //https://www.sitepoint.com/javascript-truthy-falsy/
     if (!phrase.author) {
         phrase.author = "Unknown";
     }
@@ -108,6 +111,13 @@ function pickQuote() {
 
 //-- Click Audio --//
 function playClick() {
+    //Adds audio context after user touches the screen to solve audio issues on chrome and safari
+    if (!AudioContext) {
+        AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+    }
+
+
     let snd = $("#click-audio")[0];
     snd.currentTime = 0;
     snd.play();
@@ -173,19 +183,21 @@ function gameOverMenu() {
 
 //-- Change the game mode --//
 function updateGameMode(buttonObj) {
+    const M_PREV_AREA = $("#mode-prev-area");
+    const M_NEXT_AREA = $("#mode-next-area");
     //Prev Button
     if (buttonObj.id === "mode_prev_button") {
-        MODE_NEXT_BUTTON.removeClass("gray-out");
+        M_NEXT_AREA.removeClass("gray-out");
 
         if (currentGameMode === 0) {
-            MODE_PREV_BUTTON.addClass("gray-out");
+            M_PREV_AREA.addClass("gray-out");
         }
     } else {
         //Next Button
-        MODE_PREV_BUTTON.removeClass("gray-out");
+        M_PREV_AREA.removeClass("gray-out");
 
         if (currentGameMode === 3) {
-            MODE_NEXT_BUTTON.addClass("gray-out");
+            M_NEXT_AREA.addClass("gray-out");
         }
     }
     //Change the game mode display text
@@ -195,18 +207,22 @@ function updateGameMode(buttonObj) {
 
 //-- Change the game theme --//
 function updateGameTheme(buttonObj) {
+    const T_PREV_AREA = $("#theme-prev-area");
+    const T_NEXT_AREA = $("#theme-next-area");
+
+    console.log(buttonObj.id);
     //Prev Button
     if (buttonObj.id === "theme_prev_button") {
-        THEME_NEXT_BUTTON.removeClass("gray-out");
+        T_NEXT_AREA.removeClass("gray-out");
         if (currentTheme === 0) {
-            THEME_PREV_BUTTON.addClass("gray-out");
+            T_PREV_AREA.addClass("gray-out");
         }
     } else {
         //Next Button
-        THEME_PREV_BUTTON.removeClass("gray-out");
+        T_PREV_AREA.removeClass("gray-out");
 
         if (currentTheme === 3) {
-            THEME_NEXT_BUTTON.addClass("gray-out");
+            T_NEXT_AREA.addClass("gray-out");
         }
     }
 
@@ -229,10 +245,12 @@ function buttonPressed(button) {
     setTimeout(function () {
         $(`#${button}-game-button`).removeClass("game-button-pressed");
     }, 200);
-    //Play the Audio
+
     let snd = $(`#${button}-classic-audio`)[0];
     // https://github.com/TravelTimN/simon-game - inspiration for this sound control.
+    // restart any playing audio
     snd.currentTime = 0;
+    //Play the Audio
     snd.play();
 }
 
@@ -439,16 +457,16 @@ $(document).ready(function () {
 
     //-- Add event listeners to the buttons BUTTONS --//
     // Main Menu Button
-    $("#main_menu_button > img").off().on("click touch", function () {
+    $("#menu").off().on("click touch", function () {
         playClick();
         mainMenu();
     });
 
     // Help Menu Button
-    $("#help_button > img").off().on("click touch", helpMenu);
+    $("#help_button").off().on("click touch", helpMenu);
 
     // Settings Menu Button
-    $("#settings_button > img").off().on("click touch", settingsMenu);
+    $("#settings_button").off().on("click touch", settingsMenu);
 
     // Close Menu Button
     CLOSE_BUTTON.off().on("click touch", function () {

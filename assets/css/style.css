@@ -24,6 +24,16 @@ main {
     background-color: #000000;
 }
 
+button {
+    border: none;
+}
+
+/*remove outline*/
+/*https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome*/
+button:focus {
+    outline: 0;
+}
+
 /* ################### Modals ###################  */
 /*Main Modal Setup*/
 .modal {
@@ -128,7 +138,7 @@ main {
 }
 
 /*Settings Button*/
-#settings_button {
+#settings_area {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -249,49 +259,43 @@ main {
 }
 
 /* ---------- Game Colour Buttons setup ---------- */
-/* Bricks */
-.brick {
-    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585325560/Simon/Wall_zdsceq.png) no-repeat;
+/* Backgrounds */
+.brick,
+.brick-cracked,
+.lego,
+.lego-cracked,
+.metal,
+.metal-cracked {
     background-size: cover;
     bottom: 50%;
     right: 50%;
 }
 
+/* Bricks */
+.brick {
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585388520/Simon/brick_wall_wg9qar.png) no-repeat;
+}
+
 .brick-cracked {
-    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585325560/Simon/Wall_zdsceq.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
-    background-size: cover;
-    bottom: 50%;
-    right: 50%;
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585388520/Simon/brick_wall_wg9qar.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
 }
 
 /* Lego */
 .lego {
-    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585332641/Simon/lego-texture_zczprg.png) no-repeat;
-    background-size: cover;
-    bottom: 50%;
-    right: 50%;
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_480/v1585332641/Simon/lego-texture_zczprg.png) no-repeat;
 }
 
 .lego-cracked {
-    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585332641/Simon/lego-texture_zczprg.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
-    background-size: cover;
-    bottom: 50%;
-    right: 50%;
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_480/v1585332641/Simon/lego-texture_zczprg.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
 }
 
 /* metal plate */
 .metal {
-    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585334760/Simon/DiamandPlate2_ojh9l2.png) no-repeat;
-    background-size: cover;
-    bottom: 50%;
-    right: 50%;
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_480/v1585334248/Simon/DiamandPlate_h6jl1y.png) no-repeat;
 }
 
 .metal-cracked {
-    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/v1585334760/Simon/DiamandPlate2_ojh9l2.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
-    background-size: cover;
-    bottom: 50%;
-    right: 50%;
+    background: url(https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_480/v1585334760/Simon/DiamandPlate2_ojh9l2.png) no-repeat, url(https://res.cloudinary.com/dajuujhvs/image/upload/v1583679697/Simon/CrackedSmall_zqgonv.png) no-repeat;
 }
 
 .classic {
@@ -306,7 +310,6 @@ main {
     bottom: 50%;
     right: 50%;
 }
-
 
 /* common settings for the colour buttons*/
 .button-green,
@@ -572,6 +575,10 @@ main {
         margin-bottom: 2em;
     }
 
+    .Simon-Logo img {
+        width: 50%;
+    }
+
     .game-over-logo {
         height: 50px;
         padding-top: 0;
@@ -645,5 +652,15 @@ main {
         padding-top: 0.2em;
         font-size: 1em;
     }
+
+    .game-mode-heading {
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    #mode_description {
+        padding-bottom: 0;
+    }
+
 
 }

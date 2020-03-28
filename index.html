@@ -31,16 +31,24 @@
             <!-- Menu buttons-->
             <div class="row">
                 <!-- Help Button -->
-                <div class="col3 help-button" id="help_button"><img class="btn" alt="help button image"
-                                                                    src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Help_btn_yopxqk.png">
+                <div class="col3 help-button">
+                    <button type="button" aria-label="help" id="help_button"><img class="btn" alt="help button image"
+                                                                                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Help_btn_yopxqk.png">
+                    </button>
                 </div>
                 <!-- Play Button-->
-                <div class="col3 play-button" id="play_button"><img class="btn play " alt="play button image"
-                                                                    src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png">
+                <div class="col3 play-button" id="play_button">
+                    <button type="button" aria-label="play" class=" play">
+                        <img class="btn" alt="play button image"
+                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png">
+                    </button>
                 </div>
                 <!-- Settings Button -->
-                <div class="col3" id="settings_button"><img class="btn" alt="settings button image"
-                                                            src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Settings_btn_fjur4o.png">
+                <div class="col3" id="settings_area">
+                    <button type="button" aria-label="settings" id="settings_button">
+                        <img class="btn" alt="settings button image"
+                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Settings_btn_fjur4o.png">
+                    </button>
                 </div>
             </div>
         </div>
@@ -97,14 +105,20 @@
             <div class="game-mode-heading"><p>Mode</p></div>
             <div class="row">
                 <!-- Previous Mode -->
-                <div class="col3 prev-button gray-out" id="mode_prev_button"><img class="btn" alt="prev button image"
-                                                                                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
+                <div class="col3 prev-button gray-out" id="mode-prev-area">
+                    <button type="button" aria-label="previous mode" id="mode_prev_button">
+                        <img class="btn" alt="prev button image"
+                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
+                    </button>
                 </div>
                 <!-- Mode Text -->
                 <div class="col3 game-mode-box"><p id="game-mode-text">CLASSIC</p></div>
                 <!-- Next Mode -->
-                <div class="col3 next-button" id="mode_next_button"><img class="btn" alt="next button image"
-                                                                         src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
+                <div class="col3 next-button" id="mode-next-area">
+                    <button type="button" aria-label="next mode" id="mode_next_button">
+                        <img class="btn" alt="next button image"
+                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
+                    </button>
                 </div>
             </div>
 
@@ -114,15 +128,22 @@
             <!-- Game Theme -->
             <div class="game-mode-heading"><p>Theme</p></div>
             <div class="row">
-                <!-- Previous Mode -->
-                <div class="col3 prev-button gray-out" id="theme_prev_button"><img class="btn" alt="prev button image"
-                                                                                   src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
+                <!-- Previous theme -->
+                <div class="col3 prev-button gray-out" id="theme-prev-area">
+                    <button type="button" aria-label="previous theme" id="theme_prev_button">
+                        <img class="btn"
+                             alt="prev button image"
+                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
+                    </button>
                 </div>
                 <!-- Mode Text -->
                 <div class="col3 game-mode-box"><p id="game-theme-text">CLASSIC</p></div>
-                <!-- Next Mode -->
-                <div class="col3 next-button" id="theme_next_button"><img class="btn" alt="next button image"
-                                                                          src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
+                <!-- Next theme -->
+                <div class="col3 next-button" id="theme-next-area">
+                    <button type="button" aria-label="next theme" id="theme_next_button">
+                        <img class="btn" alt="next button image"
+                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
+                    </button>
                 </div>
             </div>
 
@@ -157,18 +178,23 @@
                 <div id="mode-text" class="col2 score score-item"><p></p></div>
             </div>
 
-            <!--  Menu Buttons -->
+            <!--  Game Over Menu Buttons -->
             <div class="row">
                 <!--  Twitter Button-->
-                <div class="col3 social-tw social"><a href="https://www.twitter.com/" target="_blank"
-                                                      rel="noopener"><img class="btn"
-                                                                          src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
-                                                                          alt="Twitter icon image"></a>
+                <div class="col3 social-tw social"
+                >
+                    <a href="https://www.twitter.com/" target="_blank"
+                       rel="noopener"><img class="btn"
+                                           src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
+                                           alt="Twitter icon image"></a>
                 </div>
                 <!--  Replay Button -->
-                <div class="col3 play-button replay-button " id="replay_button"><img class="btn play"
-                                                                                     alt="replay button image"
-                                                                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Replay_btn_ikvrht.png">
+                <div class="col3 play-button replay-button " id="replay_button"
+                >
+                    <button type="button" aria-label="replay" class="play"><img class="btn"
+                                                                                alt="replay button image"
+                                                                                src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Replay_btn_ikvrht.png">
+                    </button>
                 </div>
 
                 <!--  Facebook Button -->
@@ -178,53 +204,64 @@
                                                                            alt="FaceBook icon image"></a>
                 </div>
                 <!-- Main Menu Button -->
-                <div class="col3" id="main_menu_button"><img class="btn" alt="main menu button image"
-                                                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png">
+                <div class="col3" id="main_menu_button">
+                    <button type="button" aria-label="main menu" id="menu"><img class="btn" alt="main menu button image"
+                                                                                src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png">
+                    </button>
                 </div>
 
             </div>
         </div>
 
         <!-- Close Button -->
-        <div class="modal-close"><img alt="close icon" class="close btn" id="close_button"
-                                      src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/X_icon_mfi8xa.png"/>
+        <div class="modal-close">
+            <button type="button" aria-label="close" id="close_button"><img alt="close button image" class="close btn"
+                                                                            src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/X_icon_mfi8xa.png"/>
+            </button>
         </div>
     </div>
 
     <!-- Main Game Play Buttons -->
     <div id="game-buttons">
         <!-- Green Button -->
-        <div
-                class="button-green"
-                data-button="green"
-                id="green-game-button"
-        >
+        <div>
+            <button type="button"
+                    aria-label="blue"
+                    class="button-green"
+                    data-button="green"
+                    id="green-game-button"></button>
             <!-- preload images -->
             <div id="green-button-overlay" class="cracked classic brick lego metal"></div>
 
         </div>
         <!-- Red Button -->
-        <div
-                class="button-red"
-                data-button="red"
-                id="red-game-button">
+        <div>
+            <button type="button"
+                    aria-label="red"
+                    class="button-red"
+                    data-button="red"
+                    id="red-game-button"></button>
             <!-- preload images -->
             <div id="red-button-overlay" class="cracked classic brick lego metal"></div>
         </div>
         <!-- Yellow Button -->
-        <div
-                class="button-yellow"
-                data-button="yellow"
-                id="yellow-game-button"
-        >
+        <div>
+            <button type="button"
+                    aria-label="yellow"
+                    class="button-yellow"
+                    data-button="yellow"
+                    id="yellow-game-button"></button>
             <!-- preload images -->
             <div id="yellow-button-overlay" class="cracked classic brick lego metal"></div>
         </div>
         <!-- Blue Button -->
-        <div
-                class="button-blue"
-                data-button="blue"
-                id="blue-game-button">
+        <div>
+            <button type="button"
+                    aria-label="blue"
+                    class="button-blue"
+                    data-button="blue"
+                    id="blue-game-button"
+            ></button>
             <!-- preload images -->
             <div id="blue-button-overlay" class="cracked classic brick lego metal"></div>
         </div>

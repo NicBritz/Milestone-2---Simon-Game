@@ -51,11 +51,14 @@ As a user ...
 - I would like the game to show me when I hit the wrong button.
 - I would like an endless game experience that will increase in speed incrementally.
 - I would like to see my score after each game as well as my best score.
+- I would like the game to have different themes to make it more customizable to mey own linking.
 
 ### The design process
 
 #### Scope
-The goal of this project was to recreate the classic 1978 electronic game called Simon. This is a more modern approach and is focused on delivering a clean and responsive user interface. keeping any effects subtle but still notable, without overwhelming the user with too much information at once makes for a simple but fun game. 
+The goal of this project was to recreate the classic 1978 electronic game called Simon. This is a more modern approach and is focused on delivering a clean and responsive user interface. 
+Keeping any effects subtle but still notable, without overwhelming the user with too much information at once makes for a simple but fun endless game.
+ 
 
 #### Audio
 Audio plays a big part in the experience of the game and because of this, most of the audio assets used are original. All the audio files are both in mp3 and Ogg format to ensure compatibility on a wide range of devices.
@@ -219,35 +222,76 @@ The game modes are as detailed as follows:
 ### GUI Elements
 With the use of well designed GUI elements, that were either purchased, free or custom created for the Graphical User Interface the game looks neat and feels like a native application.
 
+#### Themes
+To add another interesting twist to the game I have included the options of themes, these themes help to add a fresh design to teh games interface.
+
+**Classic**
+
+This is the plain smooth buttons that the game was originally designed to have.
+
+<img  src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1584981568/Simon/Screenshots/Game_PC_klrnko.png" alt="Classic Game screen for pc">
+<br>
+<br>
+
+**Brick**
+
+The Game buttons will have a Brick texture and look like four colored walls.
+
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1585391962/Simon/BrickScreenshot_yace6t.png" alt="Brick Game screen for pc">
+<br>
+<br>
+
+**Lego**
+
+The Game buttons will have a Lego texture and look like four colored lego pieces.
+
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1585391962/Simon/LegoScreenshot_bwghmx.png" alt="Lego Game screen for pc">
+<br>
+<br>
+**Metal**
+
+The Game buttons will have a Lego texture and look like four colored lego pieces.
+
+<img src="https://res.cloudinary.com/dajuujhvs/image/upload/c_scale,w_300/v1585391962/Simon/LegoScreenshot_bwghmx.png" alt="Metal Game screen for pc">
+
+---
+
 **Favicon**
-With the use of  [this article](https://www.w3.org/2005/10/howto-favicon) a favicon was added to the browser tab, this helped to make it feel like a more professional web game. The <span><img src="/assets/images/favicon.png" alt="Favicon Icon"></span> png file, is an original that was created using [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop),
+
+With the use of this [article](https://www.w3.org/2005/10/howto-favicon) a favicon was added to the browser tab, this helped to make it feel like a more professional web game. The <span><img src="/assets/images/favicon.png" alt="Favicon Icon"></span> png file, is an original that was created using [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop),
 it was designed to look like a tiny version of the game screen.
 
 **Modal**
+
 All the game menu elements are contained in a modal. The window in the modal has a white border that is used to add to the overall look of the menu. 
 The modal is made using and an external jQuery library called [jQuery Modal](https://jquerymodal.com/), you can find the GitHub repository for the library [here](https://github.com/kylefox/jquery-modal). 
 There is also a slight fade animation on the modal to make it have a smooth transition between the modal and the game screen.
 
 **Game Buttons**
+
 All the menu buttons and icons are from a mobile GUI pack that was sourced from [Graphic Burger](https://graphicburger.com/mobile-game-gui/). In conjunction with [Adobe PhotoShop](https://www.adobe.com/uk/products/photoshop.html?gclid=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjwvOHzBRBoEiwA48i6AtbSWstaKzHCUaUKzSlnKYFxv7dELw1rAOJgZhYShhzdXSxrCp3JHxoCnG4QAvD_BwE:G:s&s_kwcid=AL!3085!3!340669891884!e!!g!!photoshop) I 
 was able to extract the elements I wanted from the source file. All images are served by the content delivery system [Cloudinary](https://cloudinary.com/) to maximize the performance of the application. 
 When a user selects any of the buttons there will be an audio cue to indicate the button was pressed. Hovering over the button will change the cursor the grab symbol and the button will increase slightly in size.   
 
 **Logo and Game Over text**
+
 The content pack for this is something io purchased some time back, created by [Asa Faly Rayyan](https://www.facebook.com/asafalyrayyan) and provided in .ai format. 
 With the aid of [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html?gclid=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE&sdid=88X75SKR&mv=search&ef_id=CjwKCAjw3-bzBRBhEiwAgnnLCiFDFYsUaqMcRHmDmhhvqiX-2gtK55h9ro6Pmep8P7GkxZjHNlzHsBoCvN0QAvD_BwE:G:s&s_kwcid=AL!3085!3!340693010824!e!!g!!adobe%20illistrator) I was able to create both the game title text and the game over text. 
 As with the button images, these are also served by the content delivery system [Cloudinary](https://cloudinary.com/). 
 
 **Help Menu**
+
 The help menu describes the overall object of the game, the instructions are arranged in such a way as to describe the overall game rules as well as the individual gameplay options.
 With the use or headings and red underlines, the content is organised in an easy to follow way. 
 
 **Settings Menu**
+
 In this menu, you can find the options available to the player. Each choice in the game mode section can be selected by using the left and right arrows. 
 If you are at the end of the list the arrow will be greyed out indicating there are no further options in that direction. 
 Underneath the selection, there is a brief description of what to expect from that option.
 
 **Game Over Menu**
+
 When the player loses the round they will be presented with the game over screen. On this screen, there is a summary of the results of the game.
 - Score: This will be the score from the round just played, the score is the number of rounds the player has completed in the previous session. 
 - Best: This indicated the Top Score the player as achieved since the start of playing the game.
@@ -260,12 +304,15 @@ If the player chooses to go back to the main menu they will be presented with a 
 ### Game Screen
 
 The main game screen has the following elements:
+
 **Buttons**
+
 The four coloured game buttons will be the main game buttons when playing. Whenever the button is pressed by either the computer of the player, 
 it will scale down and play a relative audio sound. It the player get the sequence correct the computer will start the next round if not then the button will display a cracked overlay and
 play a crack sound. This will then trigger the Game Over modal. The buttons have rounded edges and an inset shadow to make them look and feel smooth. 
 
 **Circle**
+
 In the centre of the screen, there is a circle that is used to indicate the current round the player is on. The circle also has an inset colour ring that indicates the following:
 - RED - Computers turn, player controls are disabled.
 - GREEN - Players turn, player controls are enabled. 
@@ -274,9 +321,8 @@ In the centre of the screen, there is a circle that is used to indicate the curr
 The page is responsive and with the use of media queries, it caters for a wide range of screen sizes. 
 
 #### Features Left to Implement
-- Themes, different visual themes to add some great looks to the game
 - Permanent score storage
-- Timer between rounds
+- Timer between rounds - it may make for some interesting game play.
 - Strict mode and standard mode
 
 <!-- Top -->
@@ -430,7 +476,7 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
  
  Once you have these tools installed and everything is working you can follow the steps below:
 
- - Cloning
+ **Cloning**
   - You are now ready to clone a copy of this project to your local machine for editing.
   - At the top of the repository click on the ``Clone or download button``
   - Copy the path to the repo ``https://github.com/Frozenaught/Milestone-2---Simon-Game.git``
@@ -450,19 +496,22 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
   - To run the project locally, simple launch the index.html file from your Machine.
   - You can now edit any of the code using your code editor of choice. 
   
- - Deploying 
-    - To deploy this to your Github account, navigate to Github and create a new repository.
-    - Give the repository a name and click the ``Create repository`` button.
-    - push the cloned repository to your Github account with the following commands in the command-line 
+ **Deploying**
+ 
+  - To deploy this to your Github account, navigate to Github and create a new repository.
+  - Give the repository a name and click the ``Create repository`` button.
+  - push the cloned repository to your Github account with the following commands in the command-line
+    
     ``` 
         git remote add origin https://github.com/Frozenaught/<repo name>.git 
         git push -u origin master
-   ```
-   - Once you have uploaded your repo you can make use of Github pages to host the website.
-   - Go to Settings using the settings button at the top of the repository page, navigate down to Github pages and choose the master branch.
-   - This project will now be published and you will get a link like https://frozenaught.github.io/Milestone-2---Simon-Game/ to share.
+    ```
+  
+  - Once you have uploaded your repo you can make use of Github pages to host the website.
+  - Go to Settings using the settings button at the top of the repository page, navigate down to Github pages and choose the master branch.
+  - This project will now be published and you will get a link like https://frozenaught.github.io/Milestone-2---Simon-Game/ to share.
    
- - Development
+ **Development**
   - If you chose to make changes to the website I would recommend using separate branches so that you can go back to the original master branch if the changes don't work as expected.
   - Use ``git checkout -b <brancname>`` to create a new branch and edit the files accordingly.
   - If you are happy with the changes to use ``git commit -m "my commit message of changes I have made"`` to commit the changes.
@@ -523,9 +572,6 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
     - This game helped with inspiration for the overall design of the game as well as some of the different game modes.
     - some wording was also used for inspiration.
     
-#### Code
-- [setTimout test](https://makandracards.com/makandra/32477-testing-settimeout-and-setinterval-with-jasmine)
-
 
 #### Other
 
@@ -538,8 +584,19 @@ This project is hosted on  [GitHub](https://github.com/) and used GitHub pages t
     - For those times when I could not figure out why I was not getting the result, I expected to like this [article](https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari)
 - [MDN](https://developer.mozilla.org/en-US/)
     - For code referencing, while trying to get my code to do what I wanted it to do rather than what I told it to do.
-- [Timed array loops](https://scottiestech.info/2014/07/01/javascript-fun-looping-with-a-delay/) - This was helpful in figuring a way to play back each element in an array with a delay between each step.
-    
+- [Timed array loops](https://scottiestech.info/2014/07/01/javascript-fun-looping-with-a-delay/) 
+    - This was helpful in figuring a way to play back each element in an array with a delay between each step.
+- [setTimout test](https://makandracards.com/makandra/32477-testing-settimeout-and-setinterval-with-jasmine)
+    - used for help with timeout tests.
+- [Stack Overflow Audio Problem](https://stackoverflow.com/questions/22216954/whats-causing-this-slow-delayed-audio-playback-in-safari)
+    - used to help solve a bug on safari with audio not playing
+- [falsy truthy](https://www.sitepoint.com/javascript-truthy-falsy/)
+    - used as guide when figuing out how th check for undefined and empty variables
+- [fetch](https://javascript.info/fetch)
+    - used for help with api handling.
+- [remove outline](https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome)
+    - this helped me to remove the outline on my button elements
+ 
  <!-- Top -->
 
 <div align="center">
