@@ -40,7 +40,7 @@
     - [Pycharm](#pycharmhttpswwwjetbrainscompycharm)
     - [Devices](#devices-and-browsers)
     - [user testing](#user-testing)
-    - [jasmine](#jasmin)
+    - [jasmine](#jasmine)
 - [Deployment](#deployment)
     - [Cloning](#cloning)
     - [Deploying](#deploying)
@@ -569,8 +569,8 @@ I had some friends and family test the site and the feedback was invaluable. Thi
 There was feedback from multiple players that the game had a level-up text that was very distracting when it flashed on the screen so this was removed, they also picked up some small grammar issues I had missed. 
 There was some feedback that the app was a bit unresponsive to touch sometimes, I changed the code slightly to accommodate for this. 
 
-##### Jasmin
-Using Jasmin I was able to test if the code was working as expected. The test files can be found [here](tests). 
+##### Jasmine
+Using Jasmine I was able to test if the code was working as expected. The test files can be found [here](tests). 
 I have broken the spec's into three separate files to make it a bit easier to navigate the tests. I have used some ideas for testing from [Tim Nelson](https://github.com/TravelTimN/simon-game).
 ani i made use of [jasmine jQuery](https://www.npmjs.com/package/jasmine-jquery) to help with unit testing. You can run the automated test simply by running the [test.html](/tests/tests.html).
 
