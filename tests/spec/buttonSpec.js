@@ -133,11 +133,11 @@ describe("Simon Game button tests",function () {
     describe("Settings Button", function () {
         //click the button
         beforeEach(function () {
-            $("#settings_button > img").click();
+            $("#settings_area > img").click();
         });
         //is defined
         it("should have been defined", function () {
-            expect($("#settings_button > img")).toBeDefined();
+            expect($("#settings_area > img")).toBeDefined();
         });
         //trigger settings menu function
         it("should trigger the Settings Menu function", function () {
