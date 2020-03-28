@@ -6,14 +6,6 @@
 ## Contents
 
 - [Overview](#overview)
-<details>
-    <summary>UX</summary>
-    - [user](#User)
-        - [design](#design)
-           - [scope](#scope)
-           - [audio](#audio)
-           - [visual](#visual) 
-</details>
 - [UX](#ux)
     - [user](#User)
     - [design](#design)
