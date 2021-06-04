@@ -1,5 +1,7 @@
 <div align="center">
+    <a href="https://nicbritz.github.io/Milestone-2---Simon-Game/" target="_blank">
     <img  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png" alt="Main Screen screen for pc">
+    </a>
 </div>
 <!-- contents -->
 
@@ -56,7 +58,7 @@
 ## Overview
 Simon is not only a fun and challenging game but also a tool to help improve memory. This particular iteration of the 1978 classic game has four game modes. 
 Each mode brings on a new set of challenges that add a modern twist to the game. There is also a random inspirational quote shown at the beginning of each game to help mentally prepare you for the challenge. 
-The use of themes also make for an interesting change of scenery. you can find the deployed game here: https://frozenaught.github.io/Milestone-2---Simon-Game/
+The use of themes also make for an interesting change of scenery. you can find the deployed game here: https://nicbritz.github.io/Milestone-2---Simon-Game/
 
 <!-- Top -->
 
