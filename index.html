@@ -1,332 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="Description"
-          content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      name="Description"
+      content="A Simon Says Game for my Code Institute Milestone Project, CREATED BY: Nico Britz "
+    />
     <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" rel="stylesheet"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+      rel="stylesheet"
+    />
     <!-- link to my StyleSheet -->
-    <link href="assets/css/style.css" rel="stylesheet"/>
+    <link href="assets/css/style.css" rel="stylesheet" />
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/favicon.png"
+    />
     <title>Simon Game</title>
-</head>
+  </head>
 
-<body>
-<main id="main_screen">
-
-    <!-- Main modal -->
-    <div class="modal" id="main-modal">
-
+  <body>
+    <main id="main_screen">
+      <!-- Main modal -->
+      <div class="modal" id="main-modal">
         <!-- Main Menu -->
         <div id="main_menu">
-            <!-- Main title logo -->
-            <div class="Simon-Logo" id="title"><img alt="Simon title text"
-                                                    src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png">
+          <!-- Main title logo -->
+          <div class="Simon-Logo" id="title">
+            <img
+              alt="Simon title text"
+              src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Title_yaufra.png"
+            />
+          </div>
+          <!-- Quote Text Box  -->
+          <div class="quote-txt-box" id="main-menu-quote"></div>
+          <!-- Menu buttons-->
+          <div class="row">
+            <!-- Help Button -->
+            <div class="col3 help-button">
+              <button type="button" aria-label="help" id="help_button">
+                <img
+                  class="btn"
+                  alt="help button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Help_btn_yopxqk.png"
+                />
+              </button>
             </div>
-            <!-- Quote Text Box  -->
-            <div class="quote-txt-box" id="main-menu-quote"></div>
-            <!-- Menu buttons-->
-            <div class="row">
-                <!-- Help Button -->
-                <div class="col3 help-button">
-                    <button type="button" aria-label="help" id="help_button"><img class="btn" alt="help button image"
-                                                                                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Help_btn_yopxqk.png">
-                    </button>
-                </div>
-                <!-- Play Button-->
-                <div class="col3 play-button" id="play_button">
-                    <button type="button" aria-label="play" class=" play">
-                        <img class="btn" alt="play button image"
-                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png">
-                    </button>
-                </div>
-                <!-- Settings Button -->
-                <div class="col3" id="settings_area">
-                    <button type="button" aria-label="settings" id="settings_button">
-                        <img class="btn" alt="settings button image"
-                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Settings_btn_fjur4o.png">
-                    </button>
-                </div>
+            <!-- Play Button-->
+            <div class="col3 play-button" id="play_button">
+              <button type="button" aria-label="play" class="play">
+                <img
+                  class="btn"
+                  alt="play button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png"
+                />
+              </button>
             </div>
+            <!-- Settings Button -->
+            <div class="col3" id="settings_area">
+              <button type="button" aria-label="settings" id="settings_button">
+                <img
+                  class="btn"
+                  alt="settings button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Settings_btn_fjur4o.png"
+                />
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Help Menu -->
         <div id="help_menu">
-            <!-- some help from:  https://www.ultraboardgames.com/simon/game-rules.php -->
-            <div class="help-txt" id="help_txt">
-                <h1>Instructions</h1>
-                <h2>Object of the Game</h2>
-                <br>
-                <p>
-                    The object of the game is to correctly repeat the sequence. Depending on the game mode selected this
-                    will vary in complexity.
-                </p>
-                <br>
-                <p> Press <span><img alt="play button image" class="play-small"
-                                     src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png"></span>
-                    and Simon will give the first signal.
-                </p>
+          <!-- some help from:  https://www.ultraboardgames.com/simon/game-rules.php -->
+          <div class="help-txt" id="help_txt">
+            <h1>Instructions</h1>
+            <h2>Object of the Game</h2>
+            <br />
+            <p>
+              The object of the game is to correctly repeat the sequence.
+              Depending on the game mode selected this will vary in complexity.
+            </p>
+            <br />
+            <p>
+              Press
+              <span
+                ><img
+                  alt="play button image"
+                  class="play-small"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Play_btn_e4ljma.png"
+              /></span>
+              and Simon will give the first signal.
+            </p>
 
-                <h2>Classic Game Mode</h2>
-                <br>
-                <p> Repeat the steps in the order they are presented, each round will increase in length.</p>
+            <h2>Classic Game Mode</h2>
+            <br />
+            <p>
+              Repeat the steps in the order they are presented, each round will
+              increase in length.
+            </p>
 
-                <h2>Random Game Mode</h2>
-                <br>
-                <p> Repeat the steps in the order they are presented, each round will be random and increase in
-                    length.</p>
+            <h2>Random Game Mode</h2>
+            <br />
+            <p>
+              Repeat the steps in the order they are presented, each round will
+              be random and increase in length.
+            </p>
 
-                <h2>Single Game Mode</h2>
-                <br>
-                <p> Repeat the steps in the order they were presented, only the final step will play back but you will
-                    need
-                    to present the entire sequence, each round
-                    will increase in length. </p>
+            <h2>Single Game Mode</h2>
+            <br />
+            <p>
+              Repeat the steps in the order they were presented, only the final
+              step will play back but you will need to present the entire
+              sequence, each round will increase in length.
+            </p>
 
-                <h2>Reverse Game Mode</h2>
-                <br>
-                <p> Repeat the steps in a reverse order to which they are presented, each round
-                    will increase in length. </p>
-                <br>
+            <h2>Reverse Game Mode</h2>
+            <br />
+            <p>
+              Repeat the steps in a reverse order to which they are presented,
+              each round will increase in length.
+            </p>
+            <br />
 
-                <p> Continue playing
-                    as long as you can, repeat each sequence of signals correctly. After every 5th signal in a sequence,
-                    Simon automatically speeds up. If you fail to repeat a sequence exactly then it's <strong>GAME
-                        OVER</strong>.
-                </p></div>
+            <p>
+              Continue playing as long as you can, repeat each sequence of
+              signals correctly. After every 5th signal in a sequence, Simon
+              automatically speeds up. If you fail to repeat a sequence exactly
+              then it's <strong>GAME OVER</strong>.
+            </p>
+          </div>
         </div>
 
         <!-- Settings Menu -->
         <div id="settings_menu">
-            <!-- Game Modes -->
-            <div class="game-mode-heading"><p>Mode</p></div>
-            <div class="row">
-                <!-- Previous Mode -->
-                <div class="col3 prev-button gray-out" id="mode-prev-area">
-                    <button type="button" aria-label="previous mode" id="mode_prev_button">
-                        <img class="btn" alt="prev button image"
-                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
-                    </button>
-                </div>
-                <!-- Mode Text -->
-                <div class="col3 game-mode-box"><p id="game-mode-text">CLASSIC</p></div>
-                <!-- Next Mode -->
-                <div class="col3 next-button" id="mode-next-area">
-                    <button type="button" aria-label="next mode" id="mode_next_button">
-                        <img class="btn" alt="next button image"
-                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
-                    </button>
-                </div>
+          <!-- Game Modes -->
+          <div class="game-mode-heading"><p>Mode</p></div>
+          <div class="row">
+            <!-- Previous Mode -->
+            <div class="col3 prev-button gray-out" id="mode-prev-area">
+              <button
+                type="button"
+                aria-label="previous mode"
+                id="mode_prev_button"
+              >
+                <img
+                  class="btn"
+                  alt="prev button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png"
+                />
+              </button>
             </div>
-
-            <div id="mode_description"><p>Repeat the steps in the order they are presented, each
-                round will increase in length.</p></div>
-
-            <!-- Game Theme -->
-            <div class="game-mode-heading"><p>Theme</p></div>
-            <div class="row">
-                <!-- Previous theme -->
-                <div class="col3 prev-button gray-out" id="theme-prev-area">
-                    <button type="button" aria-label="previous theme" id="theme_prev_button">
-                        <img class="btn"
-                             alt="prev button image"
-                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png">
-                    </button>
-                </div>
-                <!-- Mode Text -->
-                <div class="col3 game-mode-box"><p id="game-theme-text">CLASSIC</p></div>
-                <!-- Next theme -->
-                <div class="col3 next-button" id="theme-next-area">
-                    <button type="button" aria-label="next theme" id="theme_next_button">
-                        <img class="btn" alt="next button image"
-                             src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png">
-                    </button>
-                </div>
+            <!-- Mode Text -->
+            <div class="col3 game-mode-box">
+              <p id="game-mode-text">CLASSIC</p>
             </div>
+            <!-- Next Mode -->
+            <div class="col3 next-button" id="mode-next-area">
+              <button
+                type="button"
+                aria-label="next mode"
+                id="mode_next_button"
+              >
+                <img
+                  class="btn"
+                  alt="next button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png"
+                />
+              </button>
+            </div>
+          </div>
 
-            <div id="theme_description"><p>Smooth and plain buttons.</p></div>
+          <div id="mode_description">
+            <p>
+              Repeat the steps in the order they are presented, each round will
+              increase in length.
+            </p>
+          </div>
 
+          <!-- Game Theme -->
+          <div class="game-mode-heading"><p>Theme</p></div>
+          <div class="row">
+            <!-- Previous theme -->
+            <div class="col3 prev-button gray-out" id="theme-prev-area">
+              <button
+                type="button"
+                aria-label="previous theme"
+                id="theme_prev_button"
+              >
+                <img
+                  class="btn"
+                  alt="prev button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Back_btn_ofjpai.png"
+                />
+              </button>
+            </div>
+            <!-- Mode Text -->
+            <div class="col3 game-mode-box">
+              <p id="game-theme-text">CLASSIC</p>
+            </div>
+            <!-- Next theme -->
+            <div class="col3 next-button" id="theme-next-area">
+              <button
+                type="button"
+                aria-label="next theme"
+                id="theme_next_button"
+              >
+                <img
+                  class="btn"
+                  alt="next button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Forward_btn_mmx3cs.png"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div id="theme_description"><p>Smooth and plain buttons.</p></div>
         </div>
 
         <!-- GameOver Menu -->
         <div id="gameOver-menu">
-            <!--  Main title text -->
-            <div class="game-over-logo" id="game-over-text"><img alt="Game Over Logo"
-                                                                 src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/GameOver_g9f8oo.png">
+          <!--  Main title text -->
+          <div class="game-over-logo" id="game-over-text">
+            <img
+              alt="Game Over Logo"
+              src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/GameOver_g9f8oo.png"
+            />
+          </div>
+          <!--  Score text -->
+          <div class="game-mode-heading game-over" id="score">
+            <div class="settings-menu result-text"><p>Results</p></div>
+          </div>
+          <div class="row">
+            <!--  current round score-->
+            <div class="col2 score score-title"><p>Score:</p></div>
+            <div id="current-score" class="col2 score score-item">
+              <p>20</p>
             </div>
-            <!--  Score text -->
-            <div class="game-mode-heading game-over" id="score">
-                <div class="settings-menu result-text"><p>Results</p></div>
-            </div>
-            <div class="row">
-                <!--  current round score-->
-                <div class="col2 score score-title"><p>Score:</p></div>
-                <div id="current-score" class="col2 score score-item"><p>20</p></div>
+          </div>
+          <div class="row">
+            <!--   best score -->
+            <div class="col2 score score-title"><p>Best:</p></div>
+            <div id="best-score" class="col2 score score-item"><p>50</p></div>
+          </div>
+          <div class="row">
+            <!-- Current Game Mode -->
+            <div class="col2 score score-title"><p>Mode:</p></div>
+            <div id="mode-text" class="col2 score score-item"><p></p></div>
+          </div>
 
+          <!--  Game Over Menu Buttons -->
+          <div class="row">
+            <!--  Twitter Button-->
+            <div class="col3 social-tw social">
+              <a href="https://www.twitter.com/" target="_blank" rel="noopener"
+                ><img
+                  class="btn"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
+                  alt="Twitter icon image"
+              /></a>
             </div>
-            <div class="row">
-                <!--   best score -->
-                <div class="col2 score score-title"><p>Best:</p></div>
-                <div id="best-score" class="col2 score score-item"><p>50</p></div>
-            </div>
-            <div class="row">
-                <!-- Current Game Mode -->
-                <div class="col2 score score-title"><p>Mode:</p></div>
-                <div id="mode-text" class="col2 score score-item"><p></p></div>
+            <!--  Replay Button -->
+            <div class="col3 play-button replay-button" id="replay_button">
+              <button type="button" aria-label="replay" class="play">
+                <img
+                  class="btn"
+                  alt="replay button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Replay_btn_ikvrht.png"
+                />
+              </button>
             </div>
 
-            <!--  Game Over Menu Buttons -->
-            <div class="row">
-                <!--  Twitter Button-->
-                <div class="col3 social-tw social"
-                >
-                    <a href="https://www.twitter.com/" target="_blank"
-                       rel="noopener"><img class="btn"
-                                           src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Twitter_upznd7.png"
-                                           alt="Twitter icon image"></a>
-                </div>
-                <!--  Replay Button -->
-                <div class="col3 play-button replay-button " id="replay_button"
-                >
-                    <button type="button" aria-label="replay" class="play"><img class="btn"
-                                                                                alt="replay button image"
-                                                                                src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Replay_btn_ikvrht.png">
-                    </button>
-                </div>
-
-                <!--  Facebook Button -->
-                <div class="col3 social-fb social "><a href="https://www.facebook.com/" target="_blank"
-                                                       rel="noopener"><img class="btn"
-                                                                           src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Fb_mnoxdn.png"
-                                                                           alt="FaceBook icon image"></a>
-                </div>
-                <!-- Main Menu Button -->
-                <div class="col3" id="main_menu_button">
-                    <button type="button" aria-label="main menu" id="menu"><img class="btn" alt="main menu button image"
-                                                                                src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png">
-                    </button>
-                </div>
-
+            <!--  Facebook Button -->
+            <div class="col3 social-fb social">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                ><img
+                  class="btn"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974862/Simon/Fb_mnoxdn.png"
+                  alt="FaceBook icon image"
+              /></a>
             </div>
+            <!-- Main Menu Button -->
+            <div class="col3" id="main_menu_button">
+              <button type="button" aria-label="main menu" id="menu">
+                <img
+                  class="btn"
+                  alt="main menu button image"
+                  src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/Menu_btn_anyfyx.png"
+                />
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Close Button -->
         <div class="modal-close">
-            <button type="button" aria-label="close" id="close_button"><img alt="close button image" class="close btn"
-                                                                            src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/X_icon_mfi8xa.png"/>
-            </button>
+          <button type="button" aria-label="close" id="close_button">
+            <img
+              alt="close button image"
+              class="close btn"
+              src="https://res.cloudinary.com/dajuujhvs/image/upload/v1584974863/Simon/X_icon_mfi8xa.png"
+            />
+          </button>
         </div>
-    </div>
+      </div>
 
-    <!-- Main Game Play Buttons -->
-    <div id="game-buttons">
+      <!-- Main Game Play Buttons -->
+      <div id="game-buttons">
         <!-- Green Button -->
         <div>
-            <button type="button"
-                    aria-label="blue"
-                    class="button-green"
-                    data-button="green"
-                    id="green-game-button"></button>
-            <!-- preload images -->
-            <div id="green-button-overlay" class="cracked classic brick lego metal"></div>
-
+          <button
+            type="button"
+            aria-label="blue"
+            class="button-green"
+            data-button="green"
+            id="green-game-button"
+          ></button>
+          <!-- preload images -->
+          <div
+            id="green-button-overlay"
+            class="cracked classic brick lego metal"
+          ></div>
         </div>
         <!-- Red Button -->
         <div>
-            <button type="button"
-                    aria-label="red"
-                    class="button-red"
-                    data-button="red"
-                    id="red-game-button"></button>
-            <!-- preload images -->
-            <div id="red-button-overlay" class="cracked classic brick lego metal"></div>
+          <button
+            type="button"
+            aria-label="red"
+            class="button-red"
+            data-button="red"
+            id="red-game-button"
+          ></button>
+          <!-- preload images -->
+          <div
+            id="red-button-overlay"
+            class="cracked classic brick lego metal"
+          ></div>
         </div>
         <!-- Yellow Button -->
         <div>
-            <button type="button"
-                    aria-label="yellow"
-                    class="button-yellow"
-                    data-button="yellow"
-                    id="yellow-game-button"></button>
-            <!-- preload images -->
-            <div id="yellow-button-overlay" class="cracked classic brick lego metal"></div>
+          <button
+            type="button"
+            aria-label="yellow"
+            class="button-yellow"
+            data-button="yellow"
+            id="yellow-game-button"
+          ></button>
+          <!-- preload images -->
+          <div
+            id="yellow-button-overlay"
+            class="cracked classic brick lego metal"
+          ></div>
         </div>
         <!-- Blue Button -->
         <div>
-            <button type="button"
-                    aria-label="blue"
-                    class="button-blue"
-                    data-button="blue"
-                    id="blue-game-button"
-            ></button>
-            <!-- preload images -->
-            <div id="blue-button-overlay" class="cracked classic brick lego metal"></div>
+          <button
+            type="button"
+            aria-label="blue"
+            class="button-blue"
+            data-button="blue"
+            id="blue-game-button"
+          ></button>
+          <!-- preload images -->
+          <div
+            id="blue-button-overlay"
+            class="cracked classic brick lego metal"
+          ></div>
         </div>
-    </div>
-    <!-- Main game center circle -->
-    <div class="center-circle" id="center-circle">
-    </div>
-    <!-- Center Score text -->
-    <div class="game-circle" id="game-center-circle-textbox"><p id="game-circle-txt">0</p></div>
+      </div>
+      <!-- Main game center circle -->
+      <div class="center-circle" id="center-circle"></div>
+      <!-- Center Score text -->
+      <div class="game-circle" id="game-center-circle-textbox">
+        <p id="game-circle-txt">0</p>
+      </div>
+    </main>
 
-</main>
+    <!-- Audio Imports -->
+    <audio id="green-classic-audio" preload="auto">
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_u6owdw.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_nxviwf.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio id="red-classic-audio" preload="auto">
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/red-classic-audio_whpfqx.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/red-classic-audio_rpybox.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio id="yellow-classic-audio" preload="auto">
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/yellow-classic-audio_awj9ly.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/yellow-classic-audio_hm2ycn.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio id="blue-classic-audio" preload="auto">
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/blue-classic-audio_fcol2z.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/blue-classic-audio_pr9epq.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <!-- click sound -->
+    <audio id="click-audio" preload="auto">
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_itafjp.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_edu6rx.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <!--crack sound -->
+    <audio id="crack-audio" preload="auto">
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_oqiblc.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_zjj3qz.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
 
-<!-- Audio Imports -->
-<audio id="green-classic-audio" preload="auto">
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_u6owdw.ogg"
-            type="audio/ogg"/>
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/green-classic-audio_nxviwf.mp3"
-            type="audio/mpeg"/>
-</audio>
-<audio id="red-classic-audio" preload="auto">
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/red-classic-audio_whpfqx.ogg"
-            type="audio/ogg"/>
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/red-classic-audio_rpybox.mp3"
-            type="audio/mpeg"/>
-</audio>
-<audio id="yellow-classic-audio" preload="auto">
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/yellow-classic-audio_awj9ly.ogg"
-            type="audio/ogg"/>
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975738/Simon/Audio/yellow-classic-audio_hm2ycn.mp3"
-            type="audio/mpeg"/>
-</audio>
-<audio id="blue-classic-audio" preload="auto">
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/blue-classic-audio_fcol2z.ogg"
-            type="audio/ogg"/>
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/blue-classic-audio_pr9epq.mp3"
-            type="audio/mpeg"/>
-</audio>
-<!-- click sound -->
-<audio id="click-audio" preload="auto">
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_itafjp.ogg"
-            type="audio/ogg"/>
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/click2_edu6rx.mp3"
-            type="audio/mpeg"/>
-</audio>
-<!--crack sound -->
-<audio id="crack-audio" preload="auto">
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_oqiblc.ogg"
-            type="audio/ogg"/>
-    <source src="https://res.cloudinary.com/dajuujhvs/video/upload/v1584975737/Simon/Audio/Crack_zjj3qz.mp3"
-            type="audio/mpeg"/>
-</audio>
+    <!-- Scripts -->
 
-<!-- Scripts -->
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 
-<!-- Jquery -->
-<script
-        crossorigin="anonymous"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-></script>
-<!-- jQuery Modal https://jquerymodal.com/ && https://github.com/kylefox/jquery-modal-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-<!-- main Game Script -->
-<script src="assets/js/game.js"></script>
-
-</body>
+    <!-- main Game Script -->
+    <script src="assets/js/game.js"></script>
+  </body>
 </html>
